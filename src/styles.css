@@ -1,0 +1,55 @@
+@import 'assets/css/base.css';
+@import '../node_modules/primeicons/primeicons.css';
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1680px;
+}
+section {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  .container {
+    max-width: 1200px;
+    .header {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+.bg-filter {
+  background-color: var(--color-background-soft);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+@media (hover: hover) {
+  nav a:hover {
+  }
+}
+
+@media (min-width: 1024px) {
+
+}
