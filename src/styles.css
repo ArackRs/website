@@ -9,31 +9,41 @@
 
 .container {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1680px;
+  padding: 0 1rem;
 }
 section {
   padding-top: 10rem;
-  padding-bottom: 5rem;
   .container {
-    max-width: 1200px;
+    max-width: 1680px;
+    padding: 0 max(1rem, 12%);
+
     .header {
+      width: 100%;
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.5em;
         font-weight: 600;
       }
       h2 {
-        font-size: 2rem;
+        font-size: 2em;
         font-weight: 600;
       }
       p {
-        font-size: 1.2rem;
+        font-size: 1.2em;
         font-weight: 400;
         margin-bottom: 1rem;
       }
+    }
+    .content {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
   }
 }
@@ -49,7 +59,41 @@ section {
   nav a:hover {
   }
 }
-
-@media (min-width: 1024px) {
-
+@media (max-width: 1024px) {
+  .container {
+    font-size: 85%;
+  }
+  section {
+    .container {
+      .header {
+      }
+      .content {
+        gap: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 80%;
+  }
+  section {
+    .container {
+      text-align: center;
+      .header {
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    font-size: 75%;
+  }
+  section {
+    .container {
+      .header {
+      }
+    }
+  }
 }

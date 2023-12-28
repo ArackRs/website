@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #27CEB0;
+    --color-primary: rgb(39, 206, 176);
     --color-primary-soft: rgba(39, 206, 176, 0.8);
     --color-primary-mute: rgba(39, 206, 176, 0.6);
 
@@ -15,7 +15,7 @@
 
     --black: #000000;
     --black-soft: rgba(26, 28, 29, 0.8);
-    --black-mute: rgba(14, 14, 14, 0.6);
+    --black-mute: rgba(25, 25, 25, 0.6);
 }
 
 @media (prefers-color-scheme: light) {
