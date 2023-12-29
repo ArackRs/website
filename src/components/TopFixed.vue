@@ -29,8 +29,8 @@ onUnmounted(() => {
       <nav>
         <router-link to="/">Home</router-link>
         <div :class="{ 'is-active': isNavVisible }">
-          <router-link to="/my-projects">Projects</router-link>
           <router-link to="/about-me">About</router-link>
+          <router-link to="/my-projects">Projects</router-link>
           <router-link to="/contact-me">Contact</router-link>
         </div>
       </nav>

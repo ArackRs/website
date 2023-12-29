@@ -2,14 +2,15 @@
 import { RouterView } from 'vue-router'
 import TopFixed from "@/components/TopFixed.vue";
 import BottomFixed from "@/components/BottomFixed.vue";
+import NavbarMobile from '@/components/NavbarMobile.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 </script>
 
 <template>
   <TopFixed />
+  <NavbarMobile />
   <RouterView />
-  <footer>
-    <p>&copy; 2023 - All rights reserved. Proudly created with Vue.js by Jack Arana</p>
-  </footer>
+  <FooterComponent />
   <BottomFixed />
 </template>
 
