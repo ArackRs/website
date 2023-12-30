@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1](https://github.com/arack-dev/website/compare/v0.0.0...v0.0.1) (2023-12-30)
+
+
+### Features
+
+* **components:** add animation ([7010bac](https://github.com/arack-dev/website/commit/7010bacdada13da57e1a45c04ebf93d344329b3d))
+* **css:** update styles ([5d1cba0](https://github.com/arack-dev/website/commit/5d1cba008307e3c01c7032b7705136f551856a5e))
+
+
+### Bug Fixes
+
+* **home:** remove stack section ([f956695](https://github.com/arack-dev/website/commit/f9566959251805a0f521506e79f8e3df05c7653d))
+
 ## 0.0.0 (2023-12-19)
 
 
