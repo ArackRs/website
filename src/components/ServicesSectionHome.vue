@@ -63,7 +63,6 @@ onUnmounted(() => {
 <style scoped>
   .services {
     background: var(--color-background-soft);
-    padding-bottom: 10rem;
   }
   .services-container {
     flex-direction: column;

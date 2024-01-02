@@ -7,7 +7,7 @@ const skills = [
 </script>
 
 <template>
-  <section class="stack">
+  <section id="stack">
     <div class="stack-container container">
       <div class="stack-header header">
         <h1>My technology stack</h1>
@@ -26,8 +26,8 @@ const skills = [
 </template>
 
 <style scoped>
-  .stack {
-    background-color: var(--color-background-soft);
+  #stack {
+    background: var(--color-background-soft);
     padding-bottom: 7rem;
   }
   .stack-container {

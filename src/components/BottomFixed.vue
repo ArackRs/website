@@ -38,7 +38,7 @@ onUnmounted(() => {
         <a href=""><i class="pi pi-linkedin"></i></a>
         <a href=""><i class="pi pi-instagram"></i></a>
       </nav>
-      <button class="toggle-theme"><i class="pi pi-sun"></i></button>
+      <pv-button class="toggle-theme" text rounded severity="secondary"><i class="pi pi-sun"></i></pv-button>
     </div>
   </footer>
 </template>

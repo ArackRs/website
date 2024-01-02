@@ -8,7 +8,7 @@
         <h1>Hello, I'm
           <strong>Jack Arana</strong>
         </h1>
-        <h1><span>Software Engineering Student</span></h1>
+        <h1 class="heading">Software Engineering Student</h1>
         <h1>Specialized in FullStack Development</h1>
         <router-link to="about-me">Resume
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
@@ -22,7 +22,6 @@
 #hero {
   width: 100%;
   height: 100vh;
-  padding-top: 0;
   position: relative;
   overflow: hidden;
 }
@@ -44,19 +43,6 @@
     font-size: 2em;
     strong {
       padding-left: .7rem;
-    }
-  }
-
-  & h1:nth-child(2) {
-    background-color: var(--color-background);
-    & span {
-      font-size: 3em;
-      font-weight: bold;
-      color: transparent;
-      background: linear-gradient(113deg, var(--color-primary), var(--color-secondary-mute));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
   }
 
