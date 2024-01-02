@@ -4,7 +4,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
   font-weight: normal;
   text-decoration: none;
 }
@@ -54,10 +53,6 @@ p {
   color: var(--color-text-mute);
 }
 button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
   i {
     color: var(--color-text);
   }

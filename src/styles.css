@@ -19,6 +19,9 @@
 }
 section {
   padding-top: 10rem;
+  &:first-child, &:last-child {
+    padding: 10rem 0;
+  }
   .container {
     max-width: 1680px;
     padding: 0 max(1rem, 12%);
@@ -39,13 +42,25 @@ section {
         margin-bottom: 1rem;
       }
     }
-    .content {
+    .content, .footer {
       width: 100%;
       display: flex;
+      justify-content: space-between;
+      align-items: end;
       flex-wrap: wrap;
       gap: 2rem;
     }
   }
+}
+.heading {
+  font-size: 4.5em;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(113deg, var(--color-primary), var(--color-secondary-mute));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 .bg-filter {
   background-color: var(--color-background-soft);
