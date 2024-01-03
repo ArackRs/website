@@ -1,5 +1,9 @@
 <script setup>
-
+const skills = [
+  'visualstudio', 'cpp', 'html', 'css', 'js', 'bootstrap', 'sass', 'vscode', 'py', 'git',
+  'github', 'figma', 'idea', 'angular', 'ts', 'vue', 'firebase', 'cs', 'dotnet', 'java',
+  'spring', 'nodejs', 'mysql', 'mongodb', 'postman', 'docker', 'azure', 'linux'
+];
 </script>
 
 <template>
@@ -9,7 +13,7 @@
         <h1 class="heading">About Me</h1>
       </div>
       <div class="summary-content content">
-        <p>
+        <p class="description">
           I am a software developer with a passion for creating and learning. I
           have experience in web development, mobile development, and desktop
           development. I am currently working on a few projects, including a
@@ -21,13 +25,30 @@
         </p>
       </div>
       <div class="summary-footer footer">
-        <div>
-          <h1>Education</h1>
-          <h3>Peruvian University of Applied Sciences</h3>
-          <p>San Isidro - Expected in 07/2026</p>
-          <h4>Software Engineering</h4>
+        <div class="highlight">
+          <div>
+            <h1>Education</h1>
+            <h3>Peruvian University of Applied Sciences</h3>
+            <p>San Isidro - Expected in 07/2026</p>
+            <h4>Software Engineering</h4>
+          </div>
+          <div>
+            <h1>Skills</h1>
+            <h3>Programming Languages</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <h3>Libraries & Frameworks</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <h3>Tools & Platforms</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </div>
+          <pv-button class="btn-cv" label="Download Resume" outlined />
         </div>
-        <pv-button label="Download Resume" outlined />
+        <div class="stack-images bg-filter">
+          <img v-for="(skill, index) in skills" ref="imageRefs"
+               :src="'https://skillicons.dev/icons?i=' + skill + '&theme=light'"
+               :alt="`${skill} icon`"
+               :key="index" />
+        </div>
       </div>
     </div>
   </section>
@@ -35,7 +56,7 @@
 
 <style scoped>
   #summary {
-    padding-bottom: 7rem;
+    min-height: 100vh;
   }
   .summary-container {
     flex-direction: column;
@@ -50,12 +71,28 @@
     justify-content: space-between;
     gap: 1rem;
     p {
-
       font-size: 1.2em;
       line-height: 1.5;
     }
     img {
       width: 20rem;
+    }
+  }
+  .summary-footer {
+    gap: 10rem !important;
+    .highlight {
+      min-width: max-content;
+      display: grid;
+      gap: 2rem;
+      .btn-cv {
+        width: max-content;
+      }
+    }
+    .stack-images {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
   }
 </style>

@@ -27,12 +27,10 @@ onUnmounted(() => {
     <div class="top-container container">
       <a href="/" class="top-brand">Arack</a>
       <nav>
-        <router-link to="/">Home</router-link>
-        <div :class="{ 'is-active': isNavVisible }">
-          <router-link to="/about-me">About</router-link>
-          <router-link to="/my-projects">Projects</router-link>
-          <router-link to="/contact-me">Contact</router-link>
-        </div>
+        <router-link :class="{ 'is-active': isNavVisible }" to="/">Home</router-link>
+        <router-link :class="{ 'is-active': isNavVisible }" to="/about-me">About</router-link>
+        <router-link :class="{ 'is-active': isNavVisible }" to="/my-projects">Projects</router-link>
+        <router-link :class="{ 'is-active': isNavVisible }" to="/contact-me">Contact</router-link>
       </nav>
     </div>
   </header>
@@ -64,12 +62,15 @@ onUnmounted(() => {
     gap: 1rem;
     padding: 1rem 0;
 
-    div {
-      display: grid;
-      opacity: 0;
-      gap: 1rem;
+    a {
+      text-decoration: none;
+      color: var(--color-text-mute);
+      opacity: 0.2;
+      transform: rotate(270deg);
+      padding: 0.7rem;
+      margin: 1rem 0;
       transition: all .3s ease-in-out;
-      &.is-active {
+      .is-active {
         opacity: 1;
       }
       &:hover {
@@ -78,22 +79,16 @@ onUnmounted(() => {
     }
   }
 
-  nav a {
-    text-decoration: none;
-    color: white;
-    transform: rotate(270deg);
-    padding: 0.7rem;
-    margin: 1rem 0;
-    transition: all .3s ease-in-out;
-  }
-
   nav a:hover {
     background-color: var(--color-background-soft);
+    color: var(--color-text);
     transform: rotate(0deg);
   }
 
   nav a.router-link-exact-active {
     background-color: var(--color-background-soft);
+    color: var(--color-text);
+    opacity: 1;
     transform: rotate(0deg);
   }
 
