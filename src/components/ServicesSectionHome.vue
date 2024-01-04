@@ -65,8 +65,7 @@ onUnmounted(() => {
     background: var(--color-background-soft);
   }
   .services-container {
-    flex-direction: column;
-    gap: 2rem;
+
   }
 
   .services-header {

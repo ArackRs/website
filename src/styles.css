@@ -25,6 +25,9 @@ section {
   .container {
     max-width: 1680px;
     padding: 0 max(1rem, 12%);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 
     .header {
       width: 100%;
@@ -47,7 +50,7 @@ section {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 2rem;
     }
   }

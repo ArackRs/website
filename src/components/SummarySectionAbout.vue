@@ -89,7 +89,7 @@ const skills = [
       }
     }
     .stack-images {
-      width: 100%;
+      width: min(48rem, 100%);
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
