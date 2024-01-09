@@ -14,7 +14,8 @@ import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
 import Image from 'primevue/image';
 import Carousel from 'primevue/carousel';
-
+import Tag from 'primevue/tag';
+import Chip from 'primevue/chip';
 
 const app = createApp(App)
 
@@ -28,5 +29,7 @@ app.component('pv-tab-view', TabView);
 app.component('pv-tab-panel', TabPanel);
 app.component('pv-image', Image);
 app.component('pv-carousel', Carousel);
+app.component('pv-tag', Tag);
+app.component('pv-chip', Chip);
 
 app.mount('#app')

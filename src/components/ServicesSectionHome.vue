@@ -64,12 +64,9 @@ onUnmounted(() => {
   .services {
     background: var(--color-background-soft);
   }
-  .services-container {
-
-  }
 
   .services-header {
-    text-align: end;
+    text-align: center;
     transform: translateX(0%);
     transition: all 5s;
   }

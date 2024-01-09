@@ -1,9 +1,20 @@
 <script setup>
 const skills = [
-  'visualstudio', 'cpp', 'html', 'css', 'js', 'bootstrap', 'sass', 'vscode', 'py', 'git',
-  'github', 'figma', 'idea', 'angular', 'ts', 'vue', 'firebase', 'cs', 'dotnet', 'java',
-  'spring', 'nodejs', 'mysql', 'mongodb', 'postman', 'docker', 'azure', 'linux'
+  {
+    type: 'Programming Languages',
+    items: ['html', 'css', 'javascript', 'typescript', 'python', 'java', 'cs', 'cpp']
+  },
+  {
+    type: 'Libraries & Frameworks',
+    items: ['bootstrap', 'sass', 'angular', 'vue', 'firebase', 'spring', 'nodejs', 'express']
+  },
+  {
+    type: 'Tools & Platforms',
+    items: ['git', 'github', 'figma', 'vscode', 'idea', 'visualstudio', 'postman', 'docker', 'azure', 'linux']
+  }
 ];
+const stack = skills.flatMap(skill => skill.items);
+console.log(stack);
 </script>
 
 <template>
@@ -19,9 +30,6 @@ const skills = [
           development. I am currently working on a few projects, including a
           mobile app and a web app. I am also learning about machine learning
           and artificial intelligence.
-          I am a student at the University of Waterloo, studying Computer
-          Science. I am also a member of the University of Waterloo
-          Association for Computing Machinery (ACM) Student Chapter.
         </p>
       </div>
       <div class="summary-footer footer">
@@ -34,20 +42,20 @@ const skills = [
           </div>
           <div>
             <h1>Skills</h1>
-            <h3>Programming Languages</h3>
-            <p>HTML, CSS, JavaScript</p>
-            <h3>Libraries & Frameworks</h3>
-            <p>HTML, CSS, JavaScript</p>
-            <h3>Tools & Platforms</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <div v-for="skill in skills" :key="skill.type">
+              <h3>{{ skill.type }}</h3>
+              <div class="chips">
+                <pv-chip v-for="item in skill.items" :key="item" :label="item" style="font-size: 0.7em" />
+              </div>
+            </div>
           </div>
           <pv-button class="btn-cv" label="Download Resume" outlined />
         </div>
-        <div class="stack-images bg-filter">
-          <img v-for="(skill, index) in skills" ref="imageRefs"
-               :src="'https://skillicons.dev/icons?i=' + skill + '&theme=light'"
-               :alt="`${skill} icon`"
-               :key="index" />
+        <div class="stack bg-filter">
+          <img v-for="tech in stack"
+               :src="'https://skillicons.dev/icons?i=' + tech + '&theme=light'"
+               :alt="`${tech} icon`"
+               :key="tech" />
         </div>
       </div>
     </div>
@@ -55,9 +63,6 @@ const skills = [
 </template>
 
 <style scoped>
-  #summary {
-    min-height: 100vh;
-  }
   .summary-container {
     flex-direction: column;
     align-items: start;
@@ -81,15 +86,21 @@ const skills = [
   .summary-footer {
     gap: 10rem !important;
     .highlight {
-      min-width: max-content;
+      width: min(35rem, 100%);
       display: grid;
       gap: 2rem;
+      .chips {
+        padding: 0.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
       .btn-cv {
         width: max-content;
       }
     }
-    .stack-images {
-      width: min(48rem, 100%);
+    .stack {
+      width: min(27rem, 100%);
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;

@@ -65,7 +65,7 @@ onUnmounted(() => {
     a {
       text-decoration: none;
       color: var(--color-text-mute);
-      opacity: 0.2;
+      opacity: 0.4;
       transform: rotate(270deg);
       padding: 0.7rem;
       margin: 1rem 0;
