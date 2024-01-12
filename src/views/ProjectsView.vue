@@ -1,11 +1,9 @@
 <script setup>
-import ExperienceSectionAbout from '@/components/ExperienceSectionAbout.vue'
-
+import HeroSectionProjects from '@/components/HeroSectionProjects.vue'
 </script>
 
 <template>
-  <ExperienceSectionAbout />
-
+  <HeroSectionProjects />
 </template>
 
 <style scoped>
