@@ -66,6 +66,7 @@ section {
     }
   }
 }
+
 .heading {
   font-size: 4.5em;
   font-weight: bold;
@@ -82,12 +83,6 @@ section {
   backdrop-filter: blur(15px);
   padding: 2rem;
   border-radius: 20px;
-}
-.image {
-  width: 100%;
-  img {
-    width: 100%;
-  }
 }
 .image.bg-filter {
   padding: 0.5rem;

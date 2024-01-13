@@ -1,20 +1,13 @@
 <script setup>
-import { ref } from 'vue';
-const projects = ref([
-  { id: '1', title: 'Vopilot', description: 'Education web application, which helps young people find their ideal',
-    url: 'vopilot', image: 'logo_vopilot.png' },
-  { id: '2', title: 'Vopilot', description: 'Education web application, which helps young people find their ideal',
-    url: 'vopilot', image: 'logo_vopilot.png' },
-  { id: '3', title: 'Vopilot', description: 'Education web application, which helps young people find their ideal',
-    url: 'vopilot', image: 'logo_vopilot.png' },
-  { id: '4', title: 'Vopilot', description: 'Education web application, which helps young people find their',
-    url: 'vopilot', image: 'logo_vopilot.png' },
-  { id: '5', title: 'Vopilot', description: 'Education web application, which helps young people find their ideal',
-    url: 'vopilot', image: 'logo_vopilot.png' },
-  { id: '6', title: 'Vopilot', description: 'Education web application, which helps young people find their ideal',
-    url: 'vopilot', image: 'logo_vopilot.png' }
-]);
+import { defineProps } from 'vue'
+const { projects } = defineProps(['projects']);
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const selectProject = (url) => {
+  router.push('my-projects/' + url);
+};
 </script>
+
 
 <template>
   <section id="projects">
@@ -31,26 +24,26 @@ const projects = ref([
       </div>
       <div class="projects-content content">
         <template v-for="project in projects" :key="project.id">
-          <router-link to="/project/1">
-            <div class="projects-item bg-filter">
-              <div class="image bg-filter">
-                <img :src="'src/assets/images/' + project.image" alt="Image" width="50" />
-              </div>
-              <div class="text">
-                <h1>{{ project.title }}</h1>
-                <p>{{ project.description }}.</p>
-              </div>
+          <div class="projects-item bg-filter" v-on:click="selectProject(project.url)">
+            <div class="image bg-filter">
+              <img :src="'src/assets/images/' + project.logo" alt="Image" width="70" />
             </div>
-          </router-link>
+            <div class="text">
+              <h1>{{ project.title }}</h1>
+              <p>{{ project.overview }}.</p>
+            </div>
+          </div>
         </template>
       </div>
     </div>
   </section>
+
 </template>
 
 <style scoped>
   #projects {
     min-height: 100vh;
+    padding-bottom: 10rem;
   }
   .projects-container {
     flex-direction: column;
@@ -68,6 +61,13 @@ const projects = ref([
       align-items: center;
       gap: 1rem;
       padding: 1rem;
+      &:hover {
+        border: 1px solid var(--color-text-mute);
+        cursor: pointer;
+      }
+      .text {
+        width: max-content !important;
+      }
     }
   }
 </style>

@@ -80,6 +80,7 @@ onUnmounted(() => {
     }
   }
   .toggle-theme {
+    padding: 0;
     & i {
       font-size: 2em;
     }

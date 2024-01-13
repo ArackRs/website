@@ -1,24 +1,43 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-
+import { useRouter } from 'vue-router';
+import { onMounted, ref } from 'vue'
+import { httpService } from '@/services/http.service.js'
+import axios from 'axios'
+const source = axios.CancelToken.source();
 const projects = ref([]);
+const project = ref({});
+const lastEndpoint = ref('');
+const router = useRouter();
 
 onMounted(async () => {
-  // Utiliza fetch para obtener datos desde jsonplaceholder
-  const response = await fetch('https://my-json-server.typicode.com/arack-api/website/projects');
-  // Asigna los datos directamente a projects.value
-  projects.value = await response.json();
+  const parts = router.currentRoute.value.path.split('/');
+  lastEndpoint.value = parts[parts.length - 1];
+
+  try {
+    projects.value = await httpService.get('projects', source.token);
+    project.value = (projects.value).find((project) => project.url === lastEndpoint.value) || null;
+
+  } catch (error) {
+    if (axios.isCancel(error)) {
+      console.log('Solicitud cancelada:', error.message);
+    } else {
+      console.error('Error en la solicitud:', error);
+    }
+  }
 });
+
+const goBack = () => {
+  router.push('my-projects');
+};
 </script>
 
+
 <template>
-  <section id="project" v-for="project in projects" :key="project.id">
+  <section id="project">
     <div class="project-container container">
       <div class="project-header header">
         <div class="title">
-          <a href="/my-projects" class="back">
-            <pv-button icon="pi pi-arrow-left" rounded  aria-label="Bookmark" />
-          </a>
+          <pv-button icon="pi pi-arrow-left" rounded  aria-label="Bookmark" @click="goBack" />
           <h1>{{ project.title }}</h1>
         </div>
         <pv-button class="btn-explore" label="Explore" outlined />
@@ -29,11 +48,13 @@ onMounted(async () => {
         </div>
         <div class="overview bg-filter">
           <h1>Overview</h1>
-
+          <p>{{ project.overview }}</p>
         </div>
         <div class="stack bg-filter">
           <h1>Technologies</h1>
-
+          <ul>
+            <li v-for="tech in project.technologies" :key="tech">{{ tech }}</li>
+          </ul>
         </div>
         <div class="details bg-filter">
           <h1>Executive Summary</h1>
@@ -58,6 +79,7 @@ onMounted(async () => {
         </div>
         <div class="problem bg-filter">
           <h1>Problem Statement</h1>
+          <p>{{ project.problem }}</p>
         </div>
       </div>
     </div>
@@ -78,12 +100,12 @@ onMounted(async () => {
     display: flex;
     align-items: center;
     gap: 1rem;
+    .p-button {
+      cursor: pointer;
+    }
     h1 {
       font-size: 3em;
       font-weight: bold;
-    }
-    router-link {
-      cursor: pointer;
     }
   }
 }
@@ -106,6 +128,11 @@ onMounted(async () => {
   }
   .image {
     grid-area: imagen;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .overview {
     grid-area: overview;

@@ -1,11 +1,29 @@
 <script setup>
 import HeroSectionProjects from '@/components/HeroSectionProjects.vue'
+import { ref, onMounted, onUnmounted } from 'vue';
+import { httpService } from '@/services/http.service.js';
+import axios from 'axios';
+
+const projects = ref([]);
+const source = axios.CancelToken.source();
+
+onMounted(async () => {
+  try {
+    projects.value = await httpService.get('projects', source.token);
+  } catch (error) {
+    if (axios.isCancel(error)) {
+      console.log('Solicitud cancelada:', error.message);
+    } else {
+      console.error('Error en la solicitud:', error);
+    }
+  }
+});
+
+onUnmounted(() => {
+  source.cancel('Solicitud cancelada al desmontar el componente');
+});
 </script>
 
 <template>
-  <HeroSectionProjects />
+  <HeroSectionProjects :projects="projects"  />
 </template>
-
-<style scoped>
-
-</style>

@@ -19,7 +19,7 @@ import Chip from 'primevue/chip';
 
 const app = createApp(App)
 
-app.use(router)
+app.use(router);
 app.use(PrimeVue);
 
 app.component('pv-button', Button);
