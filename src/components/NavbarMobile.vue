@@ -32,7 +32,6 @@ const toggleMenu = () => {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--color-background);
   padding: 1rem 0;
   z-index: 100;
   display: none;

@@ -4,6 +4,7 @@ import TopFixed from "@/components/TopFixed.vue";
 import BottomFixed from "@/components/BottomFixed.vue";
 import NavbarMobile from '@/components/NavbarMobile.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+import CodepenFloatingSquares from '@/components/CodepenFloatingSquares.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
   <RouterView />
   <FooterComponent />
   <BottomFixed />
+  <CodepenFloatingSquares />
 </template>
 
 <style scoped>

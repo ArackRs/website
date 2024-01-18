@@ -10,7 +10,7 @@ const selectProject = (url) => {
 
 
 <template>
-  <section id="projects">
+  <section id="projects-section" class="hero">
     <div class="projects-container container">
       <div class="projects-header">
         <h1 class="heading">My Projects</h1>
@@ -41,16 +41,7 @@ const selectProject = (url) => {
 </template>
 
 <style scoped>
-  #projects {
-    min-height: 100vh;
-    padding-bottom: 10rem;
-  }
-  .projects-container {
-    flex-direction: column;
-    align-items: start;
-    gap: 1rem;
-    width: 100%;
-  }
+
   .projects-content {
     padding-top: 5rem;
     display: grid !important;

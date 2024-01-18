@@ -1,8 +1,9 @@
 <script setup>
+import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
 </script>
 
 <template>
-  <section id="hero">
+  <section class="hero">
     <div class="hero-container container">
       <div class="hero-content">
         <h1>Hello, I'm
@@ -16,27 +17,27 @@
       </div>
     </div>
   </section>
+
+  <CodepenBlobBackgroundAnimation />
 </template>
 
 <style scoped>
-#hero {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
 }
-
+.hero-container {
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+}
 .hero-content {
   width: 100%;
   z-index: 100;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: start;
 
   & h1 {
     line-height: normal;
-    display: inline-flex;
-    background-color: var(--color-background);
   }
 
   & h1:first-child {

@@ -24,7 +24,7 @@
   #footer {
     width: 100%;
     z-index: 100;
-    background: var(--color-primary-mute);
+    background: var(--color-primary);
     transition: all .3s ease-in-out;
   }
   .footer-container {
