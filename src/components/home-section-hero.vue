@@ -16,14 +16,14 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
         </router-link>
       </div>
     </div>
+    <CodepenBlobBackgroundAnimation />
   </section>
-
-  <CodepenBlobBackgroundAnimation />
 </template>
 
 <style scoped>
 .hero {
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
   background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
 }
 .hero-container {
@@ -35,6 +35,7 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
 .hero-content {
   width: 100%;
   z-index: 100;
+  margin: auto 0;
 
   & h1 {
     line-height: normal;

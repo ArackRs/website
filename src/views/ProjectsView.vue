@@ -1,8 +1,8 @@
 <script setup>
-import HeroSectionProjects from '@/components/HeroSectionProjects.vue'
 import { ref, onMounted, onUnmounted } from 'vue';
 import { httpService } from '@/services/http.service.js';
 import axios from 'axios';
+import ProjectsSectionGallery from '@/components/projects-section-gallery.vue'
 
 const projects = ref([]);
 const source = axios.CancelToken.source();
@@ -25,5 +25,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <HeroSectionProjects :projects="projects"  />
+  <ProjectsSectionGallery :projects="projects" />
 </template>

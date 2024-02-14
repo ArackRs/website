@@ -1,6 +1,6 @@
 <script setup>
 
-import HeroSectionContact from '@/components/HeroSectionContact.vue'
+import HeroSectionContact from '@/components/contact-section-hero.vue'
 </script>
 
 <template>

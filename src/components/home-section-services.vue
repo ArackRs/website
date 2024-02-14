@@ -1,39 +1,9 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
 
-// eslint-disable-next-line no-unused-vars
-let lastScrollPosition = 0;
-const isFooter = ref(false);
-
-const handleScroll = () => {
-
-  const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
-  const windowHeight = window.innerHeight;
-  const documentHeight = Math.max(
-    document.body.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.clientHeight,
-    document.documentElement.scrollHeight,
-    document.documentElement.offsetHeight
-  );
-
-  // Adjust the condition to check if the user has reached the bottom
-  isFooter.value = currentScrollPosition + windowHeight >= documentHeight;
-  lastScrollPosition = currentScrollPosition;
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Check visibility on mount
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
 </script>
 
 <template>
-  <section class="services" :class="{ 'is-visible': isFooter }">
+  <section class="services">
     <div class="services-container container">
       <div class="services-header header">
         <h1>What I can do for you</h1>
@@ -63,6 +33,7 @@ onUnmounted(() => {
 <style scoped>
   .services {
     background: var(--color-background-soft);
+    padding-top: 2rem;
   }
 
   .services-header {

@@ -31,35 +31,35 @@ body {
   -webkit-animation: sliderShape 5s linear infinite;
   &:nth-child(2) {
     left: 40%;
-    top: -15%;
+    top: -25%;
   }
   &:nth-child(3) {
     left: 75%;
-    top: 25%;
+    top: 45%;
   }
   &:nth-child(4) {
     width: 150px;
     height: 150px;
     left: 15%;
-    top: 5%;
+    top: 10%;
   }
   &:nth-child(5) {
     width: 150px;
     height: 150px;
     left: 70%;
-    top: 10%;
+    top: 20%;
   }
   &:nth-child(6) {
     width: 600px;
     height: 350px;
     left: 25%;
-    top: 40%;
+    top: 80%;
   }
   &:nth-child(7) {
     width: 50px;
     height: 50px;
-    left: 65%;
-    top: 40%;
+    left: 62%;
+    top: 70%;
   }
 }
 @keyframes sliderShape{

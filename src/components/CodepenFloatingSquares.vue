@@ -113,7 +113,7 @@
     border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
   }
   100%{
-    transform: translateY(-850px) rotate(720deg);
+    transform: translateY(-2000px) rotate(720deg);
     opacity: 0;
     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
   }

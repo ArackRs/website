@@ -23,7 +23,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="top">
+  <div class="top">
     <div class="top-container container">
       <a href="/" class="top-brand">Arack</a>
       <nav>
@@ -33,7 +33,7 @@ onUnmounted(() => {
         <router-link :class="{ 'is-active': isNavVisible }" to="/contact-me">Contact</router-link>
       </nav>
     </div>
-  </header>
+  </div>
 </template>
 
 <style scoped>

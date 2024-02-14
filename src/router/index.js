@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/my-projects/:project',
       name: 'project',
-      component: () => import('../components/InfoSectionProjects.vue')
+      component: () => import('../components/projects-section-info.vue')
     }
   ],
   scrollBehavior() {

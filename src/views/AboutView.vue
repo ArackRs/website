@@ -1,14 +1,14 @@
 <script setup>
-import SummarySectionAbout from '@/components/SummarySectionAbout.vue'
-import CertificatesSectionAbout from '@/components/CertificatesSectionAbout.vue'
-import ExperienceSectionAbout from '@/components/ExperienceSectionAbout.vue'
+import FooterComponent from '@/components/footer-component.vue'
+import BentoColumnAbout from '@/components/about-bento-column.vue'
+import AboutBentoSocial from '@/components/about-bento-social.vue'
 </script>
 
 <template>
   <main>
-    <SummarySectionAbout />
-    <CertificatesSectionAbout />
-    <ExperienceSectionAbout />
+    <BentoColumnAbout />
+    <AboutBentoSocial />
+    <FooterComponent />
   </main>
 </template>
 

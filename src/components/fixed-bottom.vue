@@ -1,37 +1,9 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
 
-// eslint-disable-next-line no-unused-vars
-let lastScrollPosition = 0;
-const isFooter = ref(false);
-
-const checkScroll = () => {
-  const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
-  const windowHeight = window.innerHeight;
-  const documentHeight = Math.max(
-    document.body.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.clientHeight,
-    document.documentElement.scrollHeight,
-    document.documentElement.offsetHeight
-  );
-
-  // Adjust the condition to check if the user has reached the bottom
-  isFooter.value = currentScrollPosition + windowHeight >= documentHeight - 200;
-  lastScrollPosition = currentScrollPosition;
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', checkScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', checkScroll);
-});
 </script>
 
 <template>
-  <footer id="bottom" :class="{ 'is-active': isFooter }">
+  <div id="bottom">
     <div class="bottom-container container">
       <nav class="nav-social">
         <a href=""><i class="pi pi-github"></i></a>
@@ -40,7 +12,7 @@ onUnmounted(() => {
       </nav>
       <pv-button class="toggle-theme" text rounded severity="secondary"><i class="pi pi-sun"></i></pv-button>
     </div>
-  </footer>
+  </div>
 </template>
 
 <style>
