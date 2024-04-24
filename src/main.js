@@ -5,6 +5,7 @@ import './styles.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import i18n from './locales/i18n.js'
 import router from './router'
 import PrimeVue from "primevue/config";
 import Button from 'primevue/button';
@@ -18,7 +19,7 @@ import Tag from 'primevue/tag';
 import Chip from 'primevue/chip';
 
 const app = createApp(App)
-
+app.use(i18n)
 app.use(router);
 app.use(PrimeVue);
 

@@ -6,24 +6,24 @@
   <section class="services">
     <div class="services-container container">
       <div class="services-header header">
-        <h1>What I can do for you</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        <h1>{{$t('home.services.heading')}}</h1>
+        <p>{{$t('home.services.description')}}</p>
       </div>
       <div class="services-content content">
         <div class="service bg-filter">
           <i class="pi pi-desktop"></i>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+          <h2>{{$t('home.services.web')}}</h2>
+          <p>{{$t('home.services.webDescription')}}</p>
         </div>
         <div class="service bg-filter">
           <i class="pi pi-mobile"></i>
-          <h2>Mobile Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+          <h2>{{$t('home.services.mobile')}}</h2>
+          <p>{{$t('home.services.mobileDescription')}}</p>
         </div>
         <div class="service bg-filter">
           <i class="pi pi-cloud"></i>
-          <h2>Cloud Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+          <h2>{{$t('home.services.cloud')}}</h2>
+          <p>{{$t('home.services.cloudDescription')}}</p>
         </div>
       </div>
     </div>

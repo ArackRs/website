@@ -12,14 +12,8 @@ const selectProject = (url) => {
   <section id="projects-section" class="hero">
     <div class="projects-container container">
       <div class="projects-header">
-        <h1 class="heading">My Projects</h1>
-        <p class="description">
-          I am a software developer with a passion for creating and learning. I
-          have experience in web development, mobile development, and desktop
-          development. I am currently working on a few projects, including a
-          mobile app and a web app. I am also learning about machine learning
-          and artificial intelligence.
-        </p>
+        <h1 class="heading">{{$t('projects.heading')}}</h1>
+        <p class="description">{{$t('projects.description')}}</p>
       </div>
       <div class="projects-content content">
         <template v-for="(project, index) in projects" :key="project.id">
@@ -41,6 +35,11 @@ const selectProject = (url) => {
 </template>
 
 <style scoped>
+.projects-header {
+  .description {
+    width: min(50em, 100%);
+  }
+}
 .projects-content {
   padding-top: 5rem;
   align-items: initial;

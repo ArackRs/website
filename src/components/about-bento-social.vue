@@ -18,7 +18,7 @@
         <p>San Isidro - Expected in 07/2026</p>
         <h4>Software Engineering</h4>
       </div>
-      <img class="discord" src="/discord.jpg">
+      <img class="discord" src="/discord.jpg" alt="discord">
     </div>
 
   </section>

@@ -24,12 +24,8 @@ console.log(stack);
         <h1>Jack Arana Ramos</h1>
       </div>
       <div class="profile bg-filter">
-        <h1>Profile</h1>
-        <p>I am a software developer with a passion for creating and learning. I
-          have experience in web development, mobile development, and desktop
-          development. I am currently working on a few projects, including a
-          mobile app and a web app. I am also learning about machine learning
-          and artificial intelligence.</p>
+        <h1>{{$t('about.main.profile')}}</h1>
+        <p>{{$t('about.main.profileDescription')}}</p>
       </div>
       <div class="meta bg-image">
         <img src="/meta-front-end-developer-certificate.png" alt="meta">
@@ -39,15 +35,15 @@ console.log(stack);
       </div>
 
       <div class="education bg-filter bg-image">
-        <h1>Education</h1>
-        <h3>Peruvian University of Applied Sciences</h3>
-        <p>San Isidro - Expected in 07/2026</p>
-        <h4>Software Engineering</h4>
+        <h1>{{$t('about.main.education')}}</h1>
+        <h3>{{$t('about.main.educationUniversity')}}</h3>
+        <p>{{$t('about.main.educationEgress')}}</p>
+        <h4>{{$t('about.main.educationCareer')}}</h4>
       </div>
       <div class="skills bg-filter">
-        <h1>Skills</h1>
-        <h3>Languages Programming</h3>
-        <p>Issued by Coursera</p>
+        <h1>{{$t('about.main.skills')}}</h1>
+        <h3>{{$t('about.main.skillsLanguages')}}</h3>
+        <p>{{$t('about.main.certificatesIssued')}}</p>
         <div class="stack">
           <img v-for="tech in stack"
                :src="'https://skillicons.dev/icons?i=' + tech + '&theme=light'"
@@ -56,20 +52,19 @@ console.log(stack);
         </div>
       </div>
       <div class="certificates bg-filter">
-        <h1>Certificates</h1>
+        <h1>{{$t('about.main.certificates')}}</h1>
         <h3>Meta Front-End Developer</h3>
-        <p>Issued by Coursera</p>
+        <p>{{$t('about.main.certificatesIssued')}}</p>
         <pv-image src="src/assets/images/certificate_frontend.png" alt="Image" preview />
       </div>
       <div class="projects bg-filter bg-image">
-        <h1>Projects</h1>
-        <h3>Peruvian University of Applied Sciences</h3>
-        <p>San Isidro - Expected in 07/2026</p>
-        <h4>Software Engineering</h4>
+        <h1>{{$t('about.main.projects')}}</h1>
+        <p>{{$t('about.main.projectsDescription')}}</p>
       </div>
     </div>
   </section>
 </template>
+
 
 <style scoped>
 .summary-container {

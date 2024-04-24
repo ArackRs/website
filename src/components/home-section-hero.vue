@@ -6,12 +6,12 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
   <section class="hero">
     <div class="hero-container container">
       <div class="hero-content">
-        <h1>Hello, I'm
+        <h1>{{$t('home.hero.hello')}}
           <strong>Jack Arana</strong>
         </h1>
-        <h1 class="heading">Software Engineering Student</h1>
-        <h1>Specialized in FullStack Development</h1>
-        <router-link to="about-me">Resume
+        <h1 class="heading">{{$t('home.hero.career')}}</h1>
+        <h1>{{$t('home.hero.specialty')}}</h1>
+        <router-link to="about-me">{{$t('home.hero.resume')}}
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
@@ -24,6 +24,7 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
 .hero {
   position: relative;
   height: 100vh;
+  padding-block: 10rem;
   background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
 }
 .hero-container {
