@@ -1,20 +1,6 @@
 <script setup>
-const skills = [
-  {
-    type: 'Programming Languages',
-    items: ['html', 'css', 'javascript', 'typescript', 'python', 'java', 'cs', 'cpp']
-  },
-  {
-    type: 'Libraries & Frameworks',
-    items: ['bootstrap', 'sass', 'angular', 'vue', 'firebase', 'spring', 'nodejs', 'express']
-  },
-  {
-    type: 'Tools & Platforms',
-    items: ['git', 'github', 'figma', 'vscode', 'idea', 'visualstudio', 'postman', 'docker', 'azure', 'linux']
-  }
-];
-const stack = skills.flatMap(skill => skill.items);
-console.log(stack);
+import SkillsCarousel from '@/components/skills-carousel.vue'
+import CertificateCarousel from '@/components/certificate-carousel.vue'
 </script>
 
 <template>
@@ -40,22 +26,11 @@ console.log(stack);
         <p>{{$t('about.main.educationEgress')}}</p>
         <h4>{{$t('about.main.educationCareer')}}</h4>
       </div>
-      <div class="skills bg-filter">
-        <h1>{{$t('about.main.skills')}}</h1>
-        <h3>{{$t('about.main.skillsLanguages')}}</h3>
-        <p>{{$t('about.main.certificatesIssued')}}</p>
-        <div class="stack">
-          <img v-for="tech in stack"
-               :src="'https://skillicons.dev/icons?i=' + tech + '&theme=light'"
-               :alt="`${tech} icon`"
-               :key="tech" />
-        </div>
+      <div class="skills">
+        <skills-carousel/>
       </div>
-      <div class="certificates bg-filter">
-        <h1>{{$t('about.main.certificates')}}</h1>
-        <h3>Meta Front-End Developer</h3>
-        <p>{{$t('about.main.certificatesIssued')}}</p>
-        <pv-image src="src/assets/images/certificate_frontend.png" alt="Image" preview />
+      <div class="certificates">
+        <certificate-carousel/>
       </div>
       <div class="projects bg-filter bg-image">
         <h1>{{$t('about.main.projects')}}</h1>
@@ -66,7 +41,7 @@ console.log(stack);
 </template>
 
 
-<style scoped>
+<style>
 .summary-container {
   width: 100%;
   overflow: hidden;
@@ -119,35 +94,12 @@ console.log(stack);
   }
   .skills {
     grid-area: skills;
-    position: relative;
-    overflow: hidden;
-    padding-right: 15rem;
-
-    .stack {
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      width: 50%;
-      img {
-        width: min-content;
-      }
-    }
+    padding-inline: .5rem;
   }
+
   .certificates {
     grid-area: certificates;
-    position: relative;
-    overflow: hidden;
-
-    .p-image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      max-height: 100%;
-    }
+    padding-inline: .5rem;
   }
   .projects {
     grid-area: projects;
