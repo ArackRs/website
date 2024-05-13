@@ -1,6 +1,34 @@
 <script setup>
-import SkillsCarousel from '@/components/about/SkillsCarousel.vue'
-import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
+import CarouselComponent from '@/components/about/CarouselComponent.vue'
+const skills = [
+  {
+    title: 'Programming Languages',
+    image: 'certificate_frontend.png'
+  },
+  {
+    title: 'Libraries & Frameworks',
+    image: 'certificate_frontend.png'
+  },
+  {
+    title: 'Tools & Platforms',
+    image: 'certificate_frontend.png'
+  },
+];
+
+const certificates = [
+  {
+    title: 'Meta Front-End Developer Certificate',
+    image: 'certificate_frontend.png'
+  },
+  {
+    title: 'Meta Back-End Developer Certificate',
+    image: 'certificate_frontend.png'
+  },
+  {
+    title: 'Programming Languages Certificate',
+    image: 'certificate_frontend.png'
+  },
+];
 </script>
 
 <template>
@@ -27,10 +55,10 @@ import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
         <h4>{{$t('about.main.educationCareer')}}</h4>
       </div>
       <div class="skills">
-        <skills-carousel/>
+        <CarouselComponent :value="skills"/>
       </div>
       <div class="certificates">
-        <certificate-carousel/>
+        <CarouselComponent :value="certificates"/>
       </div>
       <div class="projects bg-filter bg-image">
         <h1>{{$t('about.main.projects')}}</h1>
@@ -112,6 +140,8 @@ import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
     }
   }
   .bg-image {
+    background-size: cover;
+
     &:before {
       content: '';
       background: rgba(0, 0, 0, 0.5);

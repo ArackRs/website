@@ -3,7 +3,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { HttpService } from '@/services/http.service.js';
 import axios from 'axios';
 import ProjectsSectionGallery from '@/components/projects/ProjectsGallery.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 
 const projects = ref([]);
 const source = axios.CancelToken.source();
@@ -27,5 +26,4 @@ onUnmounted(() => {
 
 <template>
   <ProjectsSectionGallery :projects="projects" />
-  <FooterComponent />
 </template>

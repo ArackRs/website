@@ -36,20 +36,9 @@ console.log(stack);
   </pv-carousel>
 </template>
 
-<style>
+<style scoped>
 .p-carousel {
-  .p-carousel-indicators {
-    padding-bottom: 0;
-    padding-inline: 2rem;
-    justify-content: start;
-    position: absolute;
-    left: 0;
-    bottom: 2rem;
-  }
-  .p-carousel-prev, .p-carousel-next {
-    opacity: 0;
-    display: none;
-  }
+
   .container-carousel {
     position: relative;
 

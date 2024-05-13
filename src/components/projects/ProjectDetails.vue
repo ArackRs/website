@@ -40,7 +40,7 @@ const goBack = () => {
           <pv-button icon="pi pi-arrow-left" rounded  aria-label="Bookmark" @click="goBack" />
           <h1>{{ project.title }}</h1>
         </div>
-        <pv-button class="btn-explore" label="Explore" outlined />
+        <pv-button class="btn-explore" label="Explore" outlined style="font-size: 1rem;" />
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
@@ -52,9 +52,7 @@ const goBack = () => {
         </div>
         <div class="stack bg-filter">
           <h1>Technologies</h1>
-          <ul>
-            <li v-for="tech in project.technologies" :key="tech">{{ tech }}</li>
-          </ul>
+          <pv-chip v-for="item in project.technologies" :key="item" :label="item" style="font-size: .9em;" />
         </div>
         <div class="details bg-filter">
           <h1>Executive Summary</h1>
@@ -90,7 +88,6 @@ const goBack = () => {
 #project {
   min-height: 100vh;
   background-color: var(--color-background-soft);
-  padding-bottom: 10rem;
 }
 .project-header {
   display: flex;
@@ -139,12 +136,52 @@ const goBack = () => {
   }
   .stack {
     grid-area: stack;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    h1 {
+      min-width: 100%;
+    }
+
+    .p-chip {
+      width: min-content;
+      height: min-content;
+    }
   }
   .problem {
     grid-area: problem;
   }
   .details {
     grid-area: details;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'imagen imagen'
+    'overview overview'
+    'details details'
+    'stack problem';
+    .stack {
+      flex-direction: row;
+      gap: .5rem;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'imagen'
+    'overview'
+    'details'
+    'stack'
+    'problem';
   }
 }
 </style>

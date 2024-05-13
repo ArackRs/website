@@ -27,8 +27,8 @@
     width: 100%;
     z-index: 100;
     transition: all .3s ease-in-out;
-    padding-bottom: 2rem;
-    padding-top: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 10rem;
     background: var(--color-background-soft);
   }
   .footer-container {
@@ -37,7 +37,6 @@
     align-items: start;
     gap: 2rem;
     max-width: 1680px;
-    padding: 0 max(1rem, 12%);
 
     .start {
       width: 100%;

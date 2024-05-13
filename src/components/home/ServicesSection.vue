@@ -52,12 +52,14 @@
 
     & .service {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 1rem;
       flex-grow: 1;
-      flex-basis: 10rem;
+      flex-shrink: 1;
+      flex-basis: 20rem;
       text-align: center;
       & i {
         font-size: 3em;

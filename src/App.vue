@@ -2,14 +2,14 @@
 import { RouterView } from 'vue-router'
 import TopFixed from "@/components/FixedTopComponent.vue";
 import BottomFixed from "@/components/FixedBottomComponent.vue";
-import NavbarMobile from '@/components/NavbarComponent.vue'
-import CodepenFloatingSquares from '@/components/CodepenFloatingSquares.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+//import CodepenFloatingSquares from '@/components/CodepenFloatingSquares.vue'
 </script>
 
 <template>
   <TopFixed />
-  <NavbarMobile />
   <RouterView />
+  <FooterComponent />
   <BottomFixed />
   <CodepenFloatingSquares />
 </template>

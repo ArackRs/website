@@ -15,8 +15,8 @@ const toggleMenu = () => {
       <a href="/" class="navbar-brand">Arack</a>
       <div class="navbar-menu bg-filter" :class="{ 'is-active': isActive }">
         <router-link to="/">Home</router-link>
-        <router-link to="/my-projects">Projects</router-link>
         <router-link to="/about-me">About</router-link>
+        <router-link to="/my-projects">Projects</router-link>
         <router-link to="/contact-me">Contact</router-link>
       </div>
       <button class="navbar-btn-menu" @click="toggleMenu">
@@ -28,7 +28,7 @@ const toggleMenu = () => {
 
 <style scoped>
 .navbar {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,7 +52,7 @@ const toggleMenu = () => {
   top: 0;
   right: -100%;
   background-color: var(--color-background-soft);
-  width: 70%;
+  width: min(25rem, 70%);
   height: 100vh;
   padding: 1rem 0;
   transition: all .3s ease-in-out;

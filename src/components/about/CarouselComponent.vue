@@ -1,9 +1,10 @@
 <script setup>
+const { value } = defineProps(['value']);
 
 </script>
 
 <template>
-  <pv-carousel :value="certificates" :numVisible="1" :numScroll="1" circular :autoplayInterval="5000">
+  <pv-carousel :value="value" :numVisible="1" :numScroll="1" circular :autoplayInterval="5000" class="bg-filter">
     <template #item="certificate">
       <div class="container-carousel bg-filter">
         <div class="text ">
@@ -17,9 +18,23 @@
 </template>
 
 <style>
+
 .p-carousel {
-  background: #0044c4;
   position: relative;
+  padding: 0;
+
+  .p-carousel-indicators {
+    padding-bottom: 0;
+    padding-inline: 2rem;
+    justify-content: start;
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+  }
+  .p-carousel-prev, .p-carousel-next {
+    opacity: 0;
+    display: none;
+  }
 
   .container-carousel {
     padding: 0;
@@ -31,6 +46,9 @@
     .text {
       height: min-content;
       padding: 2rem;
+      p {
+        padding-bottom: 2rem;
+      }
     }
     .p-image {
       max-width: 50%;
@@ -41,7 +59,9 @@
 
 @media (max-width: 425px) {
   .p-carousel {
-
+    .p-carousel-indicators {
+      bottom: 50%;
+    }
     .container-carousel {
       flex-direction: column;
       .text {
@@ -52,5 +72,4 @@
     }
   }
 }
-
 </style>
