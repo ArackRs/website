@@ -1,9 +1,9 @@
 <script setup>
-import HeroSectionHome from "@/components/home-section-hero.vue";
-import ServicesSectionHome from "@/components/home-section-services.vue";
-import FooterComponent from "@/components/footer-component.vue";
-import ExperienceSectionAbout from '@/components/home-section-experience.vue'
-import CertificatesSectionAbout from '@/components/home-section-certificates.vue'
+import HeroSectionHome from "@/components/home/HeroSection.vue";
+import ServicesSectionHome from "@/components/home/ServicesSection.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import ExperienceSectionAbout from '@/components/home/ExperienceSection.vue'
+import CertificatesSectionAbout from '@/components/home/CertificatesSection.vue'
 </script>
 
 <template>

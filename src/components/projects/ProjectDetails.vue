@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue'
-import { httpService } from '@/services/http.service.js'
+import { HttpService } from '@/services/http.service.js'
 import axios from 'axios'
 const source = axios.CancelToken.source();
 const projects = ref([]);
@@ -14,7 +14,7 @@ onMounted(async () => {
   lastEndpoint.value = parts[parts.length - 1];
 
   try {
-    projects.value = await httpService.get('projects', source.token);
+    projects.value = await HttpService.get('projects', source.token);
     project.value = (projects.value).find((project) => project.url === lastEndpoint.value) || null;
 
   } catch (error) {
@@ -44,7 +44,7 @@ const goBack = () => {
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
-          <img src="../assets/images/w00.jpg" alt="Image" />
+          <img src="../../assets/images/w00.jpg" alt="Image" />
         </div>
         <div class="overview bg-filter">
           <h1>Overview</h1>

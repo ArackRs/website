@@ -1,6 +1,6 @@
 <script setup>
-import FooterComponent from '@/components/footer-component.vue'
-import BentoColumnAbout from '@/components/about-bento-column.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import BentoColumnAbout from '@/components/about/MainBentoColumn.vue'
 </script>
 
 <template>

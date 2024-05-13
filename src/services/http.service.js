@@ -4,7 +4,7 @@ const http = axios.create({
   baseURL: "https://my-json-server.typicode.com/arack-api/website/",
 });
 
-export class httpService {
+export class HttpService {
   static async get(endpoint, cancelToken) {
     try {
       const response = await http.get(endpoint, { cancelToken });

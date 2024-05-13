@@ -33,7 +33,7 @@ const toggleMenu = () => {
   top: 0;
   left: 0;
   padding: 1rem 0;
-  z-index: 100;
+  z-index: 1000;
   display: none;
 }
 .navbar-brand {
@@ -80,6 +80,7 @@ const toggleMenu = () => {
 @media screen and (max-width: 768px) {
   .navbar {
     display: block;
+    background-color: var(--color-background-soft);
   }
 }
 </style>

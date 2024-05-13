@@ -1,6 +1,6 @@
 <script setup>
-import SkillsCarousel from '@/components/skills-carousel.vue'
-import CertificateCarousel from '@/components/certificate-carousel.vue'
+import SkillsCarousel from '@/components/about/SkillsCarousel.vue'
+import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
 </script>
 
 <template>

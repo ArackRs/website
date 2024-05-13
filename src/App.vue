@@ -1,8 +1,8 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TopFixed from "@/components/fixed-top.vue";
-import BottomFixed from "@/components/fixed-bottom.vue";
-import NavbarMobile from '@/components/navbar-component.vue'
+import TopFixed from "@/components/FixedTopComponent.vue";
+import BottomFixed from "@/components/FixedBottomComponent.vue";
+import NavbarMobile from '@/components/NavbarComponent.vue'
 import CodepenFloatingSquares from '@/components/CodepenFloatingSquares.vue'
 </script>
 
