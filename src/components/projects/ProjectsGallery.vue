@@ -25,7 +25,7 @@ const selectProject = (url) => {
               <pv-chip v-for="tech in project.technologies" :key="tech" style="font-size: 0.7em; margin-right: 0.5rem">{{ tech }}</pv-chip>
             </div>
             <div class="image bg-filter" :class="{ 'image-tall': index % 2 === 0, 'image-short': index % 2 === 1 }">
-              <img :src="'src/assets/images/' + project.imagen" alt="Image" />
+              <img :src="'src/assets/images/' + project.image" alt="Image" />
             </div>
           </div>
         </template>

@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue'
-import { HttpService } from '@/services/http.service.js'
+import { FirebaseService } from '@/shared/service/firebase.service.js'
 import axios from 'axios'
 const source = axios.CancelToken.source();
 const projects = ref([]);
@@ -14,7 +14,7 @@ onMounted(async () => {
   lastEndpoint.value = parts[parts.length - 1];
 
   try {
-    projects.value = await HttpService.get('projects', source.token);
+    projects.value = await FirebaseService.get('projects', source.token);
     project.value = (projects.value).find((project) => project.url === lastEndpoint.value) || null;
 
   } catch (error) {
