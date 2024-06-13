@@ -1,26 +1,41 @@
 <script setup>
 import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  document.getElementById('scrollButton').addEventListener('click', function() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  });
+});
 </script>
 
 <template>
   <section class="hero">
     <div class="hero-container container">
       <div class="hero-content">
-        <h1>{{$t('home.hero.hello')}}
+        <h2 class="hello">{{$t('home.hero.hello')}}
           <strong>Jack Arana</strong>
-        </h1>
-        <h1 class="heading">{{$t('home.hero.career')}}</h1>
-        <h1>{{$t('home.hero.specialty')}}</h1>
+        </h2>
+        <h1 class="career heading">{{$t('home.hero.career')}}</h1>
+        <h1 class="specialty">{{$t('home.hero.specialty')}}</h1>
         <router-link to="about-me">{{$t('home.hero.resume')}}
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
+    </div>
+    <div class="scroll-down flex flex-column align-items-center gap-2">
+      <span class="text-xl font-medium">Scroll Down</span>
+      <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem"></i>
     </div>
     <CodepenBlobBackgroundAnimation />
   </section>
 </template>
 
 <style scoped>
+
 .hero {
   position: relative;
   height: 100vh;
@@ -35,21 +50,19 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
 }
 .hero-content {
   width: 100%;
-  z-index: 100;
   margin: auto 0;
 
   & h1 {
     line-height: normal;
   }
 
-  & h1:first-child {
-    font-size: 2em;
+  & h2.hello {
     strong {
-      padding-left: .7rem;
+      color: white;
     }
   }
 
-  & h1:nth-child(3) {
+  & h1.specialty {
     font-size: 2em;
     color: white;
     line-height: 2em;
@@ -81,5 +94,25 @@ import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAn
       height: 100%;
     }
   }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.scroll-down {
+}
+
+.btn-slide-down {
+  animation: slide-down;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 </style>

@@ -3,24 +3,24 @@
 </script>
 
 <template>
-  <section class="services">
+  <section id="services" class="services">
     <div class="services-container container">
       <div class="services-header header">
         <h1>{{$t('home.services.heading')}}</h1>
         <p>{{$t('home.services.description')}}</p>
       </div>
       <div class="services-content content">
-        <div class="service bg-filter">
+        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
           <i class="pi pi-desktop"></i>
           <h2>{{$t('home.services.web')}}</h2>
           <p>{{$t('home.services.webDescription')}}</p>
         </div>
-        <div class="service bg-filter">
+        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
           <i class="pi pi-mobile"></i>
           <h2>{{$t('home.services.mobile')}}</h2>
           <p>{{$t('home.services.mobileDescription')}}</p>
         </div>
-        <div class="service bg-filter">
+        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
           <i class="pi pi-cloud"></i>
           <h2>{{$t('home.services.cloud')}}</h2>
           <p>{{$t('home.services.cloudDescription')}}</p>
@@ -37,6 +37,7 @@
   }
 
   .services-header {
+    padding-inline: 10%;
     text-align: center;
     transform: translateX(0%);
     transition: all 5s;

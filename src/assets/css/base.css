@@ -53,7 +53,35 @@ p {
   color: var(--color-text-mute);
 }
 button {
+  z-index: 1000 !important;
   i {
-    color: var(--color-text);
+    color: var(--color-text) !important;
   }
 }
+h1 {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5em;
+}
+p {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+@media (max-width: 1024px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 425px) {
+
+}
+.p-component {
+  font-size: inherit;
+}
+.pi {
+  color: inherit;
+}
+

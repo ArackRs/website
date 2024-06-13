@@ -1,25 +1,22 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { FirebaseService } from '@/shared/service/firebase.service.js';
-//import axios from 'axios';
-import ProjectsSectionGallery from '@/components/projects/ProjectsGallery.vue'
+import ProjectsGallery from '@/components/projects/ProjectsGallery.vue'
 
 const projects = ref([]);
-//const source = axios.CancelToken.source();
+const loading =ref(true);
 
 onMounted(async () => {
   try {
     projects.value = await FirebaseService.get('projects');
   } catch (error) {
     console.error('Error en la solicitud:', error);
+  } finally {
+    loading.value = false;
   }
-});
-
-onUnmounted(() => {
-
 });
 </script>
 
 <template>
-  <ProjectsSectionGallery :projects="projects" />
+  <ProjectsGallery :projects="projects" :loading="loading" />
 </template>

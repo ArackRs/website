@@ -16,6 +16,9 @@
     --black: #000000;
     --black-soft: rgba(26, 28, 29, 0.8);
     --black-mute: rgba(0, 0, 0, 0.6);
+
+    --space-pg: 2rem;
+    --space-view-py: 10rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -39,5 +42,24 @@
         --color-text: var(--white);
         --color-text-soft: var(--white-soft);
         --color-text-mute: var(--white-mute);
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --space-pg: 1.5rem;
+        --space-view-py: 7rem;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --space-pg: 1.3rem;
+        --space-view-py: 5rem;
+    }
+}
+@media (max-width: 425px) {
+    :root {
+        --space-pg: 1.1rem;
+        --space-view-py: 3rem;
     }
 }

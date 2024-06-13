@@ -1,72 +1,94 @@
 <script setup>
-import CarouselComponent from '@/components/about/CarouselComponent.vue'
-const skills = [
-  {
-    title: 'Programming Languages',
-    image: 'certificate_frontend.png'
-  },
-  {
-    title: 'Libraries & Frameworks',
-    image: 'certificate_frontend.png'
-  },
-  {
-    title: 'Tools & Platforms',
-    image: 'certificate_frontend.png'
-  },
-];
+import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
+import SkillsAccordion from '@/components/about/SkillsAccordion.vue'
 
-const certificates = [
-  {
-    title: 'Meta Front-End Developer Certificate',
-    image: 'certificate_frontend.png'
-  },
-  {
-    title: 'Meta Back-End Developer Certificate',
-    image: 'certificate_frontend.png'
-  },
-  {
-    title: 'Programming Languages Certificate',
-    image: 'certificate_frontend.png'
-  },
-];
+const { skills, certificates, loading } = defineProps(['skills', 'certificates', 'loading']);
+
 </script>
 
 <template>
   <section id="summary">
     <div class="summary-container container">
-      <div class="about-me bg-filter bg-image">
-        <h1>Jack Arana Ramos</h1>
+      <div class="about-me bg-filter bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <h1>Jack Arana Ramos</h1>
+        </template>
+        <template v-else>
+          <pv-skeleton width="85%" height="6em" class="mt-auto" />
+        </template>
       </div>
-      <div class="profile bg-filter">
-        <h1>{{$t('about.main.profile')}}</h1>
-        <p>{{$t('about.main.profileDescription')}}</p>
+      <div class="profile bg-filter" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <h1>{{$t('about.main.profile')}}</h1>
+          <p>{{$t('about.main.profileDescription')}}</p>
+        </template>
+        <template v-else>
+          <pv-skeleton width="20%" height="2rem" />
+          <pv-skeleton width="100%" height="10rem" class="mt-2" />
+        </template>
       </div>
-      <div class="meta bg-image">
-        <img src="/meta-front-end-developer-certificate.png" alt="meta">
+      <div class="meta bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <img :src="'https://firebasestorage.googleapis.com/v0/b/website-arack.appspot.com/o/images%2Finsignia%2Fmeta_frontend_developer_badge.png?alt=media&token=cf8707ea-33a8-4a67-83ac-dd3a63bd0511'" alt="meta">
+        </template>
+        <template v-else>
+          <pv-skeleton width="100%" height="14rem" />
+        </template>
       </div>
-      <div class="ibm bg-image">
-        <img src="/meta-front-end-developer-certificate.png" alt="ibm">
+      <div class="ibm bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <img src="/meta-front-end-developer-certificate.png" alt="ibm">
+        </template>
+        <template v-else>
+          <pv-skeleton width="100%" height="14rem" />
+        </template>
       </div>
-
-      <div class="education bg-filter bg-image">
-        <h1>{{$t('about.main.education')}}</h1>
-        <h3>{{$t('about.main.educationUniversity')}}</h3>
-        <p>{{$t('about.main.educationEgress')}}</p>
-        <h4>{{$t('about.main.educationCareer')}}</h4>
+      <div class="education bg-filter bg-image" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <h1>{{$t('about.main.education')}}</h1>
+          <h2>{{$t('about.main.educationUniversity')}}</h2>
+          <h3>{{$t('about.main.educationEgress')}}</h3>
+          <h3>{{$t('about.main.educationCareer')}}</h3>
+        </template>
+        <template v-else>
+          <pv-skeleton width="100%" height="2rem" />
+          <pv-skeleton width="75%" height="1.5rem" class="p-mt-2" />
+          <pv-skeleton width="100%" height="1.5rem" class="p-mt-2" />
+        </template>
       </div>
-      <div class="skills">
-        <CarouselComponent :value="skills"/>
+      <div class="skills" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <SkillsAccordion :value="skills[0]" />
+        </template>
+        <template v-else>
+          <div class="bg-filter">
+            <pv-skeleton width="100%" height="2rem" />
+            <pv-skeleton width="100%" height="10rem" class="mt-2" />
+          </div>
+        </template>
       </div>
-      <div class="certificates">
-        <CarouselComponent :value="certificates"/>
+      <div class="certificates" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <CertificateCarousel :value="certificates" />
+        </template>
+        <template v-else>
+          <pv-skeleton width="100%" height="12rem" />
+        </template>
       </div>
-      <div class="projects bg-filter bg-image">
-        <h1>{{$t('about.main.projects')}}</h1>
-        <p>{{$t('about.main.projectsDescription')}}</p>
+      <div class="projects bg-filter bg-image" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
+        <template v-if="!loading">
+          <h1>{{$t('about.main.projects')}}<i class="pi pi-arrow-right pl-2"></i></h1>
+          <p>{{$t('about.main.projectsDescription')}}</p>
+        </template>
+        <template v-else>
+          <pv-skeleton width="20%" height="2rem" />
+          <pv-skeleton width="100%" height="5rem" class="mt-2" />
+        </template>
       </div>
     </div>
   </section>
 </template>
+
 
 
 <style>
@@ -86,6 +108,7 @@ const certificates = [
     width: 100%;
     height: 100%;
   }
+
   .about-me {
     grid-area: about-me;
     background: url('/arack.jpeg');
@@ -122,12 +145,10 @@ const certificates = [
   }
   .skills {
     grid-area: skills;
-    padding-inline: .5rem;
   }
 
   .certificates {
     grid-area: certificates;
-    padding-inline: .5rem;
   }
   .projects {
     grid-area: projects;

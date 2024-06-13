@@ -47,10 +47,11 @@ onUnmounted(() => {
   .top-container {
     display: flex;
     align-items: start;
+
   }
 
   .top-brand {
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: bold;
     padding: 1rem 0;
     color: var(--color-text);
@@ -61,6 +62,7 @@ onUnmounted(() => {
     text-align: center;
     gap: 1rem;
     padding: 1rem 0;
+    z-index: 10000;
 
     a {
       text-decoration: none;
@@ -70,6 +72,7 @@ onUnmounted(() => {
       padding: 0.7rem;
       margin: 1rem 0;
       transition: all .3s ease-in-out;
+
       .is-active {
         opacity: 1;
       }
@@ -88,6 +91,7 @@ onUnmounted(() => {
   nav a.router-link-exact-active {
     background-color: var(--color-background-soft);
     color: var(--color-text);
+    font-weight: bold;
     opacity: 1;
     transform: rotate(0deg);
   }

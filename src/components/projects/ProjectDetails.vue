@@ -15,7 +15,7 @@ onMounted(async () => {
 
   try {
     projects.value = await FirebaseService.get('projects', source.token);
-    project.value = (projects.value).find((project) => project.url === lastEndpoint.value) || null;
+    project.value = (projects.value).find((project) => project.name === lastEndpoint.value) || null;
 
   } catch (error) {
     if (axios.isCancel(error)) {
@@ -27,8 +27,12 @@ onMounted(async () => {
 });
 
 const goBack = () => {
-  router.push('my-projects');
+  router.push('/my-projects');
 };
+const goExplore = (url) => {
+  window.open(url, '_blank');
+};
+
 </script>
 
 
@@ -37,46 +41,36 @@ const goBack = () => {
     <div class="project-container container">
       <div class="project-header header">
         <div class="title">
-          <pv-button icon="pi pi-arrow-left" rounded  aria-label="Bookmark" @click="goBack" />
-          <h1>{{ project.title }}</h1>
+          <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
+          <h1>{{ project.name }}</h1>
         </div>
-        <pv-button class="btn-explore" label="Explore" outlined style="font-size: 1rem;" />
+        <pv-button class="btn-explore" label="Explore" outlined style="font-size: 1rem;" @click="goExplore(project.url)" />
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
           <img src="../../assets/images/w00.jpg" alt="Image" />
         </div>
         <div class="overview bg-filter">
-          <h1>Overview</h1>
+          <h1>{{ $t('projects.detail.overview')}}</h1>
           <p>{{ project.overview }}</p>
         </div>
         <div class="stack bg-filter">
-          <h1>Technologies</h1>
+          <h1>{{ $t('projects.detail.technologies')}}</h1>
           <pv-chip v-for="item in project.technologies" :key="item" :label="item" style="font-size: .9em;" />
         </div>
         <div class="details bg-filter">
-          <h1>Executive Summary</h1>
-          <p>Project development</p>
+          <h1>{{ $t('projects.detail.executiveSummary')}}</h1>
+          <p>{{ $t('projects.detail.projectDevelopment')}}</p>
           <br>
           <ul>
-            <li>Equipo Actual (2 integrantes, incluyéndome):</li>
-            <ul>
-              <li>Retomé y rediseñé la plataforma original con un nuevo enfoque y mejoras significativas.</li>
-              <li>Colaboración estrecha con un nuevo compañero para redefinir la arquitectura, mejorar la interfaz de usuario y agregar características innovadoras.</li>
-              <li>Integración de tecnologías modernas para optimizar el rendimiento y la escalabilidad.</li>
-            </ul>
-          </ul>
-          <br>
-          <ul>
-            <li>Equipo Inicial (5 integrantes, incluyéndome):</li>
-            <ul>
-              <li>Desarrollo conjunto de una plataforma de gestión de contenidos basada en código abierto como parte del trabajo final del curso.</li>
-              <li>Implementación de funcionalidades clave, como gestión de usuarios, administración de contenido y herramientas de colaboración.</li>
+            <li>Equip Actual ({{ project.members }} {{ $t('projects.detail.members')}}, {{ $t('projects.detail.includingMe')}}):</li>
+            <ul v-for="item in project.summary" :key="item">
+              <li>{{ item }}</li>
             </ul>
           </ul>
         </div>
         <div class="problem bg-filter">
-          <h1>Problem Statement</h1>
+          <h1>{{ $t('projects.detail.problemStatement')}}</h1>
           <p>{{ project.problem }}</p>
         </div>
       </div>
@@ -84,7 +78,7 @@ const goBack = () => {
   </section>
 </template>
 
-<style scoped>
+<style>
 #project {
   min-height: 100vh;
   background-color: var(--color-background-soft);
@@ -93,6 +87,10 @@ const goBack = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .btn-go-back {
+    cursor: pointer;
+    color: var(--color-text);
+  }
   .title {
     display: flex;
     align-items: center;

@@ -1,6 +1,5 @@
 <script setup>
-import { defineProps } from 'vue'
-const { projects } = defineProps(['projects']);
+const { projects, loading } = defineProps(['projects', 'loading']);
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const selectProject = (url) => {
@@ -9,23 +8,34 @@ const selectProject = (url) => {
 </script>
 
 <template>
-  <section id="projects-section" class="hero">
+  <section id="projects-section" class="projects">
     <div class="projects-container container">
-      <div class="projects-header">
+      <div class="projects__header">
         <h1 class="heading">{{$t('projects.heading')}}</h1>
         <p class="description">{{$t('projects.description')}}</p>
       </div>
-      <div class="projects-content content">
-        <template v-for="(project, index) in projects" :key="project.id">
-          <div class="projects-item bg-filter" v-on:click="selectProject(project.url)">
-            <div class="text">
-              <h4>WORK COLABORATIVE</h4>
-              <h1>{{ project.title }}</h1>
-              <p>{{ project.overview }}.</p>
-              <pv-chip v-for="tech in project.technologies" :key="tech" style="font-size: 0.7em; margin-right: 0.5rem">{{ tech }}</pv-chip>
+      <div class="projects__content content" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!loading" >
+          <template v-for="project in projects" :key="project.id">
+            <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
+              <div class="box-img">
+                <img :src="'src/assets/images/' + project.image" alt="Image" />
+              </div>
+              <div class="box-txt">
+                <h1>{{ project.name }}</h1>
+                <p>{{ project.overview }}.</p>
+              </div>
             </div>
-            <div class="image bg-filter" :class="{ 'image-tall': index % 2 === 0, 'image-short': index % 2 === 1 }">
-              <img :src="'src/assets/images/' + project.image" alt="Image" />
+          </template>
+        </template>
+        <template v-else>
+          <div v-for="n in 6" :key="n" class="item bg-filter">
+            <div class="box-img">
+              <pv-skeleton width="100%" height="20rem" />
+            </div>
+            <div class="box-txt">
+              <pv-skeleton width="40%" height="2rem" />
+              <pv-skeleton width="100%" height="1.5rem" class="mt-2" />
             </div>
           </div>
         </template>
@@ -35,36 +45,53 @@ const selectProject = (url) => {
 </template>
 
 <style scoped>
-.projects-header {
-  .description {
-    width: min(50em, 100%);
-  }
-}
-.projects-content {
+.projects__content {
   padding-top: 5rem;
   align-items: initial;
   gap: 1rem;
-  .projects-item {
-    width: min(30rem, 100%);
-    height: min-content;
+  .item {
+    width: 30rem;
+    min-height: 20rem;
+    aspect-ratio: 16 / 5;
+    display: flex;
+    flex-direction: column-reverse;
     flex-grow: 1;
-    gap: 1rem;
     padding: 0;
-    &:hover {
-      border: 1px solid var(--color-text-mute);
-      cursor: pointer;
-    }
-    .text {
-      width: 100%;
-      padding: 2rem;
-    }
-    .image {
-      overflow: hidden;
-      width: 100%;
-      padding-left: 2rem;
-      border-radius: 0 0 20px 20px;
-      height: 10rem;
+    cursor: pointer;
 
+    .box-img {
+      width: 100%;
+      min-height: 50%;
+      padding-left: var(--space-pg);
+      transition: all 1s;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 2s;
+        border-radius: 20px 0 20px 0;
+        z-index: 1000;
+      }
+    }
+    .box-txt {
+      min-height: 50%;
+      padding: var(--space-pg);
+    }
+  }
+}
+
+@media (hover:hover) {
+  .projects__content .item {
+    &:hover {
+      background: var(--color-primary-mute);
+    }
+    .box-img:hover {
+      min-height: 100%;
+      padding-left: 0;
+    }
+    .box-img:hover > img {
+      transition: all 1s;
     }
   }
 }

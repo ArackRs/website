@@ -4,7 +4,7 @@ import en from '@/locales/en.js'
 
 const i18n = createI18n({
   locale: 'es',
-  legacy: true,
+  legacy: false,
   messages: {
     es,
     en,

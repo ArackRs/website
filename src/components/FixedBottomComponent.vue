@@ -1,5 +1,15 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+import { ref } from 'vue'
 
+const { locale } = useI18n();
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es';
+};
+const isDarkTheme = ref(false);
+const toggleTheme = () => {
+  isDarkTheme.value = !isDarkTheme.value;
+};
 </script>
 
 <template>
@@ -10,7 +20,12 @@
         <a href=""><i class="pi pi-linkedin"></i></a>
         <a href=""><i class="pi pi-instagram"></i></a>
       </nav>
-      <pv-button class="toggle-theme" text rounded severity="secondary"><i class="pi pi-sun"></i></pv-button>
+      <div class="toggles flex flex-column gap-2">
+        <pv-button class="toggle-language icon" text rounded severity="secondary" @click="toggleLanguage"><i class="pi pi-language"></i></pv-button>
+        <pv-button class="toggle-theme icon" text rounded severity="secondary" @click="toggleTheme">
+          <i :class="isDarkTheme ? 'pi pi-moon' : 'pi pi-sun'"></i>
+        </pv-button>
+      </div>
     </div>
   </div>
 </template>
@@ -39,7 +54,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: var(--space-pg);
     a {
       text-decoration: none;
       color: var(--color-text);
@@ -51,11 +66,8 @@
       }
     }
   }
-  .toggle-theme {
-    padding: 0;
-    & i {
-      font-size: 2em;
-    }
+  .toggles {
+    gap: var(--space-pg);
   }
 
   @media screen and (max-width: 768px) {
