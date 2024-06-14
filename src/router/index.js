@@ -23,8 +23,18 @@ const router = createRouter({
       path: '/contact-me',
       name: 'contact',
       component: () => import('../views/ContactView.vue')
+    },
+    {
+      path: '/my-projects/:project',
+      name: 'project',
+      component: () => import('../components/projects/ProjectDetails.vue')
     }
-  ]
+  ],
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
