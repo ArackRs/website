@@ -29,7 +29,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
       </div>
       <div class="meta bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!loading">
-          <img src="/meta-front-end-developer-certificate.png" alt="meta">
+          <img src="/src/assets/images/meta-front-end-developer-certificate.png" alt="meta">
         </template>
         <template v-else>
           <pv-skeleton width="100%" height="14rem" />
@@ -37,7 +37,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
       </div>
       <div class="ibm bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!loading">
-          <img src="/meta-front-end-developer-certificate.png" alt="ibm">
+          <img src="/src/assets/images/meta-front-end-developer-certificate.png" alt="ibm">
         </template>
         <template v-else>
           <pv-skeleton width="100%" height="14rem" />
@@ -113,7 +113,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
 
   .about-me {
     grid-area: about-me;
-    background: url('/arack.jpeg');
+    background: url('/src/assets/images/arack.jpeg');
     display: grid;
     height: 100%;
     h1 {
@@ -142,7 +142,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
   }
   .education {
     grid-area: education;
-    background: url('/upc.jpeg') no-repeat center right;
+    background: url('/src/assets/images/upc.jpeg') no-repeat center right;
     padding-right: 5rem;
   }
   .skills {
