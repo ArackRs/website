@@ -75,7 +75,7 @@ const toggleLanguage = () => {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .start {
     flex-direction: column;
     align-items: center;

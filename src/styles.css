@@ -145,7 +145,7 @@ section, footer {
     }
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .container {
     font-size: 70%;
   }

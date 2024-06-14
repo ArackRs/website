@@ -2,15 +2,27 @@
 import CertificateCarousel from '@/components/about/CertificateCarousel.vue'
 import SkillsAccordion from '@/components/about/SkillsAccordion.vue'
 
-const { skills, certificates, loading } = defineProps(['skills', 'certificates', 'loading']);
-
+const props = defineProps({
+  certificates: {
+    type: Array,
+    required: true,
+  },
+  skills: {
+    type: Array,
+    required: true,
+  },
+  loading: {
+    type: Boolean,
+    required: true,
+  },
+});
 </script>
 
 <template>
   <section id="summary">
     <div class="summary-container container">
       <div class="about-me bg-filter bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+        <template v-if="!props.loading">
           <h1>Jack Arana Ramos</h1>
         </template>
         <template v-else>
@@ -18,7 +30,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
         </template>
       </div>
       <div class="profile bg-filter" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+        <template v-if="!props.loading">
           <h1>{{$t('about.main.profile')}}</h1>
           <p>{{$t('about.main.profileDescription')}}</p>
         </template>
@@ -28,7 +40,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
         </template>
       </div>
       <div class="meta bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+        <template v-if="!props.loading">
           <img src="/src/assets/images/meta-front-end-developer-certificate.png" alt="meta">
         </template>
         <template v-else>
@@ -36,7 +48,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
         </template>
       </div>
       <div class="ibm bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+        <template v-if="!props.loading">
           <img src="/src/assets/images/meta-front-end-developer-certificate.png" alt="ibm">
         </template>
         <template v-else>
@@ -44,7 +56,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
         </template>
       </div>
       <div class="education bg-filter bg-image" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+        <template v-if="!props.loading">
           <h1>{{$t('about.main.education')}}</h1>
           <h2>{{$t('about.main.educationUniversity')}}</h2>
           <h3>{{$t('about.main.educationEgress')}}</h3>
@@ -57,8 +69,8 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
         </template>
       </div>
       <div class="skills" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
-          <SkillsAccordion :value="skills[0]" />
+        <template v-if="!props.loading">
+          <SkillsAccordion :value="props.skills[0]" />
         </template>
         <template v-else>
           <div class="bg-filter">
@@ -67,16 +79,16 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
           </div>
         </template>
       </div>
-      <div class="certificates" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
-          <CertificateCarousel :value="certificates" />
+      <div class="certificates" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!props.loading">
+          <CertificateCarousel :value="props.certificates" />
         </template>
         <template v-else>
           <pv-skeleton width="100%" height="12rem" />
         </template>
       </div>
-      <div class="projects bg-filter bg-image" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
-        <template v-if="!loading">
+      <div class="projects bg-filter bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <template v-if="!props.loading">
           <router-link to="/my-projects">
             <h1>{{$t('about.main.projects')}}<i class="pi pi-arrow-right pl-2"></i></h1>
           </router-link>
@@ -92,14 +104,13 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
 </template>
 
 
-
 <style>
 .summary-container {
   width: 100%;
   overflow: hidden;
   display: grid !important;
   place-items: center;
-  gap: 2rem;
+  gap: var(--space-pg);
   grid-template-areas:
     "about-me about-me about-me profile profile"
     "about-me about-me about-me meta ibm"
@@ -113,7 +124,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
 
   .about-me {
     grid-area: about-me;
-    background: url('/src/assets/images/arack.jpeg');
+    background: url('src/assets/images/arack.jpeg');
     display: grid;
     height: 100%;
     h1 {
@@ -142,7 +153,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
   }
   .education {
     grid-area: education;
-    background: url('/src/assets/images/upc.jpeg') no-repeat center right;
+    background: url('src/assets/images/upc.jpeg') no-repeat center right;
     padding-right: 5rem;
   }
   .skills {
@@ -177,7 +188,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
 }
 @media (max-width: 1024px) {
   .summary-container {
-    gap: 1rem;
+    gap: var(--space-pg);
   }
 }
 @media (max-width: 768px) {
@@ -192,7 +203,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .summary-container {
     grid-template-areas:
       "about-me about-me"

@@ -55,7 +55,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .p-carousel {
     .p-carousel-indicators {
       bottom: 50%;

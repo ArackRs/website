@@ -53,6 +53,6 @@ const { value } = defineProps(['value'])
 }
 
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
 }
 </style>

@@ -111,8 +111,6 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
-.scroll-down {
-}
 
 .btn-slide-down {
   animation: slide-down;

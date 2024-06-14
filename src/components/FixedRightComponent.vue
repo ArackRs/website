@@ -105,8 +105,18 @@ onUnmounted(() => {
     transform: rotate(0deg);
   }
 
+  @media (max-width: 1440px) {
+    .right {
+      right: 2%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .right {
+      right: 0;
+    }
+  }
   @media screen and (max-width: 768px) {
-    .top {
+    .right {
       display: none;
     }
   }

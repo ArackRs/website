@@ -171,7 +171,7 @@ const goExplore = (url) => {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .project-content {
     grid-template-columns: 1fr;
     grid-template-areas:

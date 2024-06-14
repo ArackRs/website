@@ -57,9 +57,18 @@
       }
     }
   }
-
+  @media screen and (max-width: 1440px) {
+    .left {
+      left: 2%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .left {
+      left: 0;
+    }
+  }
   @media screen and (max-width: 768px) {
-    #bottom {
+    .left {
       display: none;
     }
   }
