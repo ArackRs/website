@@ -62,7 +62,11 @@ const toggleLanguage = () => {
   }
 }
 .nav-social {
-  flex-direction: row;
+  display: flex;
+  gap: var(--space-pg) !important;
+  & i {
+    font-size: 2em;
+  }
 }
 .toggle-theme {
   padding: 0;

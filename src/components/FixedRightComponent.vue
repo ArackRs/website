@@ -1,5 +1,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n();
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es';
+};
+const isDarkTheme = ref(false);
+const toggleTheme = () => {
+  isDarkTheme.value = !isDarkTheme.value;
+};
 
 let lastScrollPosition = 0;
 const isNavVisible = ref(true);
@@ -23,45 +33,44 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="top">
-    <div class="top-container container">
-      <a href="/" class="top-brand">Arack</a>
+  <div class="right">
+    <div class="right-container container">
       <nav>
         <router-link :class="{ 'is-active': isNavVisible }" to="/">Home</router-link>
         <router-link :class="{ 'is-active': isNavVisible }" to="/about-me">About</router-link>
         <router-link :class="{ 'is-active': isNavVisible }" to="/my-projects">Projects</router-link>
         <router-link :class="{ 'is-active': isNavVisible }" to="/contact-me">Contact</router-link>
       </nav>
+      <div class="toggles flex flex-column gap-2">
+        <pv-button class="toggle-language icon" text rounded severity="secondary" @click="toggleLanguage"><i class="pi pi-language"></i></pv-button>
+        <pv-button class="toggle-theme icon" text rounded severity="secondary" @click="toggleTheme">
+          <i :class="isDarkTheme ? 'pi pi-moon' : 'pi pi-sun'"></i>
+        </pv-button>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .top {
-    width: 100%;
+  .right {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 8%;
+    height: 100%;
+    padding-block: var(--space-pg);
     z-index: 100;
   }
-  .top-container {
+  .right-container {
     display: flex;
-    align-items: start;
-
-  }
-
-  .top-brand {
-    font-size: 1.7em;
-    font-weight: bold;
-    padding: 1rem 0;
-    color: var(--color-text);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
   }
 
   nav {
     display: grid;
     text-align: center;
     gap: 1rem;
-    padding: 1rem 0;
     z-index: 10000;
 
     a {

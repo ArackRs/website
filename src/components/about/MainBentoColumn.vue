@@ -29,7 +29,7 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
       </div>
       <div class="meta bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!loading">
-          <img :src="'https://firebasestorage.googleapis.com/v0/b/website-arack.appspot.com/o/images%2Finsignia%2Fmeta_frontend_developer_badge.png?alt=media&token=cf8707ea-33a8-4a67-83ac-dd3a63bd0511'" alt="meta">
+          <img src="/meta-front-end-developer-certificate.png" alt="meta">
         </template>
         <template v-else>
           <pv-skeleton width="100%" height="14rem" />
@@ -77,7 +77,9 @@ const { skills, certificates, loading } = defineProps(['skills', 'certificates',
       </div>
       <div class="projects bg-filter bg-image" v-animateonscroll="{ enterClass: 'flipleft', leaveClass: 'fadeout' }">
         <template v-if="!loading">
-          <h1>{{$t('about.main.projects')}}<i class="pi pi-arrow-right pl-2"></i></h1>
+          <router-link to="/my-projects">
+            <h1>{{$t('about.main.projects')}}<i class="pi pi-arrow-right pl-2"></i></h1>
+          </router-link>
           <p>{{$t('about.main.projectsDescription')}}</p>
         </template>
         <template v-else>

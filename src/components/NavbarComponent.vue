@@ -29,6 +29,7 @@ const toggleMenu = () => {
 <style scoped>
 .navbar {
   width: 100%;
+  height: 4rem;
   position: fixed;
   top: 0;
   left: 0;

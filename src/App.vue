@@ -1,17 +1,17 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TopFixed from "@/components/FixedTopComponent.vue";
-import BottomFixed from "@/components/FixedBottomComponent.vue";
+import FixedRightComponent from "@/components/FixedRightComponent.vue";
+import FixedLeftComponent from "@/components/FixedLeftComponent.vue";
 import FooterComponent from '@/components/FooterComponent.vue'
 import NavbarComponent from '@/components/NavbarComponent.vue'
 </script>
 
 <template>
-  <TopFixed />
+  <FixedRightComponent />
   <NavbarComponent />
   <RouterView />
   <FooterComponent />
-  <BottomFixed />
+  <FixedLeftComponent />
   <pv-scroll-top />
 </template>
 

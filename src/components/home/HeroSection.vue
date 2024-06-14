@@ -35,7 +35,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
+#scrollButton {
+  cursor: pointer;
+  z-index: 1000;
+}
 .hero {
   position: relative;
   height: 100vh;
@@ -57,6 +60,7 @@ onMounted(() => {
   }
 
   & h2.hello {
+    color: white;
     strong {
       color: white;
     }
@@ -85,7 +89,7 @@ onMounted(() => {
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: #27CEB0;
+      background-color: var(--color-primary);
       z-index: -1;
       transition: all .3s ease-in-out;
     }

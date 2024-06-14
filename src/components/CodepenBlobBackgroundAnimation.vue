@@ -1,5 +1,7 @@
 <template>
   <div class="slider-thumb"></div>
+  <div class="slider-thumb two"></div>
+  <div class="slider-thumb"></div>
   <div class="slider-thumb"></div>
   <div class="slider-thumb"></div>
   <div class="slider-thumb"></div>
@@ -15,7 +17,7 @@ body {
 }
 
 .slider-thumb {
-  position: absolute;
+  position: fixed;
   content: "";
   left: -15%;
   top: 20%;
@@ -29,10 +31,7 @@ body {
   display: block;
   z-index: -1;
   -webkit-animation: sliderShape 5s linear infinite;
-  &:nth-child(2) {
-    left: 40%;
-    top: -25%;
-  }
+
   &:nth-child(3) {
     left: 75%;
     top: 45%;
@@ -61,6 +60,24 @@ body {
     left: 62%;
     top: 70%;
   }
+  &:nth-child(8) {
+    width: 450px;
+    height: 450px;
+    left: 40%;
+    top: -25%;
+  }
+  &:nth-child(9) {
+    width: 80px;
+    height: 80px;
+    left: 12%;
+    top: 70%;
+  }
+}
+.two {
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 45%;
 }
 @keyframes sliderShape{
   0%,100%{
@@ -80,5 +97,5 @@ body {
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 </script>
