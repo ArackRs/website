@@ -6,9 +6,7 @@
     --color-secondary: #0044c4;
     --color-secondary-soft: rgba(0, 68, 196, 0.8);
     --color-secondary-mute: rgba(0, 68, 196, 0.6);
-}
 
-:root {
     --white: #ffffff;
     --white-soft: rgba(255, 255, 255, 0.8);
     --white-mute: rgba(255, 255, 255, 0.6);
@@ -17,6 +15,10 @@
     --black-soft: rgba(26, 28, 29, 0.8);
     --black-mute: rgba(0, 0, 0, 0.6);
 
+    --media-m: 525px;
+    --media-t: 768px;
+    --media-p: 1024px;
+    --media-pl: 1440px;
     --space-pg: 2rem;
     --space-view-py: 10rem;
 }
@@ -57,7 +59,7 @@
         --space-view-py: 5rem;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 525px) {
     :root {
         --space-pg: 1.1rem;
         --space-view-py: 3rem;

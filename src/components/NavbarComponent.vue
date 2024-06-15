@@ -30,7 +30,7 @@ const toggleMenu = () => {
 .navbar {
   width: 100%;
   height: 4rem;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   padding: 1rem 0;
@@ -38,7 +38,7 @@ const toggleMenu = () => {
   display: none;
 }
 .navbar-brand {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
   padding: 1rem 0;
   color: var(--color-text);
@@ -52,8 +52,8 @@ const toggleMenu = () => {
   position: absolute;
   top: 0;
   right: -100%;
-  background-color: var(--color-background-soft);
-  width: min(25rem, 70%);
+  background-color: transparent;
+  width: min(25rem, 60%);
   height: 100vh;
   padding: 1rem 0;
   transition: all .3s ease-in-out;
@@ -81,7 +81,7 @@ const toggleMenu = () => {
 @media screen and (max-width: 768px) {
   .navbar {
     display: block;
-    background-color: var(--color-background-soft);
+    background-color: transparent;
   }
 }
 </style>
