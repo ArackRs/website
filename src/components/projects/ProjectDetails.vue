@@ -8,6 +8,7 @@ const projects = ref([]);
 const project = ref({});
 const lastEndpoint = ref('');
 const router = useRouter();
+const loading = ref(true);
 
 onMounted(async () => {
   const parts = router.currentRoute.value.path.split('/');
@@ -23,6 +24,8 @@ onMounted(async () => {
     } else {
       console.error('Error en la solicitud:', error);
     }
+  } finally {
+    loading.value = false;
   }
 });
 
@@ -48,7 +51,12 @@ const goExplore = (url) => {
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
-          <img src="../../assets/images/w00.jpg" alt="Image" />
+          <template v-if="!loading">
+            <img :src="project.image" alt="Image" />
+          </template>
+          <template v-else>
+            <pv-skeleton width="100%" height="50rem" />
+          </template>
         </div>
         <div class="overview bg-filter">
           <h1>{{ $t('projects.detail.overview')}}</h1>

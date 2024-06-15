@@ -19,7 +19,7 @@ const selectProject = (url) => {
           <template v-for="project in projects" :key="project.id">
             <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
               <div class="box-img">
-                <img :src="'src/assets/images/' + project.image" alt="Image" />
+                <img :src="project.image" alt="Image" />
               </div>
               <div class="box-txt">
                 <h1>{{ project.name }}</h1>
