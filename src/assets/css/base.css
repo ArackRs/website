@@ -49,13 +49,14 @@ body {
 h2, h3, h4, h5, h6, a {
   color: var(--color-text-soft);
 }
-p {
+p, ul, li {
   color: var(--color-text-mute);
 }
 button {
   z-index: 1000 !important;
   i {
     color: var(--color-text) !important;
+    margin-right: 1rem !important;
   }
 }
 h1 {

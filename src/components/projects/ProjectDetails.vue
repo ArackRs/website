@@ -29,15 +29,12 @@ onMounted(async () => {
   }
 });
 
-const goBack = () => {
-  router.push('/my-projects');
-};
-const goExplore = (url) => {
-  window.open(url, '_blank');
-};
+const goBack = () => { router.push('/my-projects') };
+const goRepo = (url) => { window.open(url, '_blank') };
+const goApi = (url) => { window.open(url, '_blank') };
+const goExplore = (url) => { window.open(url, '_blank') };
 
 </script>
-
 
 <template>
   <section id="project">
@@ -47,7 +44,11 @@ const goExplore = (url) => {
           <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
           <h1>{{ project.name }}</h1>
         </div>
-        <pv-button class="btn-explore" label="Explore" outlined style="font-size: 1rem;" @click="goExplore(project.url)" />
+        <pv-button-group>
+          <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="goRepo(project.urlCode)" />
+          <pv-button class="btn-explore" icon="pi pi-link" label="Swagger API" style="font-size: 1rem;" @click="goApi(project.urlSwagger)"  />
+          <pv-button class="btn-explore" icon="pi pi-globe" label="Explore" style="font-size: 1rem;" @click="goExplore(project.urlExplore)" />
+        </pv-button-group>
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
@@ -68,18 +69,18 @@ const goExplore = (url) => {
         </div>
         <div class="details bg-filter">
           <h1>{{ $t('projects.detail.executiveSummary')}}</h1>
-          <p>{{ $t('projects.detail.projectDevelopment')}}</p>
+          <h4>Cargo: {{ project.position }} ({{ project.members }} {{ $t('projects.detail.members')}}, {{ $t('projects.detail.includingMe')}})</h4>
           <br>
-          <ul>
-            <li>Equip Actual ({{ project.members }} {{ $t('projects.detail.members')}}, {{ $t('projects.detail.includingMe')}}):</li>
-            <ul v-for="item in project.summary" :key="item">
-              <li>{{ item }}</li>
-            </ul>
+          <p>{{ project.summary }}</p>
+          <br>
+          <p>Funciones:</p>
+          <ul v-for="item in project.functions" :key="item">
+            <li>{{ item }}</li>
           </ul>
         </div>
         <div class="problem bg-filter">
-          <h1>{{ $t('projects.detail.problemStatement')}}</h1>
-          <p>{{ project.problem }}</p>
+          <h1>{{ $t('projects.detail.projectCourse')}}</h1>
+          <p>{{ project.course }}</p>
         </div>
       </div>
     </div>
@@ -95,6 +96,9 @@ const goExplore = (url) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    background: transparent;
+  }
   .btn-go-back {
     cursor: pointer;
     color: var(--color-text);
