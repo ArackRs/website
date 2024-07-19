@@ -30,9 +30,7 @@ onMounted(async () => {
 });
 
 const goBack = () => { router.push('/my-projects') };
-const goRepo = (url) => { window.open(url, '_blank') };
-const goApi = (url) => { window.open(url, '_blank') };
-const goExplore = (url) => { window.open(url, '_blank') };
+const openUrl = (url) => { window.open(url, '_blank') };
 
 </script>
 
@@ -40,14 +38,19 @@ const goExplore = (url) => { window.open(url, '_blank') };
   <section id="project">
     <div class="project-container container">
       <div class="project-header header">
-        <div class="title">
-          <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
-          <h1>{{ project.name }}</h1>
+        <div class="title flex-column gap-5">
+          <div class="flex gap-3 align-items-center">
+            <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
+            <h1>{{ project.name }}</h1>
+          </div>
+          <div class="chip-container pt-3">
+            <pv-button class="btn-explore" icon="pi pi-link" v-for="item in project.chips" :key="item" :label="item.label"
+                       rounded :disabled="item.link === ''"
+                       style="font-size: .8em; margin-right: 1em; cursor: pointer;" @click="openUrl(item.link)" />
+          </div>
         </div>
         <pv-button-group>
-          <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="goRepo(project.urlCode)" />
-          <pv-button class="btn-explore" icon="pi pi-link" label="Swagger API" style="font-size: 1rem;" @click="goApi(project.urlSwagger)"  />
-          <pv-button class="btn-explore" icon="pi pi-globe" label="Explore" style="font-size: 1rem;" @click="goExplore(project.urlExplore)" />
+          <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="openUrl(project.urlCode)" />
         </pv-button-group>
       </div>
       <div class="project-content content">
@@ -84,6 +87,7 @@ const goExplore = (url) => { window.open(url, '_blank') };
         </div>
       </div>
     </div>
+    <CodepenBlobBackgroundAnimation />
   </section>
 </template>
 
@@ -95,7 +99,7 @@ const goExplore = (url) => { window.open(url, '_blank') };
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   a {
     background: transparent;
   }
@@ -104,15 +108,18 @@ const goExplore = (url) => { window.open(url, '_blank') };
     color: var(--color-text);
   }
   .title {
-    display: flex;
-    align-items: center;
+    justify-content: start;
     gap: 1rem;
+    .chip-container {
+      display: flex;
+    }
     .p-button {
       cursor: pointer;
     }
     h1 {
       font-size: 3em;
       font-weight: bold;
+      text-align: start;
     }
   }
 }
@@ -135,6 +142,8 @@ const goExplore = (url) => { window.open(url, '_blank') };
   }
   .image {
     grid-area: imagen;
+    aspect-ratio: 16 / 10;
+
     img {
       width: 100%;
       height: 100%;

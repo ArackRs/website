@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { FirebaseService } from '@/shared/service/firebase.service.js';
 import ProjectsGallery from '@/components/projects/ProjectsGallery.vue'
+import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
 
 const projects = ref([]);
 const loading =ref(true);
@@ -19,4 +20,5 @@ onMounted(async () => {
 
 <template>
   <ProjectsGallery :projects="projects" :loading="loading" />
+  <CodepenBlobBackgroundAnimation />
 </template>

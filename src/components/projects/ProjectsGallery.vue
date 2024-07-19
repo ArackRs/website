@@ -22,8 +22,8 @@ const selectProject = (url) => {
                 <img :src="project.image" alt="Image" />
               </div>
               <div class="box-txt">
-                <h1>{{ project.name }}</h1>
-                <p>{{ project.overview }}.</p>
+                <h1>{{ project.name }} </h1>
+                <p>{{ project.overview }}</p>
               </div>
             </div>
           </template>
@@ -52,7 +52,7 @@ const selectProject = (url) => {
   .item {
     width: 30rem;
     min-height: 20rem;
-    aspect-ratio: 16 / 5;
+    aspect-ratio: 16 / 10;
     display: flex;
     flex-direction: column-reverse;
     flex-grow: 1;
