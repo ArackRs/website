@@ -10,40 +10,24 @@ const selectProject = (url) => {
 
 
 <template>
-  <section id="projects-section" class="hero">
-    <div class="projects-container container">
-      <div class="projects-header">
-        <h1 class="heading">My Projects</h1>
-        <p class="description">
-          I am a software developer with a passion for creating and learning. I
-          have experience in web development, mobile development, and desktop
-          development. I am currently working on a few projects, including a
-          mobile app and a web app. I am also learning about machine learning
-          and artificial intelligence.
-        </p>
+  <div class="list content">
+    <template v-for="project in projects" :key="project.id">
+      <div class="projects-item bg-filter" v-on:click="selectProject(project.url)">
+        <div class="image bg-filter">
+          <img :src="'src/assets/images/' + project.logo" alt="Image" width="70" />
+        </div>
+        <div class="text">
+          <h1>{{ project.title }}</h1>
+          <p>{{ project.overview }}.</p>
+        </div>
       </div>
-      <div class="projects-content content">
-        <template v-for="project in projects" :key="project.id">
-          <div class="projects-item bg-filter" v-on:click="selectProject(project.url)">
-            <div class="image bg-filter">
-              <img :src="'src/assets/images/' + project.logo" alt="Image" width="70" />
-            </div>
-            <div class="text">
-              <h1>{{ project.title }}</h1>
-              <p>{{ project.overview }}.</p>
-            </div>
-          </div>
-        </template>
-      </div>
-    </div>
-  </section>
-
+    </template>
+  </div>
 </template>
 
 <style scoped>
 
-  .projects-content {
-    padding-top: 5rem;
+  .list {
     display: grid !important;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
