@@ -1,4 +1,5 @@
 :root {
+    /*color celeste*/
     --color-primary: rgb(39, 206, 176);
     --color-primary-soft: rgba(39, 206, 176, 0.8);
     --color-primary-mute: rgba(39, 206, 176, 0.6);
@@ -6,6 +7,10 @@
     --color-secondary: #0044c4;
     --color-secondary-soft: rgba(0, 68, 196, 0.8);
     --color-secondary-mute: rgba(0, 68, 196, 0.6);
+
+    --color-tertiary: rgb(255, 165, 0);
+    --color-tertiary-soft: rgba(255, 165, 0, 0.8);
+    --color-tertiary-mute: rgba(255, 165, 0, 0.6);
 
     --white: #ffffff;
     --white-soft: rgba(255, 255, 255, 0.8);
@@ -22,7 +27,9 @@
     --space-pg: 2rem;
     --space-view-py: 10rem;
 }
-
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    background-color: var(--color-primary);
+}
 @media (prefers-color-scheme: light) {
     :root {
         --color-background: var(--white);

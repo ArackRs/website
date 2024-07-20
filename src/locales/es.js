@@ -3,7 +3,7 @@ const es = {
     hero: {
       hello: 'Hola, Soy',
       career: 'Estudiante de Ing. de Software',
-      specialty: 'Especializado en el Desarrollo FullStack',
+      speciality: 'Especializado en el Desarrollo FullStack',
       resume: 'Resumen',
     },
     services: {

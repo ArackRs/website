@@ -1,6 +1,7 @@
 <script setup>
-import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const splitText = (text) => text.split('');
 
 onMounted(() => {
   document.getElementById('scrollButton').addEventListener('click', function() {
@@ -9,34 +10,86 @@ onMounted(() => {
       behavior: 'smooth'
     });
   });
+  Splitting(); // Splitting.js - unique! npm install splitting --save
+  textLoad();
+  setInterval(textLoad, 20000);
 });
+const secText = ref(null);
+
+const textLoad = () => {
+  if (secText.value) {
+    setTimeout(() => {
+      secText.value.textContent = 'Jack Arana';
+    }, 0);
+    setTimeout(() => {
+      secText.value.textContent = 'Frontend Developer';
+    }, 5000);
+    setTimeout(() => {
+      secText.value.textContent = 'Backend Developer';
+    }, 10000);
+    setTimeout(() => {
+      secText.value.textContent = 'Full Stack Developer';
+    }, 15000);
+  }
+};
 </script>
 
 <template>
   <section class="hero">
     <div class="hero-container container">
       <div class="hero-content">
-        <h2 class="hello">{{$t('home.hero.hello')}}
-          <strong>Jack Arana</strong>
+        <h2 class="hello animated-text" >{{$t('home.hero.hello')}}
+          <span style="font-weight: bold;" class="typed sec-text" ref="secText"></span>
         </h2>
-        <h1 class="career heading">{{$t('home.hero.career')}}</h1>
-        <h1 class="specialty">{{$t('home.hero.specialty')}}</h1>
-        <router-link to="about-me">{{$t('home.hero.resume')}}
+        <h1 class="career heading shine">{{$t('home.hero.career')}}</h1>
+        <h1 class="speciality animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
+        <router-link to="about-me" class="resume animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinright', leaveClass: 'fadeoutright' }">{{$t('home.hero.resume')}}
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
     </div>
-    <div class="scroll-down flex flex-column align-items-center gap-2">
-      <span class="text-xl font-medium">Scroll Down</span>
-      <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem"></i>
+    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000" v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
+      <span class="text-xl font-medium" data-splitting>Scroll down</span>
+      <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem;"></i>
     </div>
   </section>
 </template>
 
 <style scoped>
+.typed {
+  position: relative;
+  white-space: nowrap;
+}
+.typed.sec-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-left: 2px solid whitesmoke;
+  animation: animate 5000ms steps(12) infinite;
+}
+.typed.sec-text {
+  background: linear-gradient(to right, var(--color-tertiary) 50%, transparent 50%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: screen;
+}
+
+@keyframes animate {
+  40%, 60% {
+    left: calc(100% + 4px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
 #scrollButton {
   cursor: pointer;
-  z-index: 1000;
 }
 .hero {
   position: relative;
@@ -53,7 +106,7 @@ onMounted(() => {
 .hero-content {
   width: 100%;
   margin: auto 0;
-
+  overflow: hidden;
   & h1 {
     line-height: normal;
   }
@@ -65,7 +118,7 @@ onMounted(() => {
     }
   }
 
-  & h1.specialty {
+  & h1.speciality {
     font-size: 2em;
     color: white;
     line-height: 2em;
