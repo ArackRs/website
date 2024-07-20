@@ -30,7 +30,6 @@ onMounted(() => {
       <span class="text-xl font-medium">Scroll Down</span>
       <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem"></i>
     </div>
-    <CodepenBlobBackgroundAnimation />
   </section>
 </template>
 

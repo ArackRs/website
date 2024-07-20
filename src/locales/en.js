@@ -46,7 +46,7 @@ const en = {
       members: 'Members',
       includingMe: 'including me',
       equipActual: 'Current Team',
-      problemStatement: 'Problem Statement'
+      projectCourse: 'Project Course'
     }
   },
   footer: {

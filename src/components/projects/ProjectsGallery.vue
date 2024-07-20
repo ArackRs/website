@@ -8,51 +8,42 @@ const selectProject = (url) => {
 </script>
 
 <template>
-  <section id="projects-section" class="projects">
-    <div class="projects-container container">
-      <div class="projects__header">
-        <h1 class="heading">{{$t('projects.heading')}}</h1>
-        <p class="description">{{$t('projects.description')}}</p>
-      </div>
-      <div class="projects__content content" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-        <template v-if="!loading" >
-          <template v-for="project in projects" :key="project.id">
-            <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
-              <div class="box-img">
-                <img :src="project.image" alt="Image" />
-              </div>
-              <div class="box-txt">
-                <h1>{{ project.name }}</h1>
-                <p>{{ project.overview }}.</p>
-              </div>
-            </div>
-          </template>
-        </template>
-        <template v-else>
-          <div v-for="n in 6" :key="n" class="item bg-filter">
-            <div class="box-img">
-              <pv-skeleton width="100%" height="20rem" />
-            </div>
-            <div class="box-txt">
-              <pv-skeleton width="40%" height="2rem" />
-              <pv-skeleton width="100%" height="1.5rem" class="mt-2" />
-            </div>
+  <div class="gallery content" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+    <template v-if="!loading" >
+      <template v-for="project in projects" :key="project.id">
+        <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
+          <div class="box-img">
+            <img :src="project.image" alt="Image" />
           </div>
-        </template>
+          <div class="box-txt">
+            <h1>{{ project.name }} </h1>
+            <p>{{ project.overview }}</p>
+          </div>
+        </div>
+      </template>
+    </template>
+    <template v-else>
+      <div v-for="n in 6" :key="n" class="item bg-filter">
+        <div class="box-img">
+          <pv-skeleton width="100%" height="20rem" />
+        </div>
+        <div class="box-txt">
+          <pv-skeleton width="40%" height="2rem" />
+          <pv-skeleton width="100%" height="1.5rem" class="mt-2" />
+        </div>
       </div>
-    </div>
-  </section>
+    </template>
+  </div>
 </template>
 
 <style scoped>
-.projects__content {
-  padding-top: 5rem;
+.gallery {
   align-items: initial;
   gap: 1rem;
   .item {
     width: 30rem;
     min-height: 20rem;
-    aspect-ratio: 16 / 5;
+    aspect-ratio: 16 / 10;
     display: flex;
     flex-direction: column-reverse;
     flex-grow: 1;

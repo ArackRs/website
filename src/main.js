@@ -22,6 +22,10 @@ import Chip from 'primevue/chip';
 import SpeedDial from 'primevue/speeddial';
 import ScrollTop from 'primevue/scrolltop';
 import Skeleton from 'primevue/skeleton';
+import ButtonGroup from 'primevue/buttongroup'
+import DataView from 'primevue/dataview';
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'   // optional
+
 
 
 const app = createApp(App)
@@ -45,5 +49,8 @@ app.component('pv-chip', Chip);
 app.component('pv-speed-dial', SpeedDial);
 app.component('pv-scroll-top', ScrollTop);
 app.component('pv-skeleton', Skeleton);
+app.component('pv-button-group', ButtonGroup)
+app.component('pv-data-view', DataView);
+app.component('pv-data-view-layout-options', DataViewLayoutOptions);
 
 app.mount('#app')

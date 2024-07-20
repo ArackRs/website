@@ -46,7 +46,7 @@ const es = {
       members: 'integrantes',
       includingMe: 'incluyendome',
       equipActual: 'Equipo Actual',
-      problemStatement: 'Planteamiento del problema'
+      projectCourse: 'Curso del Proyecto'
     }
   },
   footer: {

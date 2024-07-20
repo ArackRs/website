@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "website-arack"
-  }
+    "website": "arack-rs"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
