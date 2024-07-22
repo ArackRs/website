@@ -49,6 +49,17 @@ const es = {
       projectCourse: 'Curso del Proyecto'
     }
   },
+  contact: {
+    heading: 'Contáctame',
+    description: 'Si tienes alguna pregunta o deseas colaborar en un proyecto, no dudes en ponerte en contacto conmigo. Estoy siempre dispuesto a escuchar nuevas ideas y oportunidades, y estoy ansioso por trabajar contigo para hacer realidad tus proyectos de software.',
+    form: {
+      name: 'Nombre',
+      email: 'Correo Electrónico',
+      phone: 'Teléfono',
+      message: 'Mensaje',
+      send: 'Enviar Mensaje'
+    }
+  },
   footer: {
     copyright: '&copy; 2023 - Todos los derechos reservados.',
     created: 'Creado con Vue.js por Jack Arana'

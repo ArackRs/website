@@ -24,7 +24,17 @@ import ScrollTop from 'primevue/scrolltop';
 import Skeleton from 'primevue/skeleton';
 import ButtonGroup from 'primevue/buttongroup'
 import DataView from 'primevue/dataview';
-import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'   // optional
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import Dropdown from 'primevue/dropdown';
+import Divider from 'primevue/divider';
+import IconField from 'primevue/iconfield';
+import InputText from 'primevue/inputtext';
+import Textarea from 'primevue/textarea';
+import InputIcon from 'primevue/inputicon';
+import InputGroup from 'primevue/inputgroup';
+import InputGroupAddon from 'primevue/inputgroupaddon';
+import FloatLabel from 'primevue/floatlabel';
+import InputNumber from 'primevue/inputnumber';
 
 
 
@@ -52,5 +62,15 @@ app.component('pv-skeleton', Skeleton);
 app.component('pv-button-group', ButtonGroup)
 app.component('pv-data-view', DataView);
 app.component('pv-data-view-layout-options', DataViewLayoutOptions);
+app.component('pv-dropdown', Dropdown);
+app.component('pv-divider', Divider);
+app.component('pv-icon-field', IconField);
+app.component('pv-input-text', InputText);
+app.component('pv-textarea', Textarea);
+app.component('pv-input-icon', InputIcon);
+app.component('pv-input-group', InputGroup);
+app.component('pv-input-group-addon', InputGroupAddon);
+app.component('pv-float-label', FloatLabel);
+app.component('pv-input-number', InputNumber);
 
 app.mount('#app')

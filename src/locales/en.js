@@ -49,6 +49,17 @@ const en = {
       projectCourse: 'Project Course'
     }
   },
+  contact: {
+    heading: 'Contact Me',
+    description: 'If you have any questions or wish to collaborate on a project, do not hesitate to get in touch with me. I am always open to hearing new ideas and opportunities, and I am eager to work with you to bring your software projects to life.',
+    form: {
+      name: 'Name',
+      email: 'Email',
+      phone: 'Phone',
+      message: 'Message',
+      send: 'Send Message'
+    }
+  },
   footer: {
     copyright: '&copy; 2023 - All rights reserved.',
     created: 'Created with Vue.js by Jack Arana'
