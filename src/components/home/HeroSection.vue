@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
-const splitText = (text) => text.split('');
+//const splitText = (text) => text.split('');
 
 onMounted(() => {
   document.getElementById('scrollButton').addEventListener('click', function() {
@@ -10,6 +10,7 @@ onMounted(() => {
       behavior: 'smooth'
     });
   });
+  // eslint-disable-next-line no-undef
   Splitting(); // Splitting.js - unique! npm install splitting --save
   textLoad();
   setInterval(textLoad, 20000);
@@ -27,9 +28,6 @@ const textLoad = () => {
     setTimeout(() => {
       secText.value.textContent = 'Backend Developer';
     }, 10000);
-    setTimeout(() => {
-      secText.value.textContent = 'Full Stack Developer';
-    }, 15000);
   }
 };
 </script>
