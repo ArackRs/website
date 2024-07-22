@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { FirebaseService } from '@/shared/service/firebase.service.js';
+import { FirebaseService } from '@/services/firebase.service.js';
 import ProjectsGallery from '@/components/projects/ProjectsGallery.vue'
-import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
+import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackgroundAnimation.vue'
 import ProjectsList from '@/components/projects/ProjectsList.vue'
-import FilterByCategory from '@/shared/components/FilterByCategory.vue'
+import FilterByCategory from '@/components/projects/FilterByCategory.vue'
 
 const projects = ref([]);
 const loading = ref(true);

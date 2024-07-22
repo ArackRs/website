@@ -12,7 +12,7 @@ const toggleMenu = () => {
 <template>
   <nav class="navbar">
     <div class="navbar-container container">
-      <a href="/" class="navbar-brand">Arack</a>
+      <a href="/public" class="navbar-brand">Arack</a>
       <div class="navbar-menu bg-filter" :class="{ 'is-active': isActive }">
         <router-link to="/">Home</router-link>
         <router-link to="/about-me">About</router-link>

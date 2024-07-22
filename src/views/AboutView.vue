@@ -1,8 +1,8 @@
 <script setup>
 import MainBentoColumn from '@/components/about/MainBentoColumn.vue'
 import { onMounted, ref } from 'vue'
-import { FirebaseService } from '@/shared/service/firebase.service.js'
-import CodepenBlobBackgroundAnimation from '@/components/CodepenBlobBackgroundAnimation.vue'
+import { FirebaseService } from '@/services/firebase.service.js'
+import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackgroundAnimation.vue'
 
 const firebaseService = FirebaseService;
 const certificates = ref([])

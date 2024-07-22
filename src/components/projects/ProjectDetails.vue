@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue'
-import { FirebaseService } from '@/shared/service/firebase.service.js'
+import { FirebaseService } from '@/services/firebase.service.js'
 import axios from 'axios'
 const source = axios.CancelToken.source();
 const projects = ref([]);
