@@ -25,13 +25,6 @@
   position: relative;
   overflow: hidden;
 }
-.p-accordion-content {
-  margin-bottom: 0.25rem;
-}
-.p-accordion-header-link {
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
 .container {
   width: 100%;
   height: 100%;
@@ -44,6 +37,7 @@
 }
 
 section, footer {
+  width: 100vw;
   padding-top: 10rem;
   background: var(--color-background-soft);
 
@@ -279,6 +273,13 @@ section, footer {
   color: rgba(255, 255, 255, 0.87);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.p-accordion-content {
+  margin-bottom: 0.25rem;
+}
+.p-accordion-header-link {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
 }
 .p-button-icon-left {
   margin-right: 0.5rem;
