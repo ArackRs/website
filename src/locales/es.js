@@ -36,7 +36,7 @@ const es = {
     }
   },
   projects: {
-    heading: 'Proyectos',
+    heading: 'Experiencia Relevante',
     description: 'Aquí encontrarás una selección de proyectos destacados en los que he trabajado. Cada proyecto muestra mi habilidad para enfrentar y resolver desafíos técnicos en diversas áreas del desarrollo de software. Desde aplicaciones web hasta soluciones móviles, estos proyectos representan mi enfoque práctico y mi compromiso con la calidad.',
     detail: {
       overview: 'Descripción general',

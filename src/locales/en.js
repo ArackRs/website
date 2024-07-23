@@ -36,7 +36,7 @@ const en = {
     }
   },
   projects: {
-    heading: 'Projects',
+    heading: 'Relevant Experience',
     description: 'Here you will find a selection of outstanding projects I have worked on. Each project showcases my ability to tackle and solve technical challenges in various areas of software development. From web applications to mobile solutions, these projects represent my practical approach and commitment to quality.',
     detail: {
       overview: 'Overview',

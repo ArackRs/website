@@ -13,7 +13,7 @@ onMounted(() => {
   // eslint-disable-next-line no-undef
   Splitting(); // Splitting.js - unique! npm install splitting --save
   textLoad();
-  setInterval(textLoad, 20000);
+  setInterval(textLoad, 15000);
 });
 const secText = ref(null);
 

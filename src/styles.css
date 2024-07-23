@@ -105,6 +105,10 @@ section, footer {
   background-clip: text;
   display: inline-block;
 }
+.subtitle {
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
 .shine {
   background: linear-gradient(
           to right,

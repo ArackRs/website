@@ -6,7 +6,7 @@
   <div class="left">
     <div class="left-container container animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinleft', leaveClass: '' }">
       <button class="brand">
-        <a href="/public" class="top-brand">Arack</a>
+        <a href="/" class="top-brand">Arack</a>
       </button>
       <nav class="nav-social">
         <a href="https://github.com/ArackRs" target="_blank">
