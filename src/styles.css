@@ -236,6 +236,9 @@ section, footer {
       }
     }
   }
+  .p-button {
+    padding: .2rem .5rem;
+  }
 }
 @media (max-width: 525px) {
   .container {
