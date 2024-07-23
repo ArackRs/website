@@ -42,12 +42,10 @@
   max-width: 1680px;
   padding: 0 1rem;
 }
+
 section, footer {
   padding-top: 10rem;
   background: var(--color-background-soft);
-  &:first-child {
-    min-height: 100vh;
-  }
 
   .container {
     max-width: 1680px;
@@ -212,12 +210,11 @@ section, footer {
     padding-top: 7rem;
 
     .container {
-      width: 95%;
+      width: 100%;
       .header {
       }
       .content {
         gap: 1rem;
-        width: 85%;
       }
     }
   }

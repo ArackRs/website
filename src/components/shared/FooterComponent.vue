@@ -74,7 +74,11 @@ const toggleLanguage = () => {
     font-size: 2em;
   }
 }
-
+@media (max-width: 768px) {
+  #footer {
+    margin-bottom: 3.5rem;
+  }
+}
 @media (max-width: 525px) {
   .start {
     flex-direction: column;

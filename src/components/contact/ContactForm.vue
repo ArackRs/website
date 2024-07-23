@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <form class="contact-form" id="form">
+  <form class="contact-form bg-filter" id="form">
     <pv-input-group>
       <pv-input-group-addon>
         <i class="pi pi-user"></i>
@@ -90,38 +90,12 @@ onMounted(() => {
   padding: 2rem;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
-  width: 50rem;
+  width: 100%;
   background-color: var(--color-background-soft);
 
   .btn-submit {
     padding: 12px 20px;
     font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .contact-form {
-    width: 33rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .contact-form {
-    width: 21rem;
-  }
-}
-@media screen and (max-width: 425px) {
-  .contact-form {
-    margin-top: 2.5rem;
-    width: 18rem;
-
-    .btn-submit {
-      font-size: 13px;
-    }
-  }
-}
-@media screen and (max-width: 350px) {
-  .contact-form {
-    width: 15rem;
   }
 }
 </style>

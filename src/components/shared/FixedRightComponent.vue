@@ -60,14 +60,8 @@ onUnmounted(() => {
         <a v-if="isMain" href="https://drive.google.com/drive/folders/1mkUxoHVWlIwZbDJvEGP7veSEfb--WW_C" target="_blank" class="download"><i class="pi pi-download icon-cv"></i> CV</a>
       </nav>
       <div class="toggles flex flex-column gap-2">
-        <!--<pv-button v-if="!isMain" class="toggle-download icon" icon="pi pi-download" rounded outlined text />
-          <a href="https://drive.google.com/drive/folders/1mkUxoHVWlIwZbDJvEGP7veSEfb&#45;&#45;WW_C" target="_blank" class="download"><i class=" icon-cv"></i></a>-->
         <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text @click="toggleLanguage" />
-        <!--
-        <pv-button class="toggle-theme icon" text rounded severity="secondary" @click="toggleTheme">
-          <i :class="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'"></i>
-        </pv-button>
-        -->
+        <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text @click="toggleTheme"/>
         <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
         <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
       </div>

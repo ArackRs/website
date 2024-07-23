@@ -37,19 +37,9 @@
 
 .services-header {
   padding-inline: 10%;
-  text-align: center;
-  transform: translateX(0%);
-  transition: all 5s;
-}
-.services.is-visible .services-header {
-  text-align: center;
-  transform: translateX(0%);
-  opacity: 1;
-  visibility: visible;
 }
 
 .services-content {
-
   & .service {
     display: flex;
     flex-wrap: wrap;
