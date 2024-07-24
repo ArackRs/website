@@ -1,13 +1,30 @@
 @import 'assets/css/base.css';
 @import '../node_modules/primeicons/primeicons.css';
 
+/* Splitting -------------------------------------------------- */
+.splitting .char {
+  animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+  animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-1em) rotate(-0.5turn) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+/* Splitting -------------------------------------------------- */
+
 #app {
   width: 100%;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
-
 .container {
   width: 100%;
   height: 100%;
@@ -18,12 +35,11 @@
   max-width: 1680px;
   padding: 0 1rem;
 }
+
 section, footer {
+  width: 100vw;
   padding-top: 10rem;
   background: var(--color-background-soft);
-  &:first-child {
-    min-height: 100vh;
-  }
 
   .container {
     max-width: 1680px;
@@ -81,6 +97,31 @@ section, footer {
   background-clip: text;
   display: inline-block;
 }
+.subtitle {
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.shine {
+  background: linear-gradient(
+          to right,
+          var(--color-primary) 15%,
+          var(--color-primary-soft) 30%,
+          var(--color-secondary) 45%,
+          var(--color-secondary-soft) 60%,
+          var(--color-secondary) 75%,
+          var(--color-primary-soft) 90%,
+          var(--color-primary) 100%
+  );
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 .bg-filter {
   background-color: var(--color-background-soft);
   -webkit-backdrop-filter: blur(15px);
@@ -107,9 +148,52 @@ section, footer {
     }
   }
 }
-
+.text-animation {
+  background: linear-gradient(
+          to right,
+          var(--color-primary) 15%,
+          var(--color-primary-soft) 30%,
+          var(--color-secondary) 45%,
+          var(--color-secondary-soft) 60%,
+          var(--color-secondary) 75%,
+          var(--color-primary-soft) 90%,
+          var(--color-primary) 100%
+  );
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+.swal2-popup {
+  background-color: var(--black-mute); /* Cambia el color de fondo aquí */
+  color: var(--white); /* Cambia el color del texto si es necesario */
+}
 @media (hover: hover) {
   nav a:hover {
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    font-size: 95%;
+  }
+  section, footer {
+    padding-top: 11rem;
+
+    .container {
+      width: 85%;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .container {
+    font-size: 90%;
+  }
+  section, footer {
+    padding-top: 9rem;
+
+    .container {
+      width: 90%;
+    }
   }
 }
 @media (max-width: 1024px) {
@@ -120,6 +204,7 @@ section, footer {
     padding-top: 7rem;
 
     .container {
+      width: 100%;
       .header {
       }
       .content {
@@ -128,6 +213,7 @@ section, footer {
     }
   }
 }
+
 @media (max-width: 768px) {
   .container {
     font-size: 80%;
@@ -144,8 +230,8 @@ section, footer {
       }
     }
   }
-  .p-button-label {
-    display: none;
+  .p-button {
+    padding: .2rem .5rem;
   }
 }
 @media (max-width: 525px) {
@@ -187,6 +273,13 @@ section, footer {
   color: rgba(255, 255, 255, 0.87);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.p-accordion-content {
+  margin-bottom: 0.25rem;
+}
+.p-accordion-header-link {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
 }
 .p-button-icon-left {
   margin-right: 0.5rem;

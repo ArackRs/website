@@ -13,13 +13,15 @@ const toggleLanguage = () => {
       <div class="bg-filter shadow-5" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <div class="start">
           <nav class="nav-social">
+            <a href=""><i class="pi pi-linkedin linkedin"></i></a>
+            <a href=""><i class="pi pi-instagram whatsapp"></i></a>
             <a href=""><i class="pi pi-github"></i></a>
-            <a href=""><i class="pi pi-linkedin"></i></a>
-            <a href=""><i class="pi pi-instagram"></i></a>
           </nav>
           <div class="flex gap-2">
-            <pv-button class="toggle-theme" text rounded severity="secondary" @click="toggleLanguage"><i class="pi pi-language"></i></pv-button>
-            <pv-button class="toggle-theme" text rounded severity="secondary"><i class="pi pi-sun"></i></pv-button>
+            <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text @click="toggleLanguage" />
+            <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text @click="toggleTheme"/>
+            <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
+            <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
           </div>
         </div>
         <div class="end">
@@ -67,6 +69,13 @@ const toggleLanguage = () => {
   & i {
     font-size: 2em;
   }
+
+  .linkedin {
+    color: dodgerblue;
+  }
+  .whatsapp {
+    color: darkorchid;
+  }
 }
 .toggle-theme {
   padding: 0;
@@ -74,7 +83,6 @@ const toggleLanguage = () => {
     font-size: 2em;
   }
 }
-
 @media (max-width: 525px) {
   .start {
     flex-direction: column;

@@ -12,12 +12,12 @@ const selectProject = (url) => {
 <template>
   <div class="list content">
     <template v-for="project in projects" :key="project.id">
-      <div class="projects-item bg-filter" v-on:click="selectProject(project.url)">
-        <div class="image bg-filter">
-          <img :src="'src/assets/images/' + project.logo" alt="Image" width="70" />
+      <div class="item bg-filter" v-on:click="selectProject(project.name)">
+        <div class="box-img">
+          <img :src="project.logo" alt="Image" />
         </div>
-        <div class="text">
-          <h1>{{ project.title }}</h1>
+        <div class="box-txt">
+          <h1>{{ project.name }}</h1>
           <p>{{ project.overview }}.</p>
         </div>
       </div>
@@ -26,22 +26,40 @@ const selectProject = (url) => {
 </template>
 
 <style scoped>
-
   .list {
-    display: grid !important;
+    display: flex;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    .projects-item {
+    .item {
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      flex-grow: 1;
       gap: 1rem;
       padding: 1rem;
       &:hover {
-        border: 1px solid var(--color-text-mute);
-        cursor: pointer;
+        background: var(--color-primary-mute);
       }
-      .text {
-        width: max-content !important;
+      .box-img {
+        min-width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .box-txt {
+        flex-grow: 1;
+        h1 {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: var(--color-text);
+        }
+        p {
+          font-size: 1em;
+          color: var(--color-text-mute);
+        }
       }
     }
   }

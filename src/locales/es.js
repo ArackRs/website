@@ -3,7 +3,7 @@ const es = {
     hero: {
       hello: 'Hola, Soy',
       career: 'Estudiante de Ing. de Software',
-      specialty: 'Especializado en el Desarrollo FullStack',
+      speciality: 'Especializado en el Desarrollo FullStack',
       resume: 'Resumen',
     },
     services: {
@@ -36,7 +36,7 @@ const es = {
     }
   },
   projects: {
-    heading: 'Proyectos',
+    heading: 'Experiencia Relevante',
     description: 'Aquí encontrarás una selección de proyectos destacados en los que he trabajado. Cada proyecto muestra mi habilidad para enfrentar y resolver desafíos técnicos en diversas áreas del desarrollo de software. Desde aplicaciones web hasta soluciones móviles, estos proyectos representan mi enfoque práctico y mi compromiso con la calidad.',
     detail: {
       overview: 'Descripción general',
@@ -47,6 +47,17 @@ const es = {
       includingMe: 'incluyendome',
       equipActual: 'Equipo Actual',
       projectCourse: 'Curso del Proyecto'
+    }
+  },
+  contact: {
+    heading: 'Contáctame',
+    description: 'Si tienes alguna pregunta o deseas colaborar en un proyecto, no dudes en ponerte en contacto conmigo. Estoy siempre dispuesto a escuchar nuevas ideas y oportunidades, y estoy ansioso por trabajar contigo para hacer realidad tus proyectos de software.',
+    form: {
+      name: 'Nombre',
+      email: 'Correo Electrónico',
+      phone: 'Teléfono',
+      message: 'Mensaje',
+      send: 'Enviar Mensaje'
     }
   },
   footer: {

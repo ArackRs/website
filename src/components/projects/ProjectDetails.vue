@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue'
-import { FirebaseService } from '@/shared/service/firebase.service.js'
+import { FirebaseService } from '@/services/firebase.service.js'
 import axios from 'axios'
 const source = axios.CancelToken.source();
 const projects = ref([]);
@@ -38,20 +38,20 @@ const openUrl = (url) => { window.open(url, '_blank') };
   <section id="project">
     <div class="project-container container">
       <div class="project-header header">
-        <div class="title flex-column gap-5">
+        <div class="title gap-5">
           <div class="flex gap-3 align-items-center">
             <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
             <h1>{{ project.name }}</h1>
           </div>
-          <div class="chip-container pt-3">
-            <pv-button class="btn-explore" icon="pi pi-link" v-for="item in project.chips" :key="item" :label="item.label"
-                       rounded :disabled="item.link === ''"
-                       style="font-size: .8em; margin-right: 1em; cursor: pointer;" @click="openUrl(item.link)" />
-          </div>
+          <pv-button-group>
+            <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="openUrl(project.urlCode)" />
+          </pv-button-group>
         </div>
-        <pv-button-group>
-          <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="openUrl(project.urlCode)" />
-        </pv-button-group>
+        <div class="chip-container pt-3">
+          <pv-button class="btn-explore" icon="pi pi-link" v-for="item in project.chips" :key="item" :label="item.label"
+                     rounded :disabled="item.link === ''"
+                     style="font-size: .9em; cursor: pointer;" @click="openUrl(item.link)" />
+        </div>
       </div>
       <div class="project-content content">
         <div class="image bg-filter">
@@ -98,8 +98,9 @@ const openUrl = (url) => { window.open(url, '_blank') };
 }
 .project-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
+
   a {
     background: transparent;
   }
@@ -108,11 +109,10 @@ const openUrl = (url) => { window.open(url, '_blank') };
     color: var(--color-text);
   }
   .title {
-    justify-content: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
-    .chip-container {
-      display: flex;
-    }
     .p-button {
       cursor: pointer;
     }
@@ -121,6 +121,12 @@ const openUrl = (url) => { window.open(url, '_blank') };
       font-weight: bold;
       text-align: start;
     }
+  }
+  .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: .5rem;
   }
 }
 .project-content {

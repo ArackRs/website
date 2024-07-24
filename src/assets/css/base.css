@@ -9,6 +9,7 @@
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
@@ -33,8 +34,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
   &::-webkit-scrollbar {
-    width: 0.7rem;
+    width: 0;
   }
   &::-webkit-scrollbar-track {
     background: var(--color-background-soft);
@@ -42,9 +44,9 @@ body {
   &::-webkit-scrollbar-thumb {
     background: var(--color-background-mute);
   }
-    &::-webkit-scrollbar-thumb:hover {
-      background: var(--color-text-mute);
-    }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-mute);
+  }
 }
 h2, h3, h4, h5, h6, a {
   color: var(--color-text-soft);
