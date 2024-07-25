@@ -8,7 +8,7 @@ import NavbarComponent from '@/components/shared/SidebarComponent.vue'
 
 <template>
   <NavbarComponent />
-  <div class="body">
+  <div id="app-body" class="body">
     <FixedLeftComponent />
     <RouterView />
     <FooterComponent />

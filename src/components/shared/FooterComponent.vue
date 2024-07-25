@@ -14,14 +14,19 @@ const toggleLanguage = () => {
         <div class="start">
           <nav class="nav-social">
             <a href=""><i class="pi pi-linkedin linkedin"></i></a>
-            <a href=""><i class="pi pi-instagram whatsapp"></i></a>
+            <a href=""><i class="pi pi-whatsapp whatsapp"></i></a>
             <a href=""><i class="pi pi-github"></i></a>
+            <a href=""><i class="pi pi-envelope gmail"></i></a>
           </nav>
           <div class="flex gap-2">
-            <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text @click="toggleLanguage" />
-            <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text @click="toggleTheme"/>
-            <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
-            <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
+            <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text
+                       @click="toggleLanguage" severity="info" />
+            <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text
+                       @click="toggleWindowMaximize" severity="secondary"/>
+            <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text
+                       @click="toggleTheme" severity="help"/>
+            <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text
+                       @click="isMuted = !isMuted" severity="warning"/>
           </div>
         </div>
         <div class="end">
@@ -35,7 +40,6 @@ const toggleLanguage = () => {
 
 <style scoped>
 #footer {
-  width: 100%;
   z-index: 100;
   transition: all .3s ease-in-out;
   padding-top: var(--space-pg);
@@ -74,7 +78,10 @@ const toggleLanguage = () => {
     color: dodgerblue;
   }
   .whatsapp {
-    color: darkorchid;
+    color: limegreen;
+  }
+  .gmail {
+    color: crimson;
   }
 }
 .toggle-theme {

@@ -14,7 +14,6 @@ const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value;
 };
 const toggleMenu = () => {
-  //isMain.value = (route.path === '/main' || route.path === '/contact-me');
   isActive.value = !isActive.value;
 };
 const onNavbar = () => {
@@ -33,8 +32,8 @@ const toggleWindowMaximize = () => {
 
 <template>
   <FixedLeftComponent/>
-  <nav class="sidebar" v-if="isActive">
-    <div class="sidebar-container flex flex-column justify-content-between">
+  <nav class="sidebar" :class="{ 'is-active': isActive }">
+    <div class="sidebar-container flex-column justify-content-between">
       <div class="sidebar__header flex justify-content-between">
         <a href="/" class="brand">Jack Arana</a>
         <pv-button  class="btn-close" icon="pi pi-times" rounded text @click="toggleMenu"/>
@@ -74,17 +73,21 @@ const toggleWindowMaximize = () => {
 <style scoped>
 
 .sidebar {
-  display: none;
-  min-width: 15rem;
+  width: 0;
   height: 100vh;
   max-height: 100vh;
   z-index: 1000;
   background: var(--color-background-soft);
-  margin-right: .1rem;
+  margin-right: 0;
+  transition: width .3s ease-in-out;
 
   .sidebar-container {
+    display: flex;
     height: 100vh;
     padding: 1rem;
+    transform: translateX(-30rem);
+    transition: transform .3s ease-in-out;
+
     .sidebar__header {
       height: 30%;
       a.brand {
@@ -142,7 +145,14 @@ const toggleWindowMaximize = () => {
 }
 
 @media screen and (max-width: 768px) {
-  .sidebar, .btn-sidebar {
+  .sidebar.is-active {
+    width: 33rem;
+    margin-right: .1rem;
+    .sidebar-container {
+      transform: translateX(0%);
+    }
+  }
+  .btn-sidebar {
     display: initial;
   }
 }

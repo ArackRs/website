@@ -134,6 +134,18 @@ nav a.router-link-exact-active {
   transform: rotate(0deg);
 }
 
+.toggles {
+  .toggle-language:hover {
+    background: dodgerblue;
+  }
+  .toggle-theme:hover {
+    background: darkslateblue;
+  }
+  .toggle-window:hover {
+    background: darkgrey;
+  }
+}
+
 @media (max-width: 1440px) {
   .right {
     right: 2%;

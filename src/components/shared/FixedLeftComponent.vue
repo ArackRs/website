@@ -10,8 +10,8 @@
       </button>
       <nav class="nav-social">
         <a href="https://github.com/ArackRs" target="_blank"><i class="pi pi-github github"></i></a>
-        <a href="https://www.linkedin.com/in/wilver-arana-r-492a79225/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
-        <a href="https://wa.me/51933524449?text=Hola Jack, %20%20me%20gustaría%20obtener%20más%20información%20sobre%20tus%20servicios.%20¿Podrías%20ayudarme%3F%20Gracias." target="_blank">
+        <a href="https://www.linkedin.com/in/jackarana/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
+        <a href="https://wa.me/51933524449?text=Hola Jack, " target="_blank">
           <i class="pi pi-whatsapp whatsapp"></i></a>
       </nav>
     </div>
@@ -72,7 +72,7 @@
         color: dodgerblue;
       }
       .whatsapp:hover {
-        color: var(--color-primary);
+        color: limegreen;
       }
     }
   }
