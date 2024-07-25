@@ -30,10 +30,12 @@ const router = createRouter({
       component: () => import('../components/projects/ProjectDetails.vue')
     }
   ],
-  scrollBehavior() {
-    return {
-      top: 0
+  scrollBehavior (to, from, savedPosition) {
+    const appBody = document.getElementById('app-body')
+    if (appBody) {
+      appBody.scrollTo(0, 0)
     }
+    return savedPosition || { top: 0 }
   }
 })
 

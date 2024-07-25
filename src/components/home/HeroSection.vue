@@ -1,11 +1,9 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
-//const splitText = (text) => text.split('');
-
 onMounted(() => {
   document.getElementById('scrollButton').addEventListener('click', function() {
-    window.scrollTo({
+    document.getElementById('app-body').scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth'
     });
@@ -41,7 +39,7 @@ const textLoad = () => {
         </h2>
         <h1 class="career heading shine">{{$t('home.hero.career')}}</h1>
         <h1 class="speciality animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
-        <router-link to="about-me" class="resume animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinright', leaveClass: 'fadeoutright' }">{{$t('home.hero.resume')}}
+        <router-link to="about-me" class="resume animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
@@ -126,6 +124,7 @@ const textLoad = () => {
     font-size: 1.5em;
     display: inline-block;
     position: relative;
+    z-index: 1;
 
     &:hover {
       cursor: pointer;
@@ -139,8 +138,8 @@ const textLoad = () => {
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: var(--color-primary);
       z-index: -1;
+      background-color: var(--color-primary);
       transition: all .3s ease-in-out;
     }
 

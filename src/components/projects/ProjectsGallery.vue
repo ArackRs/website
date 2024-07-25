@@ -8,10 +8,11 @@ const selectProject = (url) => {
 </script>
 
 <template>
-  <div class="gallery content" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+  <div class="gallery content">
     <template v-if="!loading" >
       <template v-for="project in projects" :key="project.id">
-        <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
+        <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)"
+             v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
           <div class="box-img">
             <img :src="project.image" alt="Image" />
           </div>
