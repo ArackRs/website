@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 
 onMounted(() => {
   document.getElementById('scrollButton').addEventListener('click', function() {
-    document.getElementById('app-body').scrollTo({
+    document.getElementById('page').scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth'
     });
@@ -38,13 +38,16 @@ const textLoad = () => {
           <span style="font-weight: bold;" class="typed sec-text" ref="secText"></span>
         </h2>
         <h1 class="career heading shine">{{$t('home.hero.career')}}</h1>
-        <h1 class="speciality animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
-        <router-link to="about-me" class="resume animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
+        <h1 class="speciality animation-duration-1000"
+            v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
+        <router-link to="about-me" class="resume animation-duration-1000"
+                     v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
           <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
     </div>
-    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000" v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
+    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000"
+         v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
       <span class="text-xl font-medium" data-splitting>Scroll down</span>
       <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem;"></i>
     </div>
@@ -91,10 +94,11 @@ const textLoad = () => {
   position: relative;
   height: 100vh;
   padding-block: 10rem;
-  background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
 }
 .hero-container {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: start;
   gap: 1rem;
   width: 100%;

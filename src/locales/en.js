@@ -20,7 +20,7 @@ const en = {
   about: {
     main: {
       profile: 'Profile',
-      profileDescription: 'I am a software developer with a passion for creating and learning. I have experience in web development, mobile development, and desktop development. I am currently working on several projects, including a mobile app and a web app. I am also learning about machine learning and artificial intelligence.',
+      profileDescription: 'I consider myself a self-taught person, a quick learner and able to adapt to any environment or technology. I have experience collaborating on projects from conceptualization to implementation. This includes requirements analysis, system design, development, database management and application deployment. My skills cover all these stages, always applying good development practices.',
       education: 'Education',
       educationUniversity: 'Peruvian University of Applied Sciences',
       educationEgress: 'San Isidro - Expected by 07/2026',

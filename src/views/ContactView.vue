@@ -1,12 +1,11 @@
 <script setup>
-import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackgroundAnimation.vue'
 import ContactForm from '@/components/contact/ContactForm.vue'
 
 </script>
 
 <template>
   <main>
-    <section class="contact" id="hero-contact">
+    <section id="contact">
       <div class="contact-container container">
         <div class="contact__header bg-filter">
           <h1>{{$t('contact.heading')}}</h1>
@@ -21,11 +20,12 @@ import ContactForm from '@/components/contact/ContactForm.vue'
       </div>
     </section>
   </main>
-  <CodepenBlobBackgroundAnimation />
 </template>
 
 <style scoped>
-
+#contact {
+  padding-top: 10rem;
+}
 .contact-container {
   display: flex;
   flex-wrap: wrap;

@@ -8,21 +8,19 @@ const selectProject = (url) => {
 };
 </script>
 
-
 <template>
   <div class="list content">
-    <template v-for="project in projects" :key="project.id">
-      <div class="item bg-filter" v-on:click="selectProject(project.name)"
-           v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-        <div class="box-img">
-          <img :src="project.logo" alt="Image" />
-        </div>
-        <div class="box-txt">
-          <h1>{{ project.name }}</h1>
-          <p>{{ project.overview }}</p>
-        </div>
-      </div>
-    </template>
+    <article class="item bg-filter" @click="selectProject(project.name)"
+         v-for="project in projects" :key="project.id"
+         v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+      <figure class="box-img">
+        <img :src="project.logo" alt="Image" />
+      </figure>
+      <hgroup class="box-txt">
+        <h1>{{ project.name }}</h1>
+        <p>{{ project.overview }}</p>
+      </hgroup>
+    </article>
   </div>
 </template>
 
@@ -30,7 +28,7 @@ const selectProject = (url) => {
   .list {
     display: flex;
     gap: 1rem;
-    .item {
+    article {
       display: flex;
       justify-content: space-between;
       align-items: center;

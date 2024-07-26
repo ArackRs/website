@@ -20,7 +20,7 @@ const es = {
   about: {
     main: {
       profile: 'Perfil',
-      profileDescription: 'Soy un desarrollador de software con pasión por crear y aprender. Tengo experiencia en desarrollo web, desarrollo móvil y desarrollo de escritorio. Actualmente estoy trabajando en algunos proyectos, incluida una aplicación móvil y una aplicación web. También estoy aprendiendo sobre aprendizaje automático e inteligencia artificial.',
+      profileDescription: 'Me considero una persona autodidacta, con un aprendizaje rápido y capaz de adaptarse a cualquier entorno o tecnología. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación. Esto incluye el análisis de requerimientos, diseño del sistema, desarrollo, manejo de bases de datos y despliegue de aplicaciones. Mis habilidades abarcan todas estas etapas, aplicando siempre buenas prácticas de desarrollo.\n',
       education: 'Educación',
       educationUniversity: 'Universidad Peruana de Ciencias Aplicadas',
       educationEgress: 'San Isidro - Esperado para 07/2026',

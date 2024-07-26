@@ -13,19 +13,19 @@ const toggleLanguage = () => {
       <div class="bg-filter shadow-5" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <div class="start">
           <nav class="nav-social">
-            <a href=""><i class="pi pi-linkedin linkedin"></i></a>
-            <a href=""><i class="pi pi-whatsapp whatsapp"></i></a>
-            <a href=""><i class="pi pi-github"></i></a>
-            <a href=""><i class="pi pi-envelope gmail"></i></a>
+            <a href="https://www.linkedin.com/in/jackarana/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
+            <a href="https://wa.me/51933524449?text=Hola Jack, " target="_blank"><i class="pi pi-whatsapp whatsapp"></i></a>
+            <a href="https://github.com/ArackRs" target="_blank"><i class="pi pi-github github"></i></a>
+            <a href="mailto:arack.rs@gmail.com"><i class="pi pi-envelope gmail"></i></a>
           </nav>
-          <div class="flex gap-2">
-            <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text
+          <div class="buttons flex gap-2">
+            <pv-button class="toggle-language" icon="pi pi-language" rounded outlined text
                        @click="toggleLanguage" severity="info" />
-            <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text
+            <pv-button class="toggle-window" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text
                        @click="toggleWindowMaximize" severity="secondary"/>
-            <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text
+            <pv-button class="toggle-theme" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text
                        @click="toggleTheme" severity="help"/>
-            <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text
+            <pv-button v-if="isMain" class="toggle-volume" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text
                        @click="isMuted = !isMuted" severity="warning"/>
           </div>
         </div>
@@ -40,18 +40,17 @@ const toggleLanguage = () => {
 
 <style scoped>
 #footer {
+  width: 100%;
   z-index: 100;
   transition: all .3s ease-in-out;
   padding-top: var(--space-pg);
   padding-bottom: var(--space-view-py);
-  background: var(--color-background-soft);
 }
 .footer-container {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: var(--space-pg);
-  max-width: 1680px;
 
   .start {
     width: 100%;
@@ -88,6 +87,10 @@ const toggleLanguage = () => {
   padding: 0;
   & i {
     font-size: 2em;
+  }
+}
+@media (max-width: 768px) {
+  .container {
   }
 }
 @media (max-width: 525px) {

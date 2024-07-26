@@ -50,8 +50,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="right">
-    <div class="right-container container flex align-items-center animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinright', leaveClass: '' }">
+  <aside class="right">
+    <div class="right-container flex animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinright', leaveClass: '' }">
       <nav>
         <router-link id="router" :class="{ 'is-active': isNavVisible }" to="/" data-splitting>Home</router-link>
         <router-link id="router" :class="{ 'is-active': isNavVisible }" to="/about-me" data-splitting>About</router-link>
@@ -66,12 +66,8 @@ onUnmounted(() => {
         <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
       </div>
     </div>
-  </div>
+  </aside>
 </template>
-<style>
-.pi {
-}
-</style>
 
 <style scoped>
 .right {
@@ -83,6 +79,7 @@ onUnmounted(() => {
   z-index: 1;
 }
 .right-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -149,11 +146,6 @@ nav a.router-link-exact-active {
 @media (max-width: 1440px) {
   .right {
     right: 2%;
-  }
-}
-@media (max-width: 1024px) {
-  .right {
-    right: 0;
   }
 }
 @media screen and (max-width: 768px) {

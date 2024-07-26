@@ -2,7 +2,6 @@
 import MainBentoColumn from '@/components/about/MainBentoColumn.vue'
 import { onMounted, ref } from 'vue'
 import { FirebaseService } from '@/services/firebase.service.js'
-import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackgroundAnimation.vue'
 
 const firebaseService = FirebaseService;
 const certificates = ref([])
@@ -24,7 +23,6 @@ onMounted((async () => {
 <template>
   <main>
     <MainBentoColumn :certificates="certificates" :skills="skills" :loading="loading" />
-    <CodepenBlobBackgroundAnimation />
   </main>
 </template>
 

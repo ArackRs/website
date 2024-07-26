@@ -27,11 +27,11 @@ const router = createRouter({
     {
       path: '/my-projects/:project',
       name: 'project',
-      component: () => import('../components/projects/ProjectDetails.vue')
+      component: () => import('../views/ProjectDetailsView.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
-    const appBody = document.getElementById('app-body')
+    const appBody = document.getElementById('page')
     if (appBody) {
       appBody.scrollTo(0, 0)
     }

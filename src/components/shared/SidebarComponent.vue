@@ -31,7 +31,6 @@ const toggleWindowMaximize = () => {
 </script>
 
 <template>
-  <FixedLeftComponent/>
   <nav class="sidebar" :class="{ 'is-active': isActive }">
     <div class="sidebar-container flex-column justify-content-between">
       <div class="sidebar__header flex justify-content-between">
@@ -41,14 +40,12 @@ const toggleWindowMaximize = () => {
       <div class="sidebar__content">
         <div class="menu flex flex-column gap-3">
           <router-link to="/" @click="onNavbar()"><i class="pi pi-home icon"></i> Home</router-link>
-          <router-link to="/about-me" @click="onNavbar()"><i class="pi pi-user icon"></i> About Me</router-link>
-          <router-link to="/my-projects" @click="onNavbar()"><i class="pi pi-desktop icon"></i> Relevant Experience</router-link>
-          <router-link to="/contact-me" @click="onNavbar()"><i class="pi pi-envelope icon"></i> Contact Me</router-link>
-          <a href="https://drive.google.com/drive/folders/1mkUxoHVWlIwZbDJvEGP7veSEfb--WW_C" target="_blank" @click="onNavbar()"><i class="pi pi-download icon"></i> Resume CV</a>
+          <router-link to="/about-me" @click="onNavbar()"><i class="pi pi-user icon"></i> About</router-link>
+          <router-link to="/my-projects" @click="onNavbar()"><i class="pi pi-desktop icon"></i> Projects</router-link>
+          <router-link to="/contact-me" @click="onNavbar()"><i class="pi pi-envelope icon"></i> Contact</router-link>
         </div>
-
       </div>
-      <div class="sidebar__footer flex justify-content-between gap-5">
+      <footer class="sidebar__footer flex justify-content-between gap-5">
         <nav class="nav-social flex flex-column">
           <a href="https://github.com/ArackRs" target="_blank"><i class="pi pi-github github"></i></a>
           <a href="https://www.linkedin.com/in/wilver-arana-r-492a79225/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
@@ -61,7 +58,7 @@ const toggleWindowMaximize = () => {
           <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
           <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
         </div>
-      </div>
+      </footer>
     </div>
   </nav>
   <svg v-if="!isActive" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24"
@@ -82,6 +79,7 @@ const toggleWindowMaximize = () => {
   transition: width .3s ease-in-out;
 
   .sidebar-container {
+    width: 100%;
     display: flex;
     height: 100vh;
     padding: 1rem;
@@ -89,6 +87,7 @@ const toggleWindowMaximize = () => {
     transition: transform .3s ease-in-out;
 
     .sidebar__header {
+      width: 100%;
       height: 30%;
       a.brand {
         font-size: 1.5em;
@@ -97,6 +96,7 @@ const toggleWindowMaximize = () => {
       }
     }
     .sidebar__content {
+      width: 100%;
       height: 70%;
       .menu {
         & .icon {
@@ -146,7 +146,7 @@ const toggleWindowMaximize = () => {
 
 @media screen and (max-width: 768px) {
   .sidebar.is-active {
-    width: 33rem;
+    width: 80vw;
     margin-right: .1rem;
     .sidebar-container {
       transform: translateX(0%);

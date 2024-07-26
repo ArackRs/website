@@ -35,68 +35,71 @@ const openUrl = (url) => { window.open(url, '_blank') };
 </script>
 
 <template>
-  <section id="project">
-    <div class="project-container container">
-      <div class="project-header header">
-        <div class="title gap-5">
-          <div class="flex gap-3 align-items-center">
-            <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
-            <h1>{{ project.name }}</h1>
+  <main>
+    <article id="project">
+      <div class="project-container container">
+        <header class="project-header header">
+          <div class="title gap-5">
+            <div class="flex gap-3 align-items-center">
+              <pv-button class="btn-go-back" severity="secondary" icon="pi pi-arrow-left" rounded  aria-label="Arrow Left" @click="goBack()" />
+              <h1>{{ project.name }}</h1>
+            </div>
+            <pv-button-group>
+              <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="openUrl(project.urlCode)" />
+            </pv-button-group>
           </div>
-          <pv-button-group>
-            <pv-button class="btn-explore" icon="pi pi-code" label="Repositorio" style="font-size: 1rem;" @click="openUrl(project.urlCode)" />
-          </pv-button-group>
-        </div>
-        <div class="chip-container pt-3">
-          <pv-button class="btn-explore" icon="pi pi-link" v-for="item in project.chips" :key="item" :label="item.label"
-                     rounded :disabled="item.link === ''"
-                     style="font-size: .9em; cursor: pointer;" @click="openUrl(item.link)" />
-        </div>
-      </div>
-      <div class="project-content content">
-        <div class="image bg-filter">
+          <nav class="chip-container pt-3">
+            <pv-button class="btn-explore" icon="pi pi-link" v-for="item in project.chips" :key="item" :label="item.label"
+                       rounded :disabled="item.link === ''"
+                       style="font-size: .9em; cursor: pointer;" @click="openUrl(item.link)" />
+          </nav>
+        </header>
+        <figure class="image bg-filter">
           <template v-if="!loading">
             <img :src="project.image" alt="Image" />
           </template>
           <template v-else>
             <pv-skeleton width="100%" height="50rem" />
           </template>
-        </div>
-        <div class="overview bg-filter">
-          <h1>{{ $t('projects.detail.overview')}}</h1>
-          <p>{{ project.overview }}</p>
-        </div>
-        <div class="stack bg-filter">
-          <h1>{{ $t('projects.detail.technologies')}}</h1>
-          <pv-chip v-for="item in project.technologies" :key="item" :label="item" style="font-size: .9em;" />
-        </div>
-        <div class="details bg-filter">
-          <h1>{{ $t('projects.detail.executiveSummary')}}</h1>
-          <h4>Cargo: {{ project.position }} ({{ project.members }} {{ $t('projects.detail.members')}}, {{ $t('projects.detail.includingMe')}})</h4>
-          <br>
-          <p>{{ project.summary }}</p>
-          <br>
-          <p>Funciones:</p>
-          <ul v-for="item in project.functions" :key="item">
-            <li>{{ item }}</li>
-          </ul>
-        </div>
-        <div class="problem bg-filter">
-          <h1>{{ $t('projects.detail.projectCourse')}}</h1>
-          <p>{{ project.course }}</p>
-        </div>
+        </figure>
+        <section class="grid">
+          <hgroup class="overview bg-filter">
+            <h1>{{ $t('projects.detail.overview')}}</h1>
+            <p>{{ project.overview }}</p>
+          </hgroup>
+          <aside class="stack bg-filter">
+            <h1>{{ $t('projects.detail.technologies')}}</h1>
+            <pv-chip v-for="item in project.technologies" :key="item" :label="item" style="font-size: .9em;" />
+          </aside>
+          <section class="details bg-filter">
+            <hgroup>
+              <h1>{{ $t('projects.detail.executiveSummary')}}</h1>
+              <p>Cargo: {{ project.position }} ({{ project.members }}
+                {{ $t('projects.detail.members')}}, {{ $t('projects.detail.includingMe')}})</p>
+            </hgroup>
+            <br>
+            <p>{{ project.summary }}</p>
+            <br>
+            <p>Funciones:</p>
+            <ul v-for="item in project.functions" :key="item">
+              <li>{{ item }}</li>
+            </ul>
+          </section>
+          <aside class="course bg-filter">
+            <h1>{{ $t('projects.detail.projectCourse')}}</h1>
+            <p>{{ project.course }}</p>
+          </aside>
+        </section>
       </div>
-    </div>
-    <CodepenBlobBackgroundAnimation />
-  </section>
+    </article>
+  </main>
 </template>
 
 <style>
 #project {
   min-height: 100vh;
-  background-color: var(--color-background-soft);
 }
-.project-header {
+header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,31 +132,25 @@ const openUrl = (url) => { window.open(url, '_blank') };
     gap: .5rem;
   }
 }
-.project-content {
+figure {
+  grid-area: imagen;
+  aspect-ratio: 16 / 10;
+}
+.grid {
   display: grid !important;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
-  gap: 1rem;
+  gap: var(--space-pg);
   grid-template-areas:
     'imagen imagen'
     'overview stack'
     'details stack'
-    'details problem';
+    'details course';
 
-  div {
+  section, aside {
     height: 100%;
     h1 {
       font-weight: 600;
-    }
-  }
-  .image {
-    grid-area: imagen;
-    aspect-ratio: 16 / 10;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
   .overview {
@@ -175,8 +172,8 @@ const openUrl = (url) => { window.open(url, '_blank') };
       height: min-content;
     }
   }
-  .problem {
-    grid-area: problem;
+  .course {
+    grid-area: course;
   }
   .details {
     grid-area: details;
@@ -190,7 +187,7 @@ const openUrl = (url) => { window.open(url, '_blank') };
     'imagen imagen'
     'overview overview'
     'details details'
-    'stack problem';
+    'stack course';
     .stack {
       flex-direction: row;
       gap: .5rem;
@@ -206,7 +203,7 @@ const openUrl = (url) => { window.open(url, '_blank') };
     'overview'
     'details'
     'stack'
-    'problem';
+    'course';
   }
 }
 </style>

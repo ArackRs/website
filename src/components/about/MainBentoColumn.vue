@@ -19,9 +19,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="summary">
-    <div class="summary-container container">
-      <div class="about-me bg-filter bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+  <section id="about">
+    <div class="about-container container">
+      <div class="banner bg-filter bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!props.loading">
           <h1>Jack Arana Ramos</h1>
         </template>
@@ -39,17 +39,20 @@ const props = defineProps({
           <pv-skeleton width="100%" height="10rem" class="mt-2" />
         </template>
       </div>
-      <div class="meta bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+      <div class="meta " v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!props.loading">
           <img src="../../assets/images/meta-front-end-developer-certificate.png" alt="meta">
         </template>
         <template v-else>
-          <pv-skeleton width="100%" height="14rem" />
+          <pv-skeleton width="100%" height="18rem" />
         </template>
       </div>
-      <div class="ibm bg-image" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+      <div class="cv bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!props.loading">
-          <img src="../../assets/images/meta-front-end-developer-certificate.png" alt="ibm">
+          <a href="https://drive.google.com/file/d/1AInFl0_N0cTXwqKX8QJyzv7boKS6W-yF/view?usp=sharing" target="_blank"
+             @click="onNavbar()" title="Download CV">
+            <i class="pi pi-download"></i>
+          </a>
         </template>
         <template v-else>
           <pv-skeleton width="100%" height="14rem" />
@@ -105,15 +108,18 @@ const props = defineProps({
 
 
 <style>
-.summary-container {
+#about {
+  padding-top: 10rem;
+}
+.about-container {
   width: 100%;
   overflow: hidden;
   display: grid !important;
   place-items: center;
   gap: var(--space-pg);
   grid-template-areas:
-    "about-me about-me about-me profile profile"
-    "about-me about-me about-me meta ibm"
+    "banner banner banner profile profile"
+    "banner banner banner meta cv"
     "education education skills skills skills"
     "certificates certificates certificates projects projects";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -122,11 +128,13 @@ const props = defineProps({
     height: 100%;
   }
 
-  .about-me {
-    grid-area: about-me;
+  .banner {
+    grid-area: banner;
     background-image: url('../../assets/images/arack.jpeg');
+    background-size: cover;
     display: grid;
     height: 100%;
+    overflow: hidden;
     h1 {
       font-size: 4.5em;
       color: white;
@@ -144,11 +152,13 @@ const props = defineProps({
       height: 100%;
     }
   }
-  .ibm {
-    grid-area: ibm;
-    img {
-      width: 100%;
-      height: 100%;
+  .cv {
+    grid-area: cv;
+    background: linear-gradient(113deg, var(--color-primary), var(--color-secondary-mute));
+    display: grid;
+    place-items: center;
+    i {
+      font-size: 5em;
     }
   }
   .education {
@@ -187,16 +197,16 @@ const props = defineProps({
   }
 }
 @media (max-width: 1024px) {
-  .summary-container {
+  .about-container {
     gap: var(--space-pg);
   }
 }
 @media (max-width: 768px) {
-  .summary-container {
+  .about-container {
     grid-template-areas:
-      "about-me about-me about-me"
+      "banner banner banner"
       "profile profile meta"
-      "ibm education education"
+      "cv education education"
       "skills skills skills"
       "certificates certificates certificates"
       "projects projects projects";
@@ -204,11 +214,11 @@ const props = defineProps({
   }
 }
 @media (max-width: 525px) {
-  .summary-container {
+  .about-container {
     grid-template-areas:
-      "about-me about-me"
+      "banner banner"
       "profile profile"
-      "meta ibm"
+      "meta cv"
       "education education"
       "skills skills"
       "certificates certificates"

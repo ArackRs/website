@@ -3,19 +3,16 @@
 </script>
 
 <template>
-  <div class="left">
-    <div class="left-container container animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinleft', leaveClass: '' }">
-      <button class="brand">
-        <a href="/" class="top-brand">Arack</a>
-      </button>
+  <aside class="left">
+    <div class="left-container animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinleft', leaveClass: '' }">
+      <a href="/" class="brand">Arack</a>
       <nav class="nav-social">
         <a href="https://github.com/ArackRs" target="_blank"><i class="pi pi-github github"></i></a>
         <a href="https://www.linkedin.com/in/jackarana/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
-        <a href="https://wa.me/51933524449?text=Hola Jack, " target="_blank">
-          <i class="pi pi-whatsapp whatsapp"></i></a>
+        <a href="https://wa.me/51933524449?text=Hola Jack, " target="_blank"><i class="pi pi-whatsapp whatsapp"></i></a>
       </nav>
     </div>
-  </div>
+  </aside>
 </template>
 
 <style scoped>
@@ -32,17 +29,13 @@
   z-index: 1000;
 }
 .left-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: start;
 
   .brand {
-    background-color: transparent;
-    border: none;
-    backdrop-filter: blur(10px);
-    border-radius: 23px;
-  }
-  .top-brand {
     font-size: 1.7em;
     font-weight: bold;
     line-height: 3rem;
@@ -86,11 +79,6 @@
 @media screen and (max-width: 1440px) {
   .left {
     left: 2%;
-  }
-}
-@media (max-width: 1024px) {
-  .left {
-    left: 0;
   }
 }
 @media screen and (max-width: 768px) {
