@@ -16,7 +16,6 @@ import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackg
       <FooterComponent />
     </div>
     <FixedRightComponent />
-    <pv-scroll-top />
   </div>
   <CodepenBlobBackgroundAnimation />
 </template>
@@ -26,6 +25,8 @@ import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackg
   min-width: 100vw;
   width: 100%;
   height: 100vh;
+  max-height: 100vh;
+
   background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
   background: var(--color-background-soft);
   overflow-x: hidden;

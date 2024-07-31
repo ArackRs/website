@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
   transition:
@@ -34,9 +34,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: scroll;
+  overflow: hidden;
   &::-webkit-scrollbar {
-    width: 0;
+    width: .5rem;
   }
   &::-webkit-scrollbar-track {
     background: var(--color-background-soft);

@@ -51,13 +51,20 @@ const en = {
   },
   contact: {
     heading: 'Contact Me',
-    description: 'If you have any questions or wish to collaborate on a project, do not hesitate to get in touch with me. I am always open to hearing new ideas and opportunities, and I am eager to work with you to bring your software projects to life.',
+    description: 'If you want more information about my services or have any questions, feel free to get in touch with me. I am here to help and respond to your inquiries as soon as possible.',
     form: {
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
       message: 'Message',
       send: 'Send Message'
+    },
+    alert: {
+      titleTimerInterval: 'Hold on a moment!',
+      textTimerInterval: 'Sending email...',
+      textTimer: 'milliseconds',
+      title: 'Message Sent',
+      text: 'Your message has been sent successfully.'
     }
   },
   footer: {

@@ -49,7 +49,7 @@ const props = defineProps({
       </div>
       <div class="cv bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <template v-if="!props.loading">
-          <a href="https://drive.google.com/file/d/1AInFl0_N0cTXwqKX8QJyzv7boKS6W-yF/view?usp=sharing" target="_blank"
+          <a href="https://drive.google.com/file/d/1cN2AAKVXWKPS7DVM0qLAVDvJCHVrR0E-/view?usp=sharing" target="_blank"
              @click="onNavbar()" title="Download CV">
             <i class="pi pi-download"></i>
           </a>

@@ -35,6 +35,7 @@ import InputGroup from 'primevue/inputgroup';
 import InputGroupAddon from 'primevue/inputgroupaddon';
 import FloatLabel from 'primevue/floatlabel';
 import InputNumber from 'primevue/inputnumber';
+import InputMask from 'primevue/inputmask';
 
 
 
@@ -72,5 +73,6 @@ app.component('pv-input-group', InputGroup);
 app.component('pv-input-group-addon', InputGroupAddon);
 app.component('pv-float-label', FloatLabel);
 app.component('pv-input-number', InputNumber);
+app.component('pv-input-mask', InputMask);
 
 app.mount('#app')

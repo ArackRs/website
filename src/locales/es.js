@@ -51,13 +51,20 @@ const es = {
   },
   contact: {
     heading: 'Contáctame',
-    description: 'Si tienes alguna pregunta o deseas colaborar en un proyecto, no dudes en ponerte en contacto conmigo. Estoy siempre dispuesto a escuchar nuevas ideas y oportunidades, y estoy ansioso por trabajar contigo para hacer realidad tus proyectos de software.',
+    description: 'Si deseas más información sobre mis servicios o tienes alguna pregunta, no dudes en ponerte en contacto conmigo. Estoy aquí para ayudarte y responder a tus consultas lo antes posible.',
     form: {
       name: 'Nombre',
       email: 'Correo Electrónico',
       phone: 'Teléfono',
       message: 'Mensaje',
       send: 'Enviar Mensaje'
+    },
+    alert: {
+      titleTimerInterval: '¡Espera un momento!',
+      textTimerInterval: 'Enviando coreo electrónico...',
+      textTimer: 'milisegundos',
+      title: 'Mensaje enviado',
+      text: 'Tu mensaje ha sido enviado correctamente.'
     }
   },
   footer: {

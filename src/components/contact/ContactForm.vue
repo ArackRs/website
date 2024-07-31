@@ -32,9 +32,9 @@ onMounted(() => {
 
     event.preventDefault();
 
-    const serviceID = 'service_8t0crmh';
-    const templateID = 'template_82g14gq';
-    const userID = 'Xbpyq0XFM648n7g9V';
+    const serviceID = 'service_dggeuee';
+    const templateID = 'template_w5rg9xd';
+    const userID = 'jRlAZ0SeDZFhiW-vo';
 
     emailjs.sendForm(serviceID, templateID, this, userID)
       .then(() => {
@@ -58,19 +58,19 @@ onMounted(() => {
       <pv-input-group-addon>
         <i class="pi pi-user"></i>
       </pv-input-group-addon>
-      <pv-input-text maxlength="50" :placeholder="$t('contact.form.name')" id="from_name" name="from_name" required />
+      <pv-input-text type="text" maxlength="50" :placeholder="$t('contact.form.name')" id="from_name" name="from_name" required />
     </pv-input-group>
     <pv-input-group>
       <pv-input-group-addon>
         <i class="pi pi-at"></i>
       </pv-input-group-addon>
-      <pv-input-text maxlength="50" :placeholder="$t('contact.form.email')" id="email_id" name="email_id" required />
+      <pv-input-text type="email" maxlength="50" :placeholder="$t('contact.form.email')" id="email_id" name="email_id" required />
     </pv-input-group>
     <pv-input-group>
       <pv-input-group-addon>
         <i class="pi pi-phone"></i>
       </pv-input-group-addon>
-      <pv-input-text maxlength="25" :placeholder="$t('contact.form.phone')" id="phone_id" name="phone_id" required />
+      <pv-input-mask mask="(+51) 999-999-999" maxlength="25" :placeholder="$t('contact.form.phone')" id="phone_id" name="phone_id" required />
     </pv-input-group>
     <pv-input-group>
       <pv-input-group-addon>
