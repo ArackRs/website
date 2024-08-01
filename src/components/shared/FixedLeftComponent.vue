@@ -3,19 +3,16 @@
 </script>
 
 <template>
-  <div class="left">
-    <div class="left-container container animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinleft', leaveClass: '' }">
-      <button class="brand">
-        <a href="/" class="top-brand">Arack</a>
-      </button>
+  <aside class="left">
+    <div class="left-container animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinleft', leaveClass: '' }">
+      <a href="/" class="brand">Arack</a>
       <nav class="nav-social">
         <a href="https://github.com/ArackRs" target="_blank"><i class="pi pi-github github"></i></a>
-        <a href="https://www.linkedin.com/in/wilver-arana-r-492a79225/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
-        <a href="https://wa.me/51933524449?text=Hola Jack, %20%20me%20gustaría%20obtener%20más%20información%20sobre%20tus%20servicios.%20¿Podrías%20ayudarme%3F%20Gracias." target="_blank">
-          <i class="pi pi-whatsapp whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/jackarana/" target="_blank"><i class="pi pi-linkedin linkedin"></i></a>
+        <a href="https://wa.me/51933524449?text=Hola Jack, " target="_blank"><i class="pi pi-whatsapp whatsapp"></i></a>
       </nav>
     </div>
-  </div>
+  </aside>
 </template>
 
 <style scoped>
@@ -32,17 +29,13 @@
   z-index: 1000;
 }
 .left-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: start;
 
   .brand {
-    background-color: transparent;
-    border: none;
-    backdrop-filter: blur(10px);
-    border-radius: 23px;
-  }
-  .top-brand {
     font-size: 1.7em;
     font-weight: bold;
     line-height: 3rem;
@@ -72,7 +65,7 @@
         color: dodgerblue;
       }
       .whatsapp:hover {
-        color: var(--color-primary);
+        color: limegreen;
       }
     }
   }
@@ -86,11 +79,6 @@
 @media screen and (max-width: 1440px) {
   .left {
     left: 2%;
-  }
-}
-@media (max-width: 1024px) {
-  .left {
-    left: 0;
   }
 }
 @media screen and (max-width: 768px) {

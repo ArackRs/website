@@ -2,25 +2,25 @@
 const { projects, loading } = defineProps(['projects', 'loading']);
 import { useRouter } from 'vue-router';
 const router = useRouter();
-const selectProject = (url) => {
-  router.push('my-projects/' + url);
+const selectProject = (name) => {
+  router.push('my-projects/' + name);
 };
 </script>
 
 <template>
-  <div class="gallery content" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-    <template v-if="!loading" >
-      <template v-for="project in projects" :key="project.id">
-        <div class="item bg-filter hover:shadow-5" v-on:click="selectProject(project.name)">
-          <div class="box-img">
-            <img :src="project.image" alt="Image" />
-          </div>
-          <div class="box-txt">
-            <h1>{{ project.name }} </h1>
-            <p>{{ project.overview }}</p>
-          </div>
-        </div>
-      </template>
+  <div class="gallery content">
+    <template v-if="!loading">
+      <article class="item bg-filter hover:shadow-5" @click="selectProject(project.name)"
+           v-for="project in projects" :key="project.id"
+           v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+        <figure class="box-img">
+          <img :src="project.image" alt="Image" />
+        </figure>
+        <hgroup class="box-txt">
+          <h1>{{ project.name }} </h1>
+          <p>{{ project.overview }}</p>
+        </hgroup>
+      </article>
     </template>
     <template v-else>
       <div v-for="n in 6" :key="n" class="item bg-filter">
@@ -40,7 +40,7 @@ const selectProject = (url) => {
 .gallery {
   align-items: initial;
   gap: 1rem;
-  .item {
+  article {
     width: 30rem;
     min-height: 20rem;
     aspect-ratio: 16 / 10;

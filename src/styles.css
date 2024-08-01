@@ -21,29 +21,39 @@
 
 #app {
   width: 100%;
-  margin: 0 auto;
+  height: 100vh;
+  max-height: 100vh;
+
   position: relative;
-  overflow: hidden;
 }
 .container {
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1680px;
-  padding: 0 1rem;
+  gap: var(--space-pg);
 }
 
-section, footer {
-  width: 100vw;
+header {
+  width: 100%;
   padding-top: 10rem;
-  background: var(--color-background-soft);
+  padding-bottom: 2rem;
 
   .container {
-    max-width: 1680px;
-    padding: 0 max(1rem, 10%);
+    width: 100%;
+
+    display: block;
+    gap: var(--space-pg);
+  }
+}
+main {
+    width: 100%;
+
+}
+section {
+  width: 100%;
+
+  .container {
+    width: 100%;
+
     flex-direction: column;
     gap: var(--space-pg);
 
@@ -69,11 +79,8 @@ section, footer {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: var(--space-pg);
 
-      img {
-        border-radius: 10px;
-      }
       h2 {
         font-size: 1.2em;
       }
@@ -85,6 +92,18 @@ section, footer {
       align-items: flex-start;
     }
   }
+}
+
+figure {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+section .container > hgroup {
+  padding-bottom: var(--space-pg);
 }
 
 .heading {
@@ -168,48 +187,22 @@ section, footer {
   background-color: var(--black-mute); /* Cambia el color de fondo aquí */
   color: var(--white); /* Cambia el color del texto si es necesario */
 }
-@media (hover: hover) {
-  nav a:hover {
-  }
-}
+
 @media (min-width: 1440px) {
   .container {
     font-size: 95%;
-  }
-  section, footer {
-    padding-top: 11rem;
-
-    .container {
-      width: 85%;
-    }
   }
 }
 @media (max-width: 1440px) {
   .container {
     font-size: 90%;
   }
-  section, footer {
-    padding-top: 9rem;
-
-    .container {
-      width: 90%;
-    }
-  }
 }
 @media (max-width: 1024px) {
   .container {
     font-size: 85%;
-  }
-  section, footer {
-    padding-top: 7rem;
-
-    .container {
-      width: 100%;
-      .header {
-      }
-      .content {
-        gap: 1rem;
-      }
+    .content {
+      gap: 1rem;
     }
   }
 }
@@ -218,18 +211,6 @@ section, footer {
   .container {
     font-size: 80%;
   }
-  section, footer {
-    padding-top: 5rem;
-
-    .container {
-      padding: 0 max(1rem, 8%);
-
-      .header {
-        font-size: 80%;
-        text-align: center;
-      }
-    }
-  }
   .p-button {
     padding: .2rem .5rem;
   }
@@ -237,12 +218,6 @@ section, footer {
 @media (max-width: 525px) {
   .container {
     font-size: 70%;
-  }
-  section {
-    .container {
-      .header {
-      }
-    }
   }
 }
 .p-accordion {

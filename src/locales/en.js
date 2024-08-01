@@ -14,13 +14,13 @@ const en = {
       mobile: 'Mobile Development',
       mobileDescription: 'I develop scalable and high-performance mobile applications for Android. Using frameworks like Flutter, I deliver mobile solutions that not only look good but also work efficiently across different devices and platforms.',
       cloud: 'Cloud Development',
-      cloudDescription: 'I provide cloud development solutions, ensuring they are scalable, secure, and efficient. I work with AWS, Azure, and Google Cloud to optimize operations and costs, facilitating digital transformation and business growth.',
+      cloudDescription: 'I provide cloud development solutions focusing on scalability and security. I work with Firebase and Microsoft Azure, manage containers using Docker, and implement security with JWT. I automate processes using GitHub Actions and document APIs with OpenAPI.',
     }
   },
   about: {
     main: {
       profile: 'Profile',
-      profileDescription: 'I am a software developer with a passion for creating and learning. I have experience in web development, mobile development, and desktop development. I am currently working on several projects, including a mobile app and a web app. I am also learning about machine learning and artificial intelligence.',
+      profileDescription: 'I consider myself a competitive, resilient and critically thinking person. I have experience collaborating on projects from conceptualization to implementation. This includes requirements analysis, system design, development, database management and application deployment. My skills cover all these stages, always applying good development practices.',
       education: 'Education',
       educationUniversity: 'Peruvian University of Applied Sciences',
       educationEgress: 'San Isidro - Expected by 07/2026',
@@ -51,13 +51,20 @@ const en = {
   },
   contact: {
     heading: 'Contact Me',
-    description: 'If you have any questions or wish to collaborate on a project, do not hesitate to get in touch with me. I am always open to hearing new ideas and opportunities, and I am eager to work with you to bring your software projects to life.',
+    description: 'If you want more information about my services or have any questions, feel free to get in touch with me. I am here to help and respond to your inquiries as soon as possible.',
     form: {
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
       message: 'Message',
       send: 'Send Message'
+    },
+    alert: {
+      titleTimerInterval: 'Hold on a moment!',
+      textTimerInterval: 'Sending email...',
+      textTimer: 'milliseconds',
+      title: 'Message Sent',
+      text: 'Your message has been sent successfully.'
     }
   },
   footer: {

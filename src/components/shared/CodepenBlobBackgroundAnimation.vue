@@ -1,6 +1,5 @@
 <template>
   <div class="slider-thumb"></div>
-  <div class="slider-thumb two"></div>
   <div class="slider-thumb"></div>
   <div class="slider-thumb"></div>
   <div class="slider-thumb"></div>
@@ -14,11 +13,11 @@
 
 .slider-thumb {
   position: fixed;
-  content: "";
   left: -15%;
   top: 20%;
   width: 450px;
   height: 450px;
+  content: "";
   background: #434343;
   background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
@@ -28,10 +27,6 @@
   z-index: -1;
   -webkit-animation: sliderShape 5s linear infinite;
 
-  &:nth-child(3) {
-    left: 75%;
-    top: 45%;
-  }
   &:nth-child(4) {
     width: 150px;
     height: 150px;
@@ -68,13 +63,13 @@
     left: 12%;
     top: 70%;
   }
+  &:nth-child(10) {
+    left: 75%;
+    top: 45%;
+  }
+
 }
-.two {
-  width: 50px;
-  height: 50px;
-  left: 50%;
-  top: 45%;
-}
+
 @keyframes sliderShape{
   0%,100%{
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
@@ -93,3 +88,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>

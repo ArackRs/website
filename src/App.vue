@@ -3,24 +3,32 @@ import { RouterView } from 'vue-router'
 import FixedRightComponent from "@/components/shared/FixedRightComponent.vue";
 import FixedLeftComponent from "@/components/shared/FixedLeftComponent.vue";
 import FooterComponent from '@/components/shared/FooterComponent.vue'
-import NavbarComponent from '@/components/shared/SidebarComponent.vue'
+import SidebarComponent from '@/components/shared/SidebarComponent.vue'
+import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackgroundAnimation.vue'
 </script>
 
 <template>
-  <NavbarComponent />
-  <div class="body">
+  <SidebarComponent />
+  <div id="page">
     <FixedLeftComponent />
-    <RouterView />
-    <FooterComponent />
+    <div id="container">
+      <RouterView />
+      <FooterComponent />
+    </div>
     <FixedRightComponent />
-    <pv-scroll-top />
   </div>
+  <CodepenBlobBackgroundAnimation />
 </template>
 
 <style scoped>
-
-.body {
+#page {
+  min-width: 100vw;
+  width: 100%;
   height: 100vh;
+  max-height: 100vh;
+
+  background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
+  background: var(--color-background-soft);
   overflow-x: hidden;
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -35,6 +43,13 @@ import NavbarComponent from '@/components/shared/SidebarComponent.vue'
   &::-webkit-scrollbar-thumb:hover {
     background: var(--color-text-mute);
   }
+}
+#container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1580px;
+  padding: 0 max(1rem, 10%);
 }
 .p-scrolltop {
   bottom: 80px;

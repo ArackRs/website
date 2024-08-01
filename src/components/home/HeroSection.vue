@@ -1,11 +1,9 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
-//const splitText = (text) => text.split('');
-
 onMounted(() => {
   document.getElementById('scrollButton').addEventListener('click', function() {
-    window.scrollTo({
+    document.getElementById('page').scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth'
     });
@@ -40,13 +38,16 @@ const textLoad = () => {
           <span style="font-weight: bold;" class="typed sec-text" ref="secText"></span>
         </h2>
         <h1 class="career heading shine">{{$t('home.hero.career')}}</h1>
-        <h1 class="speciality animation-duration-1000" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
-        <router-link to="about-me" class="resume animation-duration-1000" v-animateonscroll="{ enterClass: 'fadeinright', leaveClass: 'fadeoutright' }">{{$t('home.hero.resume')}}
-          <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
+        <h1 class="speciality animation-duration-1000"
+            v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
+        <router-link to="about-me" class="resume animation-duration-1000"
+                     v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
+          <i class="pi pi-arrow-right" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
     </div>
-    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000" v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
+    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000"
+         v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
       <span class="text-xl font-medium" data-splitting>Scroll down</span>
       <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem;"></i>
     </div>
@@ -93,10 +94,11 @@ const textLoad = () => {
   position: relative;
   height: 100vh;
   padding-block: 10rem;
-  background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
 }
 .hero-container {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: start;
   gap: 1rem;
   width: 100%;
@@ -126,6 +128,7 @@ const textLoad = () => {
     font-size: 1.5em;
     display: inline-block;
     position: relative;
+    z-index: 1;
 
     &:hover {
       cursor: pointer;
@@ -139,8 +142,8 @@ const textLoad = () => {
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: var(--color-primary);
       z-index: -1;
+      background-color: var(--color-primary);
       transition: all .3s ease-in-out;
     }
 

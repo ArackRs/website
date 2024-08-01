@@ -4,34 +4,33 @@
 <template>
   <section id="services" class="services">
     <div class="services-container container">
-      <div class="services-header header">
+      <hgroup class="services-header header">
         <h1>{{$t('home.services.heading')}}</h1>
         <p>{{$t('home.services.description')}}</p>
-      </div>
-      <div class="services-content content">
-        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
+      </hgroup>
+      <section class="services-content content">
+        <article class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
           <i class="pi pi-desktop"></i>
           <h2>{{$t('home.services.web')}}</h2>
           <p>{{$t('home.services.webDescription')}}</p>
-        </div>
-        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
+        </article>
+        <article class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
           <i class="pi pi-mobile"></i>
           <h2>{{$t('home.services.mobile')}}</h2>
           <p>{{$t('home.services.mobileDescription')}}</p>
-        </div>
-        <div class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
+        </article>
+        <article class="service bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: '' }">
           <i class="pi pi-cloud"></i>
           <h2>{{$t('home.services.cloud')}}</h2>
           <p>{{$t('home.services.cloudDescription')}}</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   </section>
 </template>
 
 <style scoped>
 .services {
-  background: var(--color-background-soft);
   padding-top: 2rem;
 }
 

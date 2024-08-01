@@ -14,13 +14,13 @@ const es = {
       mobile: 'Desarrollo Movil',
       mobileDescription: 'Desarrollo aplicaciones móviles escalables y de alto rendimiento para Android. Utilizo frameworks como Flutter para entregar soluciones móviles que no solo lucen bien, sino que también funcionan de manera eficiente en diferentes dispositivos y plataformas.',
       cloud: 'Desarrollo Cloud',
-      cloudDescription: 'Proporciono soluciones de desarrollo en la nube, asegurando que sean escalables, seguras y eficientes. Trabajo con AWS, Azure y Google Cloud para optimizar operaciones y costes, facilitando así la transformación digital y el crecimiento empresarial.',
+      cloudDescription: 'Proporciono soluciones de desarrollo en la nube con enfoque en escalabilidad y seguridad. Utilizo Firebase y Microsoft Azure, gestionando contenedores con Docker. Implemento seguridad con JWT y automatizo procesos usando GitHub Actions, además de documentar APIs con OpenAPI.',
     }
   },
   about: {
     main: {
       profile: 'Perfil',
-      profileDescription: 'Soy un desarrollador de software con pasión por crear y aprender. Tengo experiencia en desarrollo web, desarrollo móvil y desarrollo de escritorio. Actualmente estoy trabajando en algunos proyectos, incluida una aplicación móvil y una aplicación web. También estoy aprendiendo sobre aprendizaje automático e inteligencia artificial.',
+      profileDescription: 'Me considero una persona competitiva, resiliente y con pensamiento critico. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación. Esto incluye el análisis de requerimientos, diseño del sistema, desarrollo, manejo de bases de datos y despliegue de aplicaciones. Mis habilidades abarcan todas estas etapas, aplicando siempre buenas prácticas de desarrollo.\n',
       education: 'Educación',
       educationUniversity: 'Universidad Peruana de Ciencias Aplicadas',
       educationEgress: 'San Isidro - Esperado para 07/2026',
@@ -51,13 +51,20 @@ const es = {
   },
   contact: {
     heading: 'Contáctame',
-    description: 'Si tienes alguna pregunta o deseas colaborar en un proyecto, no dudes en ponerte en contacto conmigo. Estoy siempre dispuesto a escuchar nuevas ideas y oportunidades, y estoy ansioso por trabajar contigo para hacer realidad tus proyectos de software.',
+    description: 'Si deseas más información sobre mis servicios o tienes alguna pregunta, no dudes en ponerte en contacto conmigo. Estoy aquí para ayudarte y responder a tus consultas lo antes posible.',
     form: {
       name: 'Nombre',
       email: 'Correo Electrónico',
       phone: 'Teléfono',
       message: 'Mensaje',
       send: 'Enviar Mensaje'
+    },
+    alert: {
+      titleTimerInterval: '¡Espera un momento!',
+      textTimerInterval: 'Enviando coreo electrónico...',
+      textTimer: 'milisegundos',
+      title: 'Mensaje enviado',
+      text: 'Tu mensaje ha sido enviado correctamente.'
     }
   },
   footer: {
