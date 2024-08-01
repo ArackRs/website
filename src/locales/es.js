@@ -14,13 +14,13 @@ const es = {
       mobile: 'Desarrollo Movil',
       mobileDescription: 'Desarrollo aplicaciones móviles escalables y de alto rendimiento para Android. Utilizo frameworks como Flutter para entregar soluciones móviles que no solo lucen bien, sino que también funcionan de manera eficiente en diferentes dispositivos y plataformas.',
       cloud: 'Desarrollo Cloud',
-      cloudDescription: 'Proporciono soluciones de desarrollo en la nube, asegurando que sean escalables, seguras y eficientes. Trabajo con AWS, Azure y Google Cloud para optimizar operaciones y costes, facilitando así la transformación digital y el crecimiento empresarial.',
+      cloudDescription: 'Proporciono soluciones de desarrollo en la nube con enfoque en escalabilidad y seguridad. Utilizo Firebase y Microsoft Azure, gestionando contenedores con Docker. Implemento seguridad con JWT y automatizo procesos usando GitHub Actions, además de documentar APIs con OpenAPI.',
     }
   },
   about: {
     main: {
       profile: 'Perfil',
-      profileDescription: 'Me considero una persona autodidacta, con un aprendizaje rápido y capaz de adaptarse a cualquier entorno o tecnología. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación. Esto incluye el análisis de requerimientos, diseño del sistema, desarrollo, manejo de bases de datos y despliegue de aplicaciones. Mis habilidades abarcan todas estas etapas, aplicando siempre buenas prácticas de desarrollo.\n',
+      profileDescription: 'Me considero una persona competitiva, resiliente y con pensamiento critico. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación. Esto incluye el análisis de requerimientos, diseño del sistema, desarrollo, manejo de bases de datos y despliegue de aplicaciones. Mis habilidades abarcan todas estas etapas, aplicando siempre buenas prácticas de desarrollo.\n',
       education: 'Educación',
       educationUniversity: 'Universidad Peruana de Ciencias Aplicadas',
       educationEgress: 'San Isidro - Esperado para 07/2026',
