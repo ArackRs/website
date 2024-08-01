@@ -1,6 +1,6 @@
 :root {
     /*color celeste*/
-    --color-primary: rgb(39, 206, 176);
+    --color-primary: #27ceb0;
     --color-primary-soft: rgba(39, 206, 176, 0.8);
     --color-primary-mute: rgba(39, 206, 176, 0.6);
 
@@ -8,7 +8,7 @@
     --color-secondary-soft: rgba(0, 68, 196, 0.8);
     --color-secondary-mute: rgba(0, 68, 196, 0.6);
 
-    --color-tertiary: rgb(255, 165, 0);
+    --color-tertiary: #ffa500;
     --color-tertiary-soft: rgba(255, 165, 0, 0.8);
     --color-tertiary-mute: rgba(255, 165, 0, 0.6);
 

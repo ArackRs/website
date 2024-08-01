@@ -42,7 +42,7 @@ const textLoad = () => {
             v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
         <router-link to="about-me" class="resume animation-duration-1000"
                      v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
-          <i class="pi pi-external-link" style="font-size: 0.7em; padding-right: .2rem"></i>
+          <i class="pi pi-arrow-right" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
     </div>
