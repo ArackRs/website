@@ -39,7 +39,7 @@ onUnmounted(() => {
   window.removeEventListener('scroll', checkScroll);
 });
 
-const openUrl = () => { window.open('https://drive.google.com/file/d/1nFgsGe9cqqZmgJQjNpkgwGUjB9zeevWT/view?usp=sharing', '_blank') };
+const openUrl = () => { window.open('https://drive.google.com/drive/folders/1guEbYlsXtJfHYw__WEWfyVLhbmPelGGB?usp=sharing', '_blank') };
 
 </script>
 

@@ -53,7 +53,7 @@ onMounted((async () => {
         </div>
         <div class="cv bg-filter" v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
           <template v-if="!loading">
-            <a href="https://drive.google.com/file/d/1nFgsGe9cqqZmgJQjNpkgwGUjB9zeevWT/view?usp=sharing" target="_blank"
+            <a href="https://drive.google.com/drive/folders/1guEbYlsXtJfHYw__WEWfyVLhbmPelGGB?usp=sharing" target="_blank"
               @click="onNavbar()" title="Download CV">
               <i class="pi pi-download"></i>
             </a>
