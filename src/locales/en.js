@@ -20,7 +20,7 @@ const en = {
   about: {
     main: {
       profile: 'Profile',
-      profileDescription: 'I consider myself a competitive, resilient and critically thinking person. I have experience collaborating on projects from conceptualization to implementation. This includes requirements analysis, system design, development, database management and application deployment. My skills cover all these stages, always applying good development practices.',
+      profileDescription: 'Software Engineering student, specialized in Web Development, with solid knowledge in Full Stack technologies and in constant autonomous learning. I have experience collaborating on projects from conceptualization to implementation, using agile methodologies and working on both the frontend and backend, which allows me to understand the entire development cycle of an application.',
       education: 'Education',
       educationUniversity: 'Peruvian University of Applied Sciences',
       educationEgress: 'San Isidro - Expected by 07/2026',

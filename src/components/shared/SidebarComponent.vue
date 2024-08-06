@@ -19,15 +19,9 @@ const toggleMenu = () => {
 const onNavbar = () => {
   toggleMenu();
 };
-const toggleWindowMaximize = () => {
-  if (!document.fullscreenElement && maximize.value === false) {
-    document.documentElement.requestFullscreen();
-  }
-  else {
-    document.exitFullscreen();
-  }
-  maximize.value = !maximize.value;
-}
+
+const openUrl = () => { window.open('https://drive.google.com/drive/folders/1guEbYlsXtJfHYw__WEWfyVLhbmPelGGB?usp=sharing', '_blank') };
+
 </script>
 
 <template>
@@ -56,7 +50,7 @@ const toggleWindowMaximize = () => {
           <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text @click="toggleLanguage" />
           <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text @click="toggleTheme"/>
           <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
-          <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
+          <pv-button class="toggle-window icon" icon="pi pi-download" rounded outlined text title="Download CV" @click="openUrl" />
         </div>
       </footer>
     </div>
@@ -146,7 +140,7 @@ const toggleWindowMaximize = () => {
 
 @media screen and (max-width: 768px) {
   .sidebar.is-active {
-    width: 80vw;
+    width: auto;
     margin-right: .1rem;
     .sidebar-container {
       transform: translateX(0%);
