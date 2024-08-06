@@ -8,7 +8,6 @@ const { locale } = useI18n();
 const isNavVisible = ref(true);
 const isDarkTheme = ref(false);
 const isMain = ref(false);
-const maximize = ref(false);
 let lastScrollPosition = 0;
 const isMuted = ref(true);
 
@@ -18,15 +17,7 @@ const toggleLanguage = () => {
 const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value;
 };
-const toggleWindowMaximize = () => {
-  if (!document.fullscreenElement && maximize.value === false) {
-    document.documentElement.requestFullscreen();
-  }
-  else {
-    document.exitFullscreen();
-  }
-  maximize.value = !maximize.value;
-}
+
 const checkScroll = () => {
   const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
   if (currentScrollPosition < 600) {
@@ -47,6 +38,9 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', checkScroll);
 });
+
+const openUrl = () => { window.open('https://drive.google.com/file/d/1nFgsGe9cqqZmgJQjNpkgwGUjB9zeevWT/view?usp=sharing', '_blank') };
+
 </script>
 
 <template>
@@ -63,7 +57,7 @@ onUnmounted(() => {
         <pv-button class="toggle-language icon" icon="pi pi-language" rounded outlined text @click="toggleLanguage" />
         <pv-button class="toggle-theme icon" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text @click="toggleTheme"/>
         <pv-button v-if="isMain" class="toggle-volume icon" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text @click="isMuted = !isMuted"/>
-        <pv-button class="toggle-window icon" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text  @click="toggleWindowMaximize"/>
+        <pv-button class="toggle-window icon" icon="pi pi-download" rounded outlined text title="Download CV" @click="openUrl"/>
       </div>
     </div>
   </aside>
@@ -83,7 +77,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
 }
 .toggle-volume {
   font-size: 0.8rem;

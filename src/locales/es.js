@@ -3,7 +3,7 @@ const es = {
     hero: {
       hello: 'Hola, Soy',
       career: 'Estudiante de Ing. de Software',
-      speciality: 'Especializado en el Desarrollo FullStack',
+      speciality: 'Especializado en Desarrollo FullStack',
       resume: 'Resumen',
     },
     services: {
@@ -20,7 +20,7 @@ const es = {
   about: {
     main: {
       profile: 'Perfil',
-      profileDescription: 'Me considero una persona competitiva, resiliente y con pensamiento critico. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación. Esto incluye el análisis de requerimientos, diseño del sistema, desarrollo, manejo de bases de datos y despliegue de aplicaciones. Mis habilidades abarcan todas estas etapas, aplicando siempre buenas prácticas de desarrollo.\n',
+      profileDescription: 'Estudiante de Ingeniería de Software, especializado en Desarrollo Web, con sólidos conocimientos en tecnologías Full Stack y en constante aprendizaje autónomo. Tengo experiencia colaborando en proyectos desde la conceptualización hasta la implementación, utilizando metodologías ágiles y trabajando tanto en el frontend como en el backend, lo que me permite comprender todo el ciclo de desarrollo de una aplicación.',
       education: 'Educación',
       educationUniversity: 'Universidad Peruana de Ciencias Aplicadas',
       educationEgress: 'San Isidro - Esperado para 07/2026',

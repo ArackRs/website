@@ -5,6 +5,8 @@ const { locale } = useI18n();
 const toggleLanguage = () => {
   locale.value = locale.value === 'es' ? 'en' : 'es';
 };
+const openUrl = () => { window.open('https://drive.google.com/file/d/1nFgsGe9cqqZmgJQjNpkgwGUjB9zeevWT/view?usp=sharing', '_blank') };
+
 </script>
 
 <template>
@@ -21,8 +23,8 @@ const toggleLanguage = () => {
           <div class="buttons flex gap-2">
             <pv-button class="toggle-language" icon="pi pi-language" rounded outlined text
                        @click="toggleLanguage" severity="info" />
-            <pv-button class="toggle-window" :icon="!maximize ? 'pi pi-window-maximize' : 'pi pi-github'" rounded outlined text
-                       @click="toggleWindowMaximize" severity="secondary"/>
+            <pv-button class="toggle-window" icon="pi pi-download" rounded outlined text title="Download CV"
+                       @click="openUrl" severity="secondary"/>
             <pv-button class="toggle-theme" :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" rounded outlined text
                        @click="toggleTheme" severity="help"/>
             <pv-button v-if="isMain" class="toggle-volume" :icon="isMuted ? 'pi-volume-up' : 'pi-volume-off'" rounded outlined text
