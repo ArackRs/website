@@ -26,33 +26,41 @@
     --media-pl: 1440px;
     --space-pg: 2rem;
     --space-view-py: 10rem;
+
+    --color-background: var(--black);
+    --color-background-soft: var(--black-soft);
+    --color-background-mute: var(--black-mute);
+
+    --color-text: var(--white);
+    --color-text-soft: var(--white-soft);
+    --color-text-mute: var(--white-mute);
 }
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
     background-color: var(--color-primary);
 }
-@media (prefers-color-scheme: light) {
-    :root {
-        --color-background: var(--white);
-        --color-background-soft: var(--white-soft);
-        --color-background-mute: var(--white-mute);
+/*@media (prefers-color-scheme: light) {*/
+/*    :root {*/
+/*        --color-background: var(--white);*/
+/*        --color-background-soft: var(--white-soft);*/
+/*        --color-background-mute: var(--white-mute);*/
 
-        --color-text: var(--black);
-        --color-text-soft: var(--black-soft);
-        --color-text-mute: var(--black-mute);
-    }
-}
+/*        --color-text: var(--black);*/
+/*        --color-text-soft: var(--black-soft);*/
+/*        --color-text-mute: var(--black-mute);*/
+/*    }*/
+/*}*/
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: var(--black);
-        --color-background-soft: var(--black-soft);
-        --color-background-mute: var(--black-mute);
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --color-background: var(--black);*/
+/*        --color-background-soft: var(--black-soft);*/
+/*        --color-background-mute: var(--black-mute);*/
 
-        --color-text: var(--white);
-        --color-text-soft: var(--white-soft);
-        --color-text-mute: var(--white-mute);
-    }
-}
+/*        --color-text: var(--white);*/
+/*        --color-text-soft: var(--white-soft);*/
+/*        --color-text-mute: var(--white-mute);*/
+/*    }*/
+/*}*/
 
 @media (max-width: 1024px) {
     :root {
