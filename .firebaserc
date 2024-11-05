@@ -2,7 +2,15 @@
   "projects": {
     "website": "arack-rs"
   },
-  "targets": {},
+  "targets": {
+    "arack-rs": {
+      "hosting": {
+        "arack-rs": [
+          "arackrs"
+        ]
+      }
+    }
+  },
   "etags": {},
   "dataconnectEmulatorConfig": {}
 }
