@@ -1,11 +1,11 @@
 {
   "projects": {
-    "website": "arack-rs"
+    "default": "arack-rs"
   },
   "targets": {
     "arack-rs": {
       "hosting": {
-        "arack-rs": [
+        "arackrs": [
           "arackrs"
         ]
       }
