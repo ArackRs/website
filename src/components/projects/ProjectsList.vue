@@ -9,7 +9,7 @@ const selectProject = (url) => {
 </script>
 
 <template>
-  <div class="list content">
+  <div class="list grid grid-cols-1 lg:grid-cols-2">
     <article class="item bg-filter" @click="selectProject(project.name)"
          v-for="project in projects" :key="project.id"
          v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
@@ -26,8 +26,6 @@ const selectProject = (url) => {
 
 <style scoped>
   .list {
-    display: flex;
-    gap: 1rem;
     article {
       display: flex;
       justify-content: space-between;

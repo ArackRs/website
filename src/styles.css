@@ -1,6 +1,10 @@
 @import 'assets/css/base.css';
 @import '../node_modules/primeicons/primeicons.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Splitting -------------------------------------------------- */
 .splitting .char {
   animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
@@ -32,6 +36,12 @@
   gap: var(--space-pg);
 }
 
+@layer components {
+  .grid {
+    @apply gap-8
+  }
+}
+
 header {
   width: 100%;
   padding-top: 10rem;
@@ -39,14 +49,12 @@ header {
 
   .container {
     width: 100%;
-
     display: block;
     gap: var(--space-pg);
   }
 }
 main {
     width: 100%;
-
 }
 section {
   width: 100%;
@@ -152,6 +160,19 @@ section .container > hgroup {
   animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
   z-index: 100;
+}
+.bg-card {
+  background: var(--color-background-soft);
+  padding: var(--space-pg);
+  border-radius: 20px;
+  overflow: hidden;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  z-index: 100;
+}
+.bg-blur {
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
 }
 .image.bg-filter {
   padding: 0.5rem;
