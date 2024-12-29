@@ -31,25 +31,25 @@ const textLoad = () => {
 </script>
 
 <template>
-  <section class="hero">
-    <div class="hero-container container">
-      <div class="hero-content">
-        <h2 class="hello animated-text" >{{$t('home.hero.hello')}}
-          <span style="font-weight: bold;" class="typed sec-text" ref="secText"></span>
+  <section class="h-screen py-40">
+    <div class="flex flex-col justify-between items-start h-full">
+      <div class="my-auto">
+        <h2 class="text-xl" >{{$t('home.hero.hello')}}
+          <span class="typed sec-text font-bold" ref="secText"></span>
         </h2>
-        <h1 class="career heading shine">{{$t('home.hero.career')}}</h1>
-        <h1 class="speciality animation-duration-1000"
+        <h1 class="heading shine">{{$t('home.hero.career')}}</h1>
+        <h1 class="text-3xl/10 font-bold "
             v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.speciality')}}</h1>
-        <router-link to="about-me" class="resume animation-duration-1000"
+        <router-link to="about-me" id="resume" class="text-xl inline-block relative z-10"
                      v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">{{$t('home.hero.resume')}}
           <i class="pi pi-arrow-right" style="font-size: 0.7em; padding-right: .2rem"></i>
         </router-link>
       </div>
     </div>
-    <div class="scroll-down flex flex-column align-items-center gap-2 animation-duration-1000"
+    <div class="flex flex-col items-center gap-2"
          v-animateonscroll="{ enterClass: 'zoomin', leaveClass: 'fadeout' }">
       <span class="text-xl font-medium" data-splitting>Scroll down</span>
-      <i id="scrollButton" class="btn-slide-down pi pi-angle-down fadeout" style="font-size: 2rem;"></i>
+      <i id="scrollButton" class="pi pi-angle-down fadeout cursor-pointer" style="font-size: 2rem;"></i>
     </div>
   </section>
 </template>
@@ -78,79 +78,32 @@ const textLoad = () => {
   mix-blend-mode: screen;
 }
 
-@keyframes animate {
-  40%, 60% {
-    left: calc(100% + 4px);
+#resume {
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color-text);
   }
-  100% {
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
     left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+    background-color: var(--color-primary);
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover:before {
+    height: 100%;
   }
 }
 
 #scrollButton {
-  cursor: pointer;
-}
-.hero {
-  position: relative;
-  height: 100vh;
-  padding-block: 10rem;
-}
-.hero-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  gap: 1rem;
-  width: 100%;
-}
-.hero-content {
-  width: 100%;
-  margin: auto 0;
-  overflow: hidden;
-  & h1 {
-    line-height: normal;
-  }
-
-  & h2.hello {
-    color: white;
-    strong {
-      color: white;
-    }
-  }
-
-  & h1.speciality {
-    font-size: 2em;
-    color: white;
-    line-height: 2em;
-  }
-
-  & a {
-    font-size: 1.5em;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-
-    &:hover {
-      cursor: pointer;
-      color: var(--color-text);
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      z-index: -1;
-      background-color: var(--color-primary);
-      transition: all .3s ease-in-out;
-    }
-
-    &:hover:before {
-      height: 100%;
-    }
-  }
+  animation: slide-down 3s infinite;
 }
 
 @keyframes slide-down {
@@ -164,10 +117,12 @@ const textLoad = () => {
     transform: translateY(0);
   }
 }
-
-.btn-slide-down {
-  animation: slide-down;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+@keyframes animate {
+  40%, 60% {
+    left: calc(100% + 4px);
+  }
+  100% {
+    left: 0;
+  }
 }
 </style>
