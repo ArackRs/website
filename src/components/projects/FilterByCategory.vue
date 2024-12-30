@@ -6,10 +6,12 @@ const emit = defineEmits(['update']);
 const selectedCategories = ref(['All']);
 const categories = ref([
   { id: 1, name: 'All' },
-  { id: 2, name: 'Web' },
-  { id: 3, name: 'Mobile' },
-  { id: 4, name: 'Desktop' },
-  { id: 5, name: 'Other' },
+  { id: 2, name: 'LandingPage' },
+  { id: 3, name: 'WebApp' },
+  { id: 4, name: 'MobileApp' },
+  { id: 5, name: 'DesktopApp' },
+  { id: 6, name: 'OpenAPI' },
+  { id: 7, name: 'Other' },
 ]);
 
 const updateSelection = (categoryName) => {
@@ -39,7 +41,7 @@ const filtered = computed(() => {
     return props.value;
   }
   const filtered = props.value.filter(item =>
-    selectedCategories.value.includes(item.category)
+    item.categories.some(category => selectedCategories.value.includes(category))
   );
   emit('update', filtered);
   return filtered;

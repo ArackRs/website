@@ -161,6 +161,7 @@ section .container > hgroup {
 }
 .bg-card {
   background: var(--color-background-soft);
+  opacity: 0.8;
   padding: var(--space-pg);
   border-radius: 20px;
   overflow: hidden;

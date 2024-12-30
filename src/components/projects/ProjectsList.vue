@@ -10,54 +10,17 @@ const selectProject = (url) => {
 
 <template>
   <div class="list grid grid-cols-1 lg:grid-cols-2">
-    <article class="item bg-filter" @click="selectProject(project.name)"
-         v-for="project in projects" :key="project.id"
-         v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
-      <figure class="box-img">
+    <article class="max-h-32 p-5 flex justify-between items-center hover:bg-main-mute cursor-pointer bg-card"
+             @click="selectProject(project.name)"
+             v-for="project in projects" :key="project.id"
+             v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
+      <figure class="min-w-[70px] h-[70px] rounded-full">
         <img :src="project.logo" alt="Image" />
       </figure>
-      <hgroup class="box-txt">
-        <h1>{{ project.name }}</h1>
-        <p>{{ project.overview }}</p>
+      <hgroup class="h-full overflow-hidden">
+        <h1 class="text-xl">{{ project.name }}</h1>
+        <p class="text-sm">{{ project.overview }}</p>
       </hgroup>
     </article>
   </div>
 </template>
-
-<style scoped>
-  .list {
-    article {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-grow: 1;
-      gap: 1rem;
-      padding: 1rem;
-      &:hover {
-        background: var(--color-primary-mute);
-      }
-      .box-img {
-        min-width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      .box-txt {
-        flex-grow: 1;
-        h1 {
-          font-size: 1.5em;
-          font-weight: bold;
-          color: var(--color-text);
-        }
-        p {
-          font-size: 1em;
-          color: var(--color-text-mute);
-        }
-      }
-    }
-  }
-</style>
