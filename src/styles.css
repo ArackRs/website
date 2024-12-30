@@ -1,7 +1,7 @@
 @import 'assets/css/base.css';
 @import '../node_modules/primeicons/primeicons.css';
 
-@tailwind base;
+/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
@@ -35,12 +35,12 @@
   height: 100%;
 }
 
-@layer base {
-  :root {
-    /*--color-primary: 39 206 176;*/
-    /*--color-secondary: 0 68 196;*/
-  }
-}
+/*@layer base {*/
+/*  :root {*/
+/*    !*--color-primary: 39 206 176;*!*/
+/*    !*--color-secondary: 0 68 196;*!*/
+/*  }*/
+/*}*/
 
 @layer components {
 
@@ -49,7 +49,7 @@
   }
   @media (max-width: 1024px) {
     .flex, .grid {
-      @apply gap-0
+      @apply gap-4
     }
   }
 }
