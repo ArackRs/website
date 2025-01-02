@@ -26,7 +26,6 @@ import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackg
   width: 100%;
   height: 100vh;
   max-height: 100vh;
-
   background: linear-gradient(to bottom, var(--color-background-mute), var(--color-background-soft));
   background: var(--color-background-soft);
   overflow-x: hidden;

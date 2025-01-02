@@ -1,6 +1,10 @@
 @import 'assets/css/base.css';
 @import '../node_modules/primeicons/primeicons.css';
 
+/*@tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+
 /* Splitting -------------------------------------------------- */
 .splitting .char {
   animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
@@ -29,7 +33,25 @@
 .container {
   width: 100%;
   height: 100%;
-  gap: var(--space-pg);
+}
+
+/*@layer base {*/
+/*  :root {*/
+/*    !*--color-primary: 39 206 176;*!*/
+/*    !*--color-secondary: 0 68 196;*!*/
+/*  }*/
+/*}*/
+
+@layer components {
+
+  .flex, .grid {
+    @apply gap-8
+  }
+  @media (max-width: 1024px) {
+    .flex, .grid {
+      @apply gap-4
+    }
+  }
 }
 
 header {
@@ -38,28 +60,21 @@ header {
   padding-bottom: 2rem;
 
   .container {
-    width: 100%;
-
     display: block;
     gap: var(--space-pg);
   }
 }
 main {
     width: 100%;
-
 }
 section {
   width: 100%;
 
   .container {
-    width: 100%;
-
     flex-direction: column;
     gap: var(--space-pg);
 
     .header {
-      width: 100%;
-      text-align: center;
       h1 {
         font-size: 2.5em;
         font-weight: 600;
@@ -75,7 +90,6 @@ section {
       }
     }
     .content, .footer {
-      width: 100%;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -94,14 +108,6 @@ section {
   }
 }
 
-figure {
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-}
 section .container > hgroup {
   padding-bottom: var(--space-pg);
 }
@@ -152,6 +158,20 @@ section .container > hgroup {
   animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
   z-index: 100;
+}
+.bg-card {
+  background: var(--color-background-soft);
+  opacity: 0.8;
+  padding: var(--space-pg);
+  border-radius: 20px;
+  overflow: hidden;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  z-index: 100;
+}
+.bg-blur {
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
 }
 .image.bg-filter {
   padding: 0.5rem;
