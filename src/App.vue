@@ -48,7 +48,12 @@ import CodepenBlobBackgroundAnimation from '@/components/shared/CodepenBlobBackg
   height: 100%;
   margin: 0 auto;
   max-width: 1580px;
-  padding: 0 max(1rem, 10%);
+  padding: 0 10%;
+}
+@media screen and (max-width: 450px) {
+  #container {
+    padding: 0 5%;
+  }
 }
 .p-scrolltop {
   bottom: 80px;
