@@ -8,14 +8,14 @@ const selectProject = (name) => {
 </script>
 
 <template>
-  <div class="gallery grid grid-cols-1 lg:grid-cols-2">
+  <div class="gallery">
     <template v-if="!loading">
       <article class="w-full min-h-80 p-0 aspect-[16/10] flex gap-0 flex-col-reverse cursor-pointer hover:shadow-5 hover:bg-main-dark bg-card"
            @click="selectProject(project.name)"
            v-for="project in projects" :key="project.id"
            v-animateonscroll="{ enterClass: 'scalein', leaveClass: 'fadeout' }">
         <figure class="min-h-[50%] pl-5 hover:min-h-full hover:!pl-0 transition-all duration-1000">
-          <img :src="project.image" alt="Image" />
+          <img :src="project.image" :alt="project.name" />
         </figure>
         <hgroup class="min-h-[50%] p-5">
           <h1>{{ project.name }} </h1>
@@ -38,6 +38,16 @@ const selectProject = (name) => {
 </template>
 
 <style scoped>
+.gallery {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
 img {
   border-radius: 20px 0 20px 0;
 }
